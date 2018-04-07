@@ -50,6 +50,8 @@ Table of Contents
 | Split string              | `var L = strings.Split("hi,golang", ",")`            |
 | Replace string            | `var str2 = strings.Replace("hi,all", ",", ";", -1)` |
 | String to int             | `i, _ := strconv.Atoi("39038")`                      |
+| Convert string to float   | `f, _ := strconv.ParseFloat("3.1415", 64)`           |
+| Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`          |
 
 ## Integer
 
@@ -91,7 +93,9 @@ Table of Contents
 go func() {
   // do something
 }
+```
 
+```
 // Channels
 c := make(chan T [, capacity ])
 c <- t // blocks on unbuffered channels until another routine receives the value
