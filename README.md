@@ -16,6 +16,7 @@ Table of Contents
       * [String](#string)
       * [Integer](#integer)
       * [Dict &amp; Set](#dict--set)
+      * [Goroutines](#goroutines)
       * [Bit Operator](#bit-operator)
       * [Math](#math)
       * [queue/heapq](#queueheapq)
@@ -53,6 +54,10 @@ Table of Contents
 
 ## Dict & Set
 
+| Name                      | Comment                               |
+| :---------------------    | -----------------------------------   |
+
+## Goroutines
 | Name                      | Comment                               |
 | :---------------------    | -----------------------------------   |
 
