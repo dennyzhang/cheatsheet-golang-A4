@@ -8,11 +8,14 @@
 // Description : go run helloworld.go
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 14:32:22>
+// Updated: Time-stamp: <2018-04-07 15:49:39>
 //-------------------------------------------------------------------
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
+
 func main() {
 	msg := "hello world\n";
 	// print sample message

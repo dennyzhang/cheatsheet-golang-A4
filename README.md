@@ -33,8 +33,9 @@ Table of Contents
 
 | Name                    | Comment                                 |
 | :---------------------- | --------------------------------------- |
-| Initialize a list       | `T := []string{"a", "b", "c", "d"}`     |
+| Initialize a list       | `T := []string{"a", "c", "b", "d"}`     |
 | Append item to list     | `T = append(T, "e")`                    |
+| Sort list               | `sort.Strings(T); fmt.Print(T)`         |
   
 ## String
 
