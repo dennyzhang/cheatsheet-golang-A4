@@ -2,10 +2,10 @@
 // File: example_frontend.go
 // Description :
 //    go run example_frontend.go
-//    curl http://localhost:8080/view/test
+//    curl http://localhost:8080/view/
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 15:21:17>
+// Updated: Time-stamp: <2018-04-07 16:58:58>
 //-------------------------------------------------------------------
 // link: https://golang.org/doc/articles/wiki/part2.go
 // Copyright 2010 The Go Authors. All rights reserved.

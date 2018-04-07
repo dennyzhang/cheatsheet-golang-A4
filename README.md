@@ -45,9 +45,11 @@ Table of Contents
   
 ## String
 
-| Name                      | Comment                               |
-| :------------------------ | ------------------------------------- |
-| String to int             | `i, _ := strconv.Atoi("39038")`       |
+| Name                      | Comment                                              |
+| :------------------------ | ---------------------------------------------------- |
+| Split string              | `var L = strings.Split("hi,golang", ",")`            |
+| Replace string            | `var str2 = strings.Replace("hi,all", ",", ";", -1)` |
+| String to int             | `i, _ := strconv.Atoi("39038")`                      |
 
 ## Integer
 
