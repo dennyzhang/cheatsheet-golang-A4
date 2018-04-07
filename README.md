@@ -31,11 +31,12 @@ Table of Contents
 
 ## List
 
-| Name                    | Comment                                 |
-| :---------------------- | --------------------------------------- |
-| Initialize a list       | `T := []string{"a", "c", "b", "d"}`     |
-| Append item to list     | `T = append(T, "e")`                    |
-| Sort list               | `sort.Strings(T); fmt.Print(T)`         |
+| Name                    | Comment                                       |
+| :---------------------- | ---------------------------------------       |
+| Make a list             | `var a [2]string; a[0]="hello"; a[1]="world"` |
+| Initialize a list       | `T := []string{"a", "c", "b", "d"}`           |
+| Append item to list     | `T = append(T, "e")`                          |
+| Sort list               | `sort.Strings(T); fmt.Print(T)`               |
   
 ## String
 
