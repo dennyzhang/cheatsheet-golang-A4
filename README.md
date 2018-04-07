@@ -36,14 +36,15 @@ Table of Contents
 
 ## String
 
-| Name                              | Comment                               |
-| :------------------------         | ------------------------------------- |
+| Name                      | Comment                               |
+| :------------------------ | ------------------------------------- |
+| String to int             | `i, _ := strconv.Atoi("39038")`       |
 
 ## Integer
 
 | Name                      | Comment                        |
 | :------------------------ | ------------------------------ |
-  
+
 ## Dict & Set
 
 | Name                      | Comment                               |
@@ -71,6 +72,8 @@ Table of Contents
 # Code snippets
 
 # More links
+- [The Go Programming Language](https://golang.org/doc/)
+
 - TODO: Need to automatically generate pdf
 
 - License: Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
