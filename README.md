@@ -31,9 +31,11 @@ Table of Contents
 
 ## List
 
-| Name                    | Comment                                                |
-| :---------------------- | --------------------------------------------------     |
-
+| Name                    | Comment                                 |
+| :---------------------- | --------------------------------------- |
+| Initialize a list       | `T := []string{"a", "b", "c", "d"}`     |
+| Append item to list     | `T = append(T, "e")`                    |
+  
 ## String
 
 | Name                      | Comment                               |
