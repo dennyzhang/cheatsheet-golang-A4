@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------
 // @copyright 2017 DennyZhang.com
-// Licensed under MIT 
+// Licensed under MIT
 //   https://www.dennyzhang.com/wp-content/mit_license.txt
 //
 // File: helloworld.go
@@ -8,7 +8,7 @@
 // Description : go run helloworld.go
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 15:49:39>
+// Updated: Time-stamp: <2018-04-07 16:15:58>
 //-------------------------------------------------------------------
 package main
 

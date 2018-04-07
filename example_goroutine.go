@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------
 // @copyright 2018 DennyZhang.com
-// Licensed under MIT 
+// Licensed under MIT
 //   https://www.dennyzhang.com/wp-content/mit_license.txt
 //
 // File: example_goroutine.go
@@ -8,7 +8,7 @@
 // Description : go run example_goroutine.go
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 16:15:12>
+// Updated: Time-stamp: <2018-04-07 16:15:49>
 //-------------------------------------------------------------------
 package main
 
