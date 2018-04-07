@@ -41,6 +41,7 @@ Table of Contents
 | Sort list                   | `sort.Strings(T); fmt.Print(T)`               |
 | Append item                 | `T = append(T, "e")`                          |
 | Remove last itme            | `T = T[:len(T)-1]`                            |
+| Slices of a list            | `var T2 = T[1:3]` (references of arrays)      |
   
 ## String
 
