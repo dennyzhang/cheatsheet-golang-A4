@@ -7,12 +7,8 @@
 //
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 14:59:20>
+// Updated: Time-stamp: <2018-04-07 15:09:34>
 //-------------------------------------------------------------------
-// Copyright 2011 The Go Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-
 package main
 
 import (
