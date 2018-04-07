@@ -78,6 +78,7 @@ Table of Contents
 
 # More links
 - [The Go Programming Language](https://golang.org/doc/)
+- [A Tour Of Go](https://tour.golang.org/list)
 
 - TODO: Need to automatically generate pdf
 
