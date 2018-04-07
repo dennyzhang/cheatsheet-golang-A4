@@ -103,9 +103,9 @@ close(c)
 - [A Tour Of Go](https://tour.golang.org/list)
 - [The Go Programming Language](https://golang.org/doc/)
 
-- TODO: Need to automatically generate pdf
+TODO: Need to automatically generate pdf
 
-- License: Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
+License: Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
 <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
 
