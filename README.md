@@ -27,9 +27,10 @@ Table of Contents
 
 ## Golang Compact Coding
 
-| Name                          | Comment                                                 |
-| :---------------------------- | -----------------------------------------               |
-
+| Name                                | Comment                                     |
+| :---------------------------------- | -----------------------------------------   |
+| Declare variables with initializers | `var ischecked, v, str  = false, 2, "yes!"` |
+  
 ## List
 
 | Name                        | Comment                                       |
