@@ -36,8 +36,9 @@ Table of Contents
 | Make a list                 | `var a [2]string; a[0]="hello"; a[1]="world"` |
 | Create list with fixed size | `T := [6]int{2, 3, 5, 7, 11, 13}`             |
 | Create a flexible list      | `T := []string{"a", "c", "b", "d"}`           |
-| Append item to list         | `T = append(T, "e")`                          |
 | Sort list                   | `sort.Strings(T); fmt.Print(T)`               |
+| Append item                 | `T = append(T, "e")`                          |
+| Remove last itme            | `T = T[:len(T)-1]`                            |
   
 ## String
 
@@ -77,8 +78,8 @@ Table of Contents
 # Code snippets
 
 # More links
-- [The Go Programming Language](https://golang.org/doc/)
 - [A Tour Of Go](https://tour.golang.org/list)
+- [The Go Programming Language](https://golang.org/doc/)
 
 - TODO: Need to automatically generate pdf
 
