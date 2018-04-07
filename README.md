@@ -83,6 +83,21 @@ Table of Contents
 | :-----------------  | --------------------------------------------------------- |
 
 # Code snippets
+- Goroutines & Channels
+```
+// Goroutines
+go func() {
+  // do something
+}
+
+// Channels
+c := make(chan T [, capacity ])
+c <- t // blocks on unbuffered channels until another routine receives the value
+
+d := <-c // blocks on unbuffered channels until another routine sends the value
+
+close(c)
+```
 
 # More links
 - [A Tour Of Go](https://tour.golang.org/list)
