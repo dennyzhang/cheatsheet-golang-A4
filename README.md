@@ -105,6 +105,16 @@ d := <-c // blocks on unbuffered channels until another routine sends the value
 close(c)
 ```
 
+- Logging
+```
+import "github.com/op/go-logging"
+log := logging.MustGetLogger("my-app")
+log.Info("Some info...")
+log.Warning("Some warning...")
+log.Error("Some error!")
+log.Critical("Some critical!")
+```
+
 # More links
 - [A Tour Of Go](https://tour.golang.org/list)
 - [The Go Programming Language](https://golang.org/doc/)
