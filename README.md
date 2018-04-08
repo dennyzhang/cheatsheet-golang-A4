@@ -11,7 +11,7 @@ Table of Contents
 =================
 
    * [awesome-golang-syntax](#awesome-golang-syntax)
-      * [List](#list)
+      * [Array](#array)
       * [Compact Coding](#compact-coding)
       * [String](#string)
       * [Integer](#integer)
@@ -31,17 +31,19 @@ Table of Contents
 | :---------------------------------- | -----------------------------------------   |
 | Declare variables with initializers | `var ischecked, v, str  = false, 2, "yes!"` |
   
-## List
+## Array
 
-| Name                        | Comment                                       |
-| :----------------------     | --------------------------------------------  |
-| Make a list                 | `var a [2]string; a[0]="hello"; a[1]="world"` |
-| Create list with fixed size | `T := [6]int{2, 3, 5, 7, 11, 13}`             |
-| Create a flexible list      | `T := []string{"a", "c", "b", "d"}`           |
-| Sort list                   | `sort.Strings(T); fmt.Print(T)`               |
-| Append item                 | `T = append(T, "e")`                          |
-| Remove last itme            | `T = T[:len(T)-1]`                            |
-| Slices of a list            | `var T2 = T[1:3]` (references of arrays)      |
+| Name                            | Comment                                       |
+| :-----------------------------  | --------------------------------------------  |
+| Make a array                    | `var a [2]string; a[0]="hello"; a[1]="world"` |
+| Create array with given values  | `T := [6]int{2, 3, 5, 7, 11, 13}`             |
+| Create array with given values  | `T := []string{"a", "c", "b", "d"}`           |
+| Create dynamically-sized arrays | `a := make([]int, 5)`                         |
+| Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
+| Sort array                      | `sort.Strings(T); fmt.Print(T)`               |
+| Append item                     | `T = append(T, "e")`                          |
+| Remove last itme                | `T = T[:len(T)-1]`                            |
+| Slices of a array               | `var T2 = T[1:3]` (references of arrays)      |
   
 ## String
 
