@@ -64,9 +64,12 @@ Table of Contents
 
 ## Dict & Set
 
-| Name            | Comment      |
-| :-------------- | ------------ |
-
+| Name            | Comment                          |
+| :-------------- | -------------------------------- |
+| Create dict     | `map[string]int{"a": 1, "b": 2}` |
+| Create dict     | `make(map[string]int)`           |
+| Delete key      | `delete(m, "k1")`                |
+  
 ## Goroutines
 | Name                   | Comment              |
 | :--------------------- | -------------------- |
