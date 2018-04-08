@@ -43,7 +43,7 @@ Table of Contents
 | Sort array                      | `sort.Strings(T); fmt.Print(T)`               |
 | Append item                     | `T = append(T, "e")`                          |
 | Remove last itme                | `T = T[:len(T)-1]`                            |
-| Slices of a array               | `var T2 = T[1:3]` (references of arrays)      |
+| Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
   
 ## String
 
@@ -101,6 +101,16 @@ board := [][]string{
 }
 ```
 
+- Logging
+```
+import "github.com/op/go-logging"
+log := logging.MustGetLogger("my-app")
+log.Info("Some info...")
+log.Warning("Some warning...")
+log.Error("Some error!")
+log.Critical("Some critical!")
+```
+
 - Goroutines & Channels
 ```
 // Goroutines
@@ -117,16 +127,6 @@ c <- t // blocks on unbuffered channels until another routine receives the value
 d := <-c // blocks on unbuffered channels until another routine sends the value
 
 close(c)
-```
-
-- Logging
-```
-import "github.com/op/go-logging"
-log := logging.MustGetLogger("my-app")
-log.Info("Some info...")
-log.Warning("Some warning...")
-log.Error("Some error!")
-log.Critical("Some critical!")
 ```
 
 # More links
