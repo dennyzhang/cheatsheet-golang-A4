@@ -70,10 +70,10 @@ Table of Contents
 
 ## Bit Operator
 
-| Name           | Comment                    |
-| :------------- | -------------------------- |
-| shift left     | `fmt.Print(1 << 10)` 1024  |
-| shift right    | `fmt.Print(1024 >> 3)` 128 |
+| Name           | Comment                       |
+| :------------- | ----------------------------- |
+| shift left     | `fmt.Print(1 << 10)` // 1024  |
+| shift right    | `fmt.Print(1024 >> 3)` // 128 |
 
 ## File
 | Name           | Comment          |
