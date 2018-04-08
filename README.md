@@ -92,6 +92,15 @@ Table of Contents
 | :-------------- | ---------------------- |
 
 # Code snippets
+- Create 2D arrays
+```
+board := [][]string{
+	[]string{"_", "_", "_"},
+	[]string{"_", "_", "_"},
+	[]string{"_", "_", "_"},
+}
+```
+
 - Goroutines & Channels
 ```
 // Goroutines
