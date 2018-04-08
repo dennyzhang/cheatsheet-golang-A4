@@ -3,13 +3,13 @@
 // Licensed under MIT
 //   https://www.dennyzhang.com/wp-content/mit_license.txt
 //
-// File: example_goroutine.go
+// File: example_json.go
 // Author : Denny <https://www.dennyzhang.com/contact>
 // Description : go run example_json.go
 // Link: https://www.chazzuka.com/2015/03/load-parse-json-file-golang/
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-08 13:00:22>
+// Updated: Time-stamp: <2018-04-08 13:02:18>
 //-------------------------------------------------------------------
 package main
 
@@ -61,4 +61,4 @@ func getPages() []Page {
     json.Unmarshal(raw, &c)
     return c
 }
-// File: example_goroutine.go ends
+// File: example_json.go ends

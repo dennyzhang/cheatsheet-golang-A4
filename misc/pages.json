@@ -1,0 +1,22 @@
+[
+    {
+        "id": 1,
+        "title": "About Us",
+        "url": "/about-us"
+    },
+    {
+        "id": 2,
+        "title": "Team",
+        "url": "/team"
+    },
+    {
+        "id": 3,
+        "title": "Projects",
+        "url": "/projects"
+    },
+    {
+        "id": 4,
+        "title": "Hire Us",
+        "url": "/hire-us"
+    }
+]
