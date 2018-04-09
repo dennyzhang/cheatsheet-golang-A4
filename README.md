@@ -30,11 +30,12 @@ Table of Contents
 ## Syntax Sugar: From Python To Golang
 | Name              | Python                  | Golang                                                   |
 | :---------------- | ----------------------- | -------------------------------------------------------- |
+| sum slice         | `sum([1, 2, 3])`        | `sum := 0; for i := range nums { sum += nums[i] }`       |
+| Get last item     | `nums[-1]`              | `nums[len(nums)-1]`                                  |
 | For               | `for i in range(10):`   | `for i := 0; i < 10; i++`                                |
 | Loop string       | `for ch in str:`        | `for _, ch := range str { fmt.Print(ch) }`               |
 | Iterator          | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}`              |
 | While             | `while isOK:`           | `for isOK`                                               |
-| sum slice         | `sum([1, 2, 3])`        | `sum := 0; for i := range nums { sum += nums[i] }`       |
 | Reverse list      | `nums[::-1]`            | Need to create your own function. Weird!                 |
 | Get min           | `min(2, 5)`             |                                                          |
 
