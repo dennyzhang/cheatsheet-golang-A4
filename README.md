@@ -43,6 +43,7 @@ Table of Contents
 | Name                                | Comment                                     |
 | :---------------------------------- | -----------------------------------------   |
 | Declare variables with initializers | `var ischecked, v, str  = false, 2, "yes!"` |
+| One line if statement               | `if a >= 1 { fmt.Print("yes") }`            |
 
 ## Array
 
