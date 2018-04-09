@@ -28,13 +28,14 @@ Table of Contents
 **Golang CheatSheet**: https://github.com/DennyZhang/cheatsheet-golang-A4
 
 ## Syntax Sugar: From Python To Golang
-| Name         | Python                  | Golang                                      |
-| :----------- | ----------------------- | ------------------------------------------- |
-| For          | `for i in range(10):`   | `for i := 0; i < 10; i++`                   |
-| While        | `while isOK:`           | `for isOK`                                  |
-| Iterator     | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}` |
-| Reverse list | `nums[::-1]`            | Need to create your own function. Weird!    |
-| Get min      | `min(2, 5)`             |                                             |
+| Name              | Python                  | Golang                                                   |
+| :---------------- | ----------------------- | -------------------------------------------------------- |
+| For               | `for i in range(10):`   | `for i := 0; i < 10; i++`                                |
+| Loop string       | `for ch in str:`        | `for i := 0; i<len(str); i++ {fmt.Printf("%c", str[i])}` |
+| Iterator          | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}`              |
+| While             | `while isOK:`           | `for isOK`                                               |
+| Reverse list      | `nums[::-1]`            | Need to create your own function. Weird!                 |
+| Get min           | `min(2, 5)`             |                                                          |
 
 ## Golang Compact Coding
 
@@ -77,6 +78,7 @@ Table of Contents
 | :-------------- | -------------------------------- |
 | Create dict     | `map[string]int{"a": 1, "b": 2}` |
 | Create dict     | `make(map[string]int)`           |
+| Check existence | `_, ok := m[k]`                  |
 | Delete key      | `delete(m, "k1")`                |
   
 ## Goroutines
