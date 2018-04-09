@@ -57,6 +57,7 @@ Table of Contents
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
 | Sort array                      | `sort.Strings(T); fmt.Print(T)`               |
 | Append item                     | `T = append(T, "e")`                          |
+| Append items                    | `T = append(T, "e", "b", "c")`                |
 | Remove last itme                | `T = T[:len(T)-1]`                            |
 | Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
   
@@ -64,11 +65,13 @@ Table of Contents
 
 | Name                      | Comment                                              |
 | :------------------------ | ---------------------------------------------------- |
+| Format string             | `fmt.Sprintf("at %v, %s", e.When, e.What)`           |
 | Split string              | `var L = strings.Split("hi,golang", ",")`            |
 | Replace string            | `var str2 = strings.Replace("hi,all", ",", ";", -1)` |
 | String to int             | `i, _ := strconv.Atoi("39038")`                      |
 | Convert string to float   | `f, _ := strconv.ParseFloat("3.1415", 64)`           |
 | Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`          |
+| Convert string to int     | `i, err := strconv.Atoi("-42")`                      |
 
 ## Integer
 
