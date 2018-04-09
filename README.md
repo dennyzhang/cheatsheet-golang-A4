@@ -27,7 +27,7 @@ Table of Contents
 
 **Golang CheatSheet**: https://github.com/DennyZhang/cheatsheet-golang-A4
 
-## From Python To  Golang
+## Syntax Sugar: From Python To  Golang
 | Name         | Python                  | Golang                                      |
 | :----------- | ----------------------- | ------------------------------------------- |
 | For          | `for i in range(10):`   | `for i := 0; i < 10; i++`                   |
