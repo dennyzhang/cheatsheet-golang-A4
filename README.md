@@ -27,18 +27,24 @@ Table of Contents
 
 **Golang CheatSheet**: https://github.com/DennyZhang/cheatsheet-golang-A4
 
+## From Python To  Golang
+| Python                  | Golang                    |
+| :---------------------- | ------------------------- |
+| `for i in range(10):`   | `for i := 0; i < 10; i++` |
+| `while isOK:`           | `for isOK`                |
+
 ## Golang Compact Coding
 
 | Name                                | Comment                                     |
 | :---------------------------------- | -----------------------------------------   |
 | Declare variables with initializers | `var ischecked, v, str  = false, 2, "yes!"` |
-  
+
 ## Array
 
 | Name                            | Comment                                       |
 | :-----------------------------  | --------------------------------------------  |
 | Make a array                    | `var a [2]string; a[0]="hello"; a[1]="world"` |
-| Create array with given values  | `T := [6]int{2, 3, 5, 7, 11, 13}`             |
+| Create array with given values  | `T := [6]int{2, 3, 7, 5, 11, 13}`          |
 | Create array with given values  | `T := []string{"a", "c", "b", "d"}`           |
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
@@ -157,6 +163,7 @@ close(c)
 # More links
 - [A Tour Of Go](https://tour.golang.org/list)
 - [The Go Programming Language](https://golang.org/doc/)
+- https://github.com/a8m/go-lang-cheat-sheet
 
 TODO: Need to automatically generate pdf
 
