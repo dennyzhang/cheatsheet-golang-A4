@@ -34,8 +34,8 @@ Table of Contents
 | Loop string       | `for ch in str:`        | `for i := 0; i<len(str); i++ {fmt.Printf("%c", str[i])}` |
 | Iterator          | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}`              |
 | While             | `while isOK:`           | `for isOK`                                               |
+| sum slice         | `sum([1, 2, 3])`        | `sum := 0; for i := range nums { sum += nums[i] }`       |
 | Reverse list      | `nums[::-1]`            | Need to create your own function. Weird!                 |
-| sum slice         | `sum([1, 2, 3])`        | `sum := 0; for i := range l { sum += l[i] }`             |
 | Get min           | `min(2, 5)`             |                                                          |
 
 ## Golang Compact Coding
