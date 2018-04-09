@@ -31,7 +31,7 @@ Table of Contents
 | Name              | Python                  | Golang                                                   |
 | :---------------- | ----------------------- | -------------------------------------------------------- |
 | For               | `for i in range(10):`   | `for i := 0; i < 10; i++`                                |
-| Loop string       | `for ch in str:`        | `for i := 0; i<len(str); i++ {fmt.Printf("%c", str[i])}` |
+| Loop string       | `for ch in str:`        | `for _, ch := range str { fmt.Print(ch) }`               |
 | Iterator          | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}`              |
 | While             | `while isOK:`           | `for isOK`                                               |
 | sum slice         | `sum([1, 2, 3])`        | `sum := 0; for i := range nums { sum += nums[i] }`       |
