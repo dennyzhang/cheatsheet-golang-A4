@@ -28,10 +28,12 @@ Table of Contents
 **Golang CheatSheet**: https://github.com/DennyZhang/cheatsheet-golang-A4
 
 ## From Python To  Golang
-| Python                  | Golang                    |
-| :---------------------- | ------------------------- |
-| `for i in range(10):`   | `for i := 0; i < 10; i++` |
-| `while isOK:`           | `for isOK`                |
+| Name         | Python                          | Golang                    |
+| :----------- | ------------------------------- | ------------------------- |
+| For          | `for i in range(10):`           | `for i := 0; i < 10; i++` |
+| While        | `while isOK:`                   | `for isOK`                |
+| Iterator     | `for num in [1, 2, 5]:`         |                           |
+| Reverse list | `l = [1, 2, 5]; print(l[::-1])` |                           |
 
 ## Golang Compact Coding
 
