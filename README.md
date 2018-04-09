@@ -34,6 +34,7 @@ Table of Contents
 | While        | `while isOK:`           | `for isOK`                                  |
 | Iterator     | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}` |
 | Reverse list | `nums[::-1]`            | Need to create your own function. Weird!    |
+| Get min      | `min(2, 5)`             |                                             |
 
 ## Golang Compact Coding
 
