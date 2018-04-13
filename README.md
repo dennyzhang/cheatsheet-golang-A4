@@ -58,7 +58,7 @@ Table of Contents
 | Sort array                      | `sort.Strings(T); fmt.Print(T)`               |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
-| Remove last itme                | `T = T[:len(T)-1]`                            |
+| Remove last item                | `T = T[:len(T)-1]`                            |
 | Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
   
 ## String
