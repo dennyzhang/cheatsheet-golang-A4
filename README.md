@@ -118,10 +118,17 @@ Table of Contents
 # Code snippets
 - Create 2D arrays
 ```
+// static
 board := [][]string{
+ 	[]string{"_", "_", "_"},
+ 	[]string{"_", "_", "_"},
 	[]string{"_", "_", "_"},
-	[]string{"_", "_", "_"},
-	[]string{"_", "_", "_"},
+}
+
+// dynamic
+a := make([][]uint8, dy)
+for i := range a {
+    a[i] = make([]uint8, dx)
 }
 ```
 
