@@ -183,7 +183,7 @@ close(c)
 - [The Go Programming Language](https://golang.org/doc/)
 - https://github.com/a8m/go-lang-cheat-sheet
 
-TODO: Need to automatically generate pdf
+TODO: Need to automatically generate A4 pdf
 
 License: Code is licensed under [MIT License](https://www.dennyzhang.com/wp-content/mit_license.txt).
 
