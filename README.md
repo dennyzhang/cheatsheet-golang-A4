@@ -1,7 +1,7 @@
 # awesome-golang-syntax
 <a href="https://github.com/DennyZhang?tab=followers"><img align="right" width="200" height="183" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/fork_github.png" /></a>
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin_icon.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
 
 File me [tickets](https://github.com/DennyZhang/awesome-golang-syntax/issues) or star [the repo](https://github.com/DennyZhang/awesome-golang-syntax).
 
@@ -31,13 +31,13 @@ Table of Contents
 | Name              | Python                  | Golang                                                   |
 | :---------------- | ----------------------- | -------------------------------------------------------- |
 | sum slice         | `sum([1, 2, 3])`        | `sum := 0; for i := range nums { sum += nums[i] }`       |
-| Get last item     | `nums[-1]`              | `nums[len(nums)-1]`                                  |
+| Get last item     | `nums[-1]`              | `nums[len(nums)-1]`                                      |
 | For               | `for i in range(10):`   | `for i := 0; i < 10; i++`                                |
 | Loop string       | `for ch in str:`        | `for _, ch := range str { fmt.Print(ch) }`               |
 | Iterator          | `for num in nums:`      | `for _, num := range nums {fmt.Print(num)}`              |
 | While             | `while isOK:`           | `for isOK`                                               |
 | Reverse list      | `nums[::-1]`            | Need to create your own function. Weird!                 |
-| Get min           | `min(2, 6, 5)`        |                                                          |
+| Get min           | `min(2, 6, 5)`          |                                                          |
 
 ## Golang Compact Coding
 
