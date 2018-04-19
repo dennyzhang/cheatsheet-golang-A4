@@ -18,9 +18,8 @@ Table of Contents
       * [Integer](#integer)
       * [Dict/Hashmap/Map](#dicthashmapmap)
       * [Goroutines](#goroutines)
-      * [Files](#files)
+      * [Files &amp; Folders](#files--folders)
       * [Bit Operator](#bit-operator)
-      * [File](#file)
       * [Math](#math)
       * [queue/heapq](#queueheapq)
    * [Code snippets](#code-snippets)
@@ -102,7 +101,7 @@ Table of Contents
 | :--------------------- | -------------------------------------------- |
 | Basic goroutine        | [example_goroutine.go](example_goroutine.go) |
 
-## Files
+## Files & Folders
 | Name                   | Comment                            |
 | :--------------------- | ---------------------------------- |
 | Read/Write files       | [example_file.go](example_file.go) |
@@ -113,10 +112,6 @@ Table of Contents
 | :------------- | ----------------------------- |
 | shift left     | `fmt.Print(1 << 10)` // 1024  |
 | shift right    | `fmt.Print(1024 >> 3)` // 128 |
-
-## File
-| Name           | Comment          |
-| :------------- | ---------------- |
   
 ## Math
 
