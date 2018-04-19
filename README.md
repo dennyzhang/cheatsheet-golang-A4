@@ -11,13 +11,16 @@ Table of Contents
 =================
 
    * [awesome-golang-syntax](#awesome-golang-syntax)
+      * [Syntax Sugar: From Python To Golang](#syntax-sugar-from-python-to-golang)
+      * [Golang Compact Coding](#golang-compact-coding)
       * [Array](#array)
-      * [Compact Coding](#compact-coding)
       * [String](#string)
       * [Integer](#integer)
-      * [Dict &amp; Set](#dict--set)
+      * [Dict/Hashmap/Map](#dicthashmapmap)
       * [Goroutines](#goroutines)
+      * [Files](#files)
       * [Bit Operator](#bit-operator)
+      * [File](#file)
       * [Math](#math)
       * [queue/heapq](#queueheapq)
    * [Code snippets](#code-snippets)
