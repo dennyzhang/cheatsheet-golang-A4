@@ -73,20 +73,25 @@ Table of Contents
 | Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`          |
 | Convert string to int     | `i, err := strconv.Atoi("-42")`                      |
 | Split string by separator | `strings.Split(path, " ")`                           |
+| Count characters          | `strings.Count("test", "t")`                         |
+| substring                 | `strings.Index("test", "e")`                         |
+| join string               | `strings.Join([]string{"a","b"}, "-")`               |
+| replace string            | `strings.Replace("aaaa", "a", "b", 2)` //bbaa        |
 
 ## Integer
 
 | Name          | Comment        |
 | :------------ | -------------- |
 
-## Dict & Set
+## Dict/Hashmap/Map
 
-| Name            | Comment                          |
-| :-------------- | -------------------------------- |
-| Create dict     | `map[string]int{"a": 1, "b": 2}` |
-| Create dict     | `make(map[string]int)`           |
-| Check existence | `_, ok := m[k]`                  |
-| Delete key      | `delete(m, "k1")`                |
+| Name                  | Comment                          |
+| :-------------------  | -------------------------------- |
+| Create dict           | `map[string]int{"a": 1, "b": 2}` |
+| Create dict           | `make(map[string]int)`           |
+| Check existence       | `_, ok := m[k]`                  |
+| Delete key            | `delete(m, "k1")`                |
+| Create a map of lists | `m := make(map[string][]string)` |
   
 ## Goroutines
 | Name                   | Comment              |
