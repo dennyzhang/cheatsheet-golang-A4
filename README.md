@@ -77,6 +77,7 @@ Table of Contents
 | substring                 | `strings.Index("test", "e")`                         |
 | join string               | `strings.Join([]string{"a","b"}, "-")`               |
 | replace string            | `strings.Replace("aaaa", "a", "b", 2)` //bbaa        |
+| tolower                   | `strings.ToLower("TEST")`                            |
 
 ## Integer
 
@@ -97,6 +98,11 @@ Table of Contents
 | Name                   | Comment              |
 | :--------------------- | -------------------- |
 |                        |                      |
+
+## Files
+| Name                   | Comment                            |
+| :--------------------- | ---------------------------------- |
+| Read/Write files       | [example_file.go](example_file.go) |
 
 [example_goroutine.go](example_goroutine.go)
 
