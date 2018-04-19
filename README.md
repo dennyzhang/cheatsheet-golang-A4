@@ -72,6 +72,7 @@ Table of Contents
 | Convert string to float   | `f, _ := strconv.ParseFloat("3.1415", 64)`           |
 | Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`          |
 | Convert string to int     | `i, err := strconv.Atoi("-42")`                      |
+| Split string by separator | `strings.Split(path, " ")`                           |
 
 ## Integer
 
