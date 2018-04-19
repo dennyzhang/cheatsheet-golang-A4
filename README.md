@@ -98,16 +98,14 @@ Table of Contents
 | Create a map of lists | `m := make(map[string][]string)` |
   
 ## Goroutines
-| Name                   | Comment              |
-| :--------------------- | -------------------- |
-|                        |                      |
+| Name                   | Comment                                      |
+| :--------------------- | -------------------------------------------- |
+| Basic goroutine        | [example_goroutine.go](example_goroutine.go) |
 
 ## Files
 | Name                   | Comment                            |
 | :--------------------- | ---------------------------------- |
 | Read/Write files       | [example_file.go](example_file.go) |
-
-[example_goroutine.go](example_goroutine.go)
 
 ## Bit Operator
 
