@@ -5,7 +5,7 @@
 
 File me [tickets](https://github.com/DennyZhang/awesome-golang-syntax/issues) or star [the repo](https://github.com/DennyZhang/awesome-golang-syntax).
 
-See more CheatSheets from Denny: [here](https://github.com/topics/denny-cheatsheets)
+See more CheatSheets from Denny: [#denny-cheatsheets](https://github.com/topics/denny-cheatsheets)
 
 Table of Contents
 =================
