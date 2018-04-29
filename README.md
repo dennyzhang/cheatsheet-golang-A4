@@ -68,23 +68,25 @@ Table of Contents
   
 ## String
 
-| Name                      | Comment                                                         |
-| :------------------------ | --------------------------------------------------------------- |
-| Format string             | `fmt.Sprintf("at %v, %s", e.When, e.What)`                      |
-| Format string             | `fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)` |
-| Split string              | `var L = strings.Split("hi,golang", ",")`                       |
-| Replace string            | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
-| String to int             | `i, _ := strconv.Atoi("39038")`                                 |
-| Convert string to float   | `f, _ := strconv.ParseFloat("3.1415", 64)`                      |
-| Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`                     |
-| Convert string to int     | `i, err := strconv.Atoi("-42")`                                 |
-| Split string by separator | `strings.Split(path, " ")`                                      |
-| Count characters          | `strings.Count("test", "t")`                                    |
-| substring                 | `strings.Index("test", "e")`                                    |
-| join string               | `strings.Join([]string{"a","b"}, "-")`                          |
-| replace string            | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
-| repeat string             | `strings.Repeat("a", 2)` // aa                                  |
-| tolower                   | `strings.ToLower("TEST")`                                       |
+| Name                         | Comment                                                         |
+| :------------------------    | --------------------------------------------------------------- |
+| Format string                | `fmt.Sprintf("at %v, %s", e.When, e.What)`                      |
+| Format string                | `fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)` |
+| Split string                 | `var L = strings.Split("hi,golang", ",")`                       |
+| Replace string               | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
+| String to int                | `i, _ := strconv.Atoi("39038")`                                 |
+| Convert string to float      | `f, _ := strconv.ParseFloat("3.1415", 64)`                      |
+| Convert string to int        | `i, _ := strconv.ParseInt("12345", 10, 64)`                     |
+| Convert string to int        | `i, err := strconv.Atoi("-42")`                                 |
+| Split string by separator    | `strings.Split(path, " ")`                                      |
+| Count characters             | `strings.Count("test", "t")`                                    |
+| substring                    | `strings.Index("test", "e")`                                    |
+| join string                  | `strings.Join([]string{"a","b"}, "-")`                          |
+| replace string               | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
+| repeat string                | `strings.Repeat("a", 2)` // aa                                  |
+| tolower                      | `strings.ToLower("TEST")`                                       |
+| trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
+| trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
 
 ## Integer/Float
 
