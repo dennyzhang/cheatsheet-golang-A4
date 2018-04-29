@@ -58,12 +58,13 @@ Table of Contents
 | Create array with given values  | `T := []string{"a", "c", "b", "d"}`           |
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
-| Sort array                      | `sort.Strings(T); fmt.Print(T)`               |
+| Sort string array               | `sort.Strings(T); fmt.Print(T)`               |
+| sort int array                  | `sort.Ints(l[:])`                             |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
 | Remove last item                | `T = T[:len(T)-1]`                            |
 | Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
-| Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          | 
+| Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          |
   
 ## String
 
@@ -82,17 +83,18 @@ Table of Contents
 | substring                 | `strings.Index("test", "e")`                                    |
 | join string               | `strings.Join([]string{"a","b"}, "-")`                          |
 | replace string            | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
+| repeat string             | `strings.Repeat("a", 2)` // aa                                  |
 | tolower                   | `strings.ToLower("TEST")`                                       |
 
-## Integer
+## Integer/Float
 
-| Name          | Comment                                                             |
-| :------------ | ------------------------------------------------------------------- |
-| max int       | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
-| min int       | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
+| Name                 | Comment                                                             |
+| :------------------  | ------------------------------------------------------------------- |
+| max int              | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
+| min int              | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
+| Convert int to float | `0.5*float32(age)+7>= float32(age2)`                                |
 
-## Dict/Hashmap
-/Map
+## Dict/Hashmap/Map
 
 | Name                  | Comment                          |
 | :-------------------  | -------------------------------- |

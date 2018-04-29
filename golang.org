@@ -3937,7 +3937,6 @@ https://gobyexample.com/sorting-by-functions
 sort.Slice(planets, func(i, j int) bool {
   return planets[i].Axis < planets[j].Axis
 })
-
 * DONE golang maximum int: math.MaxInt32
   CLOSED: [2018-04-17 Tue 10:02]
 https://stackoverflow.com/questions/6878590/the-maximum-value-for-an-int-type-in-go
