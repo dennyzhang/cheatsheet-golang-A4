@@ -13,9 +13,10 @@ Table of Contents
    * [cheatsheet-golang-a4](#cheatsheet-golang-a4)
       * [Syntax Sugar: From Python To Golang](#syntax-sugar-from-python-to-golang)
       * [Golang Compact Coding](#golang-compact-coding)
-      * [Array](#array)
+      * [Array/List/Slice](#arraylistslice)
       * [String](#string)
-      * [Integer](#integer)
+      * [Integer/Float](#integerfloat)
+      * [Conversion](#conversion)
       * [Dict/Hashmap/Map](#dicthashmapmap)
       * [Goroutines](#goroutines)
       * [Files &amp; Folders](#files--folders)
@@ -75,9 +76,6 @@ Table of Contents
 | Split string                 | `var L = strings.Split("hi,golang", ",")`                       |
 | Replace string               | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
 | String to int                | `i, _ := strconv.Atoi("39038")`                                 |
-| Convert string to float      | `f, _ := strconv.ParseFloat("3.1415", 64)`                      |
-| Convert string to int        | `i, _ := strconv.ParseInt("12345", 10, 64)`                     |
-| Convert string to int        | `i, err := strconv.Atoi("-42")`                                 |
 | Split string by separator    | `strings.Split(path, " ")`                                      |
 | Count characters             | `strings.Count("test", "t")`                                    |
 | substring                    | `strings.Index("test", "e")`                                    |
@@ -94,7 +92,14 @@ Table of Contents
 | :------------------  | ------------------------------------------------------------------- |
 | max int              | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
 | min int              | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
-| Convert int to float | `0.5*float32(age)+7>= float32(age2)`                                |
+
+## Conversion
+| Name                    | Comment                                       |
+| :---------------------- | --------------------------------------------- |
+| Convert string to float | `f, _ := strconv.ParseFloat("3.1415", 64)`    |
+| Convert string to int   | `i, _ := strconv.ParseInt("12345", 10, 64)`   |
+| Convert string to int   | `i, err := strconv.Atoi("-42")`               |
+| Convert int to float    | `0.5*float32(age)+7>= float32(age2)`          |
 
 ## Dict/Hashmap/Map
 
