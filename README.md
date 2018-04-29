@@ -75,16 +75,15 @@ Table of Contents
 | Format string                | `fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)` |
 | Split string                 | `var L = strings.Split("hi,golang", ",")`                       |
 | Replace string               | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
-| String to int                | `i, _ := strconv.Atoi("39038")`                                 |
+| Replace string               | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
 | Split string by separator    | `strings.Split(path, " ")`                                      |
 | Count characters             | `strings.Count("test", "t")`                                    |
-| substring                    | `strings.Index("test", "e")`                                    |
-| join string                  | `strings.Join([]string{"a","b"}, "-")`                          |
-| replace string               | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
-| repeat string                | `strings.Repeat("a", 2)` // aa                                  |
-| tolower                      | `strings.ToLower("TEST")`                                       |
-| trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
-| trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
+| Substring                    | `strings.Index("test", "e")`                                    |
+| Join string                  | `strings.Join([]string{"a","b"}, "-")`                          |
+| Repeat string                | `strings.Repeat("a", 2)` // aa                                  |
+| Tolower                      | `strings.ToLower("TEST")`                                       |
+| Trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
+| Trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
 
 ## Integer/Float
 
@@ -96,9 +95,9 @@ Table of Contents
 ## Conversion
 | Name                    | Comment                                       |
 | :---------------------- | --------------------------------------------- |
-| Convert string to float | `f, _ := strconv.ParseFloat("3.1415", 64)`    |
 | Convert string to int   | `i, _ := strconv.ParseInt("12345", 10, 64)`   |
 | Convert string to int   | `i, err := strconv.Atoi("-42")`               |
+| Convert string to float | `f, _ := strconv.ParseFloat("3.1415", 64)`    |
 | Convert int to float    | `0.5*float32(age)+7>= float32(age2)`          |
 
 ## Dict/Hashmap/Map
