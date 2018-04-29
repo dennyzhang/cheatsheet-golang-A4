@@ -54,7 +54,7 @@ Table of Contents
 | Name                            | Comment                                       |
 | :-----------------------------  | --------------------------------------------  |
 | Make a array                    | `var a [2]string; a[0]="hello"; a[1]="world"` |
-| Create array with given values  | `T := [6]int{2, 3, 7, 5, 11, 13}`          |
+| Create array with given values  | `T := [6]int{2, 3, 7, 5, 11, 13}`             |
 | Create array with given values  | `T := []string{"a", "c", "b", "d"}`           |
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
@@ -63,24 +63,26 @@ Table of Contents
 | Append items                    | `T = append(T, "e", "b", "c")`                |
 | Remove last item                | `T = T[:len(T)-1]`                            |
 | Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
+| Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          | 
   
 ## String
 
-| Name                      | Comment                                              |
-| :------------------------ | ---------------------------------------------------- |
-| Format string             | `fmt.Sprintf("at %v, %s", e.When, e.What)`           |
-| Split string              | `var L = strings.Split("hi,golang", ",")`            |
-| Replace string            | `var str2 = strings.Replace("hi,all", ",", ";", -1)` |
-| String to int             | `i, _ := strconv.Atoi("39038")`                      |
-| Convert string to float   | `f, _ := strconv.ParseFloat("3.1415", 64)`           |
-| Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`          |
-| Convert string to int     | `i, err := strconv.Atoi("-42")`                      |
-| Split string by separator | `strings.Split(path, " ")`                           |
-| Count characters          | `strings.Count("test", "t")`                         |
-| substring                 | `strings.Index("test", "e")`                         |
-| join string               | `strings.Join([]string{"a","b"}, "-")`               |
-| replace string            | `strings.Replace("aaaa", "a", "b", 2)` //bbaa        |
-| tolower                   | `strings.ToLower("TEST")`                            |
+| Name                      | Comment                                                         |
+| :------------------------ | --------------------------------------------------------------- |
+| Format string             | `fmt.Sprintf("at %v, %s", e.When, e.What)`                      |
+| Format string             | `fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)` |
+| Split string              | `var L = strings.Split("hi,golang", ",")`                       |
+| Replace string            | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
+| String to int             | `i, _ := strconv.Atoi("39038")`                                 |
+| Convert string to float   | `f, _ := strconv.ParseFloat("3.1415", 64)`                      |
+| Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`                     |
+| Convert string to int     | `i, err := strconv.Atoi("-42")`                                 |
+| Split string by separator | `strings.Split(path, " ")`                                      |
+| Count characters          | `strings.Count("test", "t")`                                    |
+| substring                 | `strings.Index("test", "e")`                                    |
+| join string               | `strings.Join([]string{"a","b"}, "-")`                          |
+| replace string            | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
+| tolower                   | `strings.ToLower("TEST")`                                       |
 
 ## Integer
 
@@ -89,7 +91,8 @@ Table of Contents
 | max int       | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
 | min int       | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
 
-## Dict/Hashmap/Map
+## Dict/Hashmap
+/Map
 
 | Name                  | Comment                          |
 | :-------------------  | -------------------------------- |
