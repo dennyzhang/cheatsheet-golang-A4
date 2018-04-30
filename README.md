@@ -60,7 +60,7 @@ Table of Contents
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
 | Sort string array               | `sort.Strings(T); fmt.Print(T)`               |
-| sort int array                  | `sort.Ints(l[:])`                             |
+| Sort int array                  | `sort.Ints(l[:])`                             |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
 | Remove last item                | `T = T[:len(T)-1]`                            |
@@ -68,6 +68,8 @@ Table of Contents
 | Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          |
   
 ## String
+
+[Package strings](https://golang.org/pkg/strings/)
 
 | Name                         | Comment                                                         |
 | :------------------------    | --------------------------------------------------------------- |
@@ -87,10 +89,10 @@ Table of Contents
 
 ## Integer/Float
 
-| Name                 | Comment                                                             |
-| :------------------  | ------------------------------------------------------------------- |
-| max int              | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
-| min int              | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
+| Name                | Comment                                                             |
+| :------------------ | ------------------------------------------------------------------- |
+| Int max             | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
+| Int min             | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
 
 ## Conversion
 | Name                    | Comment                                       |
@@ -124,8 +126,8 @@ Table of Contents
 
 | Name           | Comment                       |
 | :------------- | ----------------------------- |
-| shift left     | `fmt.Print(1 << 10)` // 1024  |
-| shift right    | `fmt.Print(1024 >> 3)` // 128 |
+| Shift left     | `fmt.Print(1 << 10)` // 1024  |
+| Shift right    | `fmt.Print(1024 >> 3)` // 128 |
   
 ## Math
 
@@ -142,9 +144,9 @@ Table of Contents
 ```
 // static
 board := [][]string{
- 	[]string{"_", "_", "_"},
- 	[]string{"_", "_", "_"},
-	[]string{"_", "_", "_"},
+         []string{"_", "_", "_"},
+         []string{"_", "_", "_"},
+         []string{"_", "_", "_"},
 }
 
 // dynamic
