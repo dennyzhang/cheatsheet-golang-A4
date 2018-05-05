@@ -101,6 +101,7 @@ Table of Contents
 | Convert string to int   | `i, err := strconv.Atoi("-42")`               |
 | Convert string to float | `f, _ := strconv.ParseFloat("3.1415", 64)`    |
 | Convert int to float    | `0.5*float32(age)+7>= float32(age2)`          |
+| Convert int to string   | `s := strconv.Itoa(-42)`                      |
 
 ## Dict/Hashmap/Map
 
