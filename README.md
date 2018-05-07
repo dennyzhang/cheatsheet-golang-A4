@@ -136,7 +136,8 @@ Table of Contents
 
 | Name          | Comment                  |
 | :------------ | ------------------------ |
-
+| pow(2, 3)     | `int(math.Pow(2, 3))`    |
+  
 ## queue/heapq
 
 | Name            | Comment                |
