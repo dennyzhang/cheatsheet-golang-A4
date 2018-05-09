@@ -173,18 +173,18 @@ log.Critical("Some critical!")
 - struct
 ```
 type Point struct {
-	X, Y int
+  X, Y int
 }
 
 var (
-	v1 = Point{10, 8}
-	v2 = Point{X: 1}  // Y would be 0
-	v3 = Point{}      // Both X and Y is 0
-	p  = &Point{10, 8} // reference: type *Point
+  v1 = Point{10, 8}
+  v2 = Point{X: 1}  // Y would be 0
+  v3 = Point{}      // Both X and Y is 0
+  p  = &Point{10, 8} // reference: type *Point
 )
 
 func main() {
-	fmt.Println(p, v1, v2, v3)
+  fmt.Println(p, v1, v2, v3)
 }
 ```
 
