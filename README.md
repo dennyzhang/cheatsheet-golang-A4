@@ -32,7 +32,7 @@ Table of Contents
 
 ## Syntax Sugar: From Python To Golang
 | Name           | Python                                   | Golang                                             |
-| :------------- | ---------------------                    | -------------------------------------------------- |
+| :------------- | ---------------------------------------  | -------------------------------------------------- |
 | sum slice      | `sum([1, 2, 3])`                         | `sum := 0; for i := range nums { sum += nums[i] }` |
 | Get last item  | `nums[-1]`                               | `nums[len(nums)-1]`                                |
 | For            | `for i in range(10):`                    | `for i := 0; i < 10; i++`                          |
@@ -61,7 +61,7 @@ Table of Contents
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
 | Sort string array               | `sort.Strings(T); fmt.Print(T)`               |
-| Sort int array                  | `sort.Ints(l[:])`                             |
+| Sort int array                  | `sort.Ints(l[:])` //in-place change           |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
 | Remove last item                | `T = T[:len(T)-1]`                            |
