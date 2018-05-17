@@ -74,7 +74,7 @@ Table of Contents
 
 | Name                         | Comment                                                         |
 | :------------------------    | --------------------------------------------------------------- |
-| Format string                | `fmt.Sprintf("at %v, %s", e.When, e.What)`                      |
+| Format string                | `fmt.Sprintf("At %v, %s", e.When, e.What)`                      |
 | Format string                | `fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)` |
 | Split string                 | `var L = strings.Split("hi,golang", ",")`                       |
 | Replace string               | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
