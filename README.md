@@ -96,14 +96,14 @@ Table of Contents
 | Int min             | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
 
 ## Conversion
-| Name                    | Comment                                       |
-| :---------------------- | --------------------------------------------- |
-| Convert string to int   | `i, _ := strconv.ParseInt("12345", 10, 64)`   |
-| Convert string to int   | `i, err := strconv.Atoi("-42")`               |
-| Convert string to float | `f, _ := strconv.ParseFloat("3.1415", 64)`    |
-| Convert int to float    | `0.5*float32(age)+7>= float32(age2)`          |
-| Convert int to string   | `s := strconv.Itoa(-42)`                      |
-| Convert list to string  | `strings.Join(list, ", ")`                    |
+| Name                      | Comment                                       |
+| :----------------------   | --------------------------------------------- |
+| Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`   |
+| Convert string to int     | `i, err := strconv.Atoi("-42")`               |
+| Convert string to float32 | `f, _ := strconv.ParseFloat("3.1415", 32)`    |
+| Convert int to float32    | `0.5*float32(age)+7>= float32(age2)`          |
+| Convert int to string     | `s := strconv.Itoa(-42)`                      |
+| Convert list to string    | `strings.Join(list, ", ")`                    |
 
 ## Dict/Hashmap/Map
 
@@ -134,9 +134,9 @@ Table of Contents
   
 ## Math
 
-| Name          | Comment                  |
-| :------------ | ------------------------ |
-| pow(2, 3)     | `int(math.Pow(2, 3))`    |
+| Name          | Comment                                     |
+| :------------ | ------------------------------------------- |
+| pow(2, 3)     | `int(math.Pow(2, 3))` // Default is float64 |
   
 ## queue/heapq
 
