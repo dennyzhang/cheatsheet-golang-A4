@@ -64,6 +64,7 @@ Table of Contents
 | Sort int array                  | `sort.Ints(l[:])` //in-place change           |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
+| Append item to head/prepend     | `T = append([]string{"a"}, T...)`             |
 | Remove last item                | `T = T[:len(T)-1]`                            |
 | Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
 | Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          |
