@@ -43,6 +43,7 @@ Table of Contents
 | Reverse list   | `nums[::-1]`                             | Need to create your own function. Weird!           |
 | Check ch range | `ord(ch) in range(ord('a'), ord('z')+1)` | ch >='a' && ch <='z'                               |
 | Get min        | `min(2, 6, 5)`                           |                                                    |
+| Check is nil   | `root is None`                           | `root == nil`                                      |
 
 ## Golang Compact Coding
 
