@@ -62,7 +62,7 @@ Table of Contents
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
 | Sort string array               | `sort.Strings(T); fmt.Print(T)`               |
-| Sort int array                  | `sort.Ints(l[:])` //in-place change           |
+| Sort int array                  | `sort.Ints(l)` //in-place change           |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
 | Append item to head/prepend     | `T = append([]string{"a"}, T...)`             |
@@ -89,6 +89,7 @@ Table of Contents
 | Tolower                      | `strings.ToLower("TEST")`                                       |
 | Trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
 | Trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
+| get character ascii          | `byte('0')`                                                     |
 
 ## Integer/Float
 
