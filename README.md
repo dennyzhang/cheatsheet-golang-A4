@@ -108,6 +108,7 @@ Table of Contents
 | Convert int to float32    | `0.5*float32(age)+7>= float32(age2)`          |
 | Convert int to string     | `s := strconv.Itoa(-42)`                      |
 | Convert list to string    | `strings.Join(list, ", ")`                    |
+| Convert rune to string    | `s := strconv.Itoa(-42)`                      |
 
 ## Dict/Hashmap/Map
 
