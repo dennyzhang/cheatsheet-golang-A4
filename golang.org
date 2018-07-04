@@ -3995,3 +3995,7 @@ https://gobyexample.com/switch
     }
 #+END_SRC
 
+* DONE golang log package
+  CLOSED: [2018-07-03 Tue 11:23]
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
