@@ -12,20 +12,8 @@
 :PROPERTIES:
 :type:   Language
 :END:
-- 常用命令
-| Name             | Comment                              |
-|------------------+--------------------------------------|
-| 编译运行         | go run ./test.go                     |
-| 编译             | go build ./test.go                   |
-| 编译、链接和运行 | 6g hello.go && 6l hello.6 && ./6.out |
 
-- 常用函数
-| Name                | Comment                            |
-|---------------------+------------------------------------|
-| 输出                | fmt.Print(pos_start)               |
-| 数据类型转换        | strconv.Itoa(rand.Intn(1000))      |
-
-- 常用的包
+- Packages
 | Name     | Comment                      |
 |----------+------------------------------|
 | strconv  | 字符串和基本数据类型间的转换 |
@@ -40,6 +28,108 @@
 | http     | HTTP服务实现包               |
 | reflect  | 反射包                       |
 | exec     | 执行外部命令包               |
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE golang json
+  CLOSED: [2018-04-07 Sat 19:10]
+Marshalling to JSON
+#+BEGIN_SRC go
+import "encoding/json"
+data := []int{1,2,3,4,5}
+json.Marshal(data)
+Marshalling structs
+type Object struct {
+    ExportedField string `json:"exported_field"`
+}
+json.Marshal(&Object{
+    ExportedField: "some info",
+})
+// {"exported_field":"some info"}
+#+END_SRC
+** DONE go install package: go get github.com/op/go-logging
+  CLOSED: [2018-04-07 Sat 19:11]
+https://github.com/op/go-logging
+** DONE go logging
+  CLOSED: [2018-04-07 Sat 19:12]
+https://github.com/davidsiefert/golang-cheatsheet#logging
+# go get github.com/op/go-logging
+
+package main
+
+import (
+	"github.com/op/go-logging"
+)
+
+func main() {
+	log := logging.MustGetLogger("some-name")
+	log.Info("Informational...")
+	log.Warning("Warning...")
+	log.Error("Error!")
+	log.Critical("Oh no!")
+}
+** DONE golang one line if
+  CLOSED: [2018-04-08 Sun 12:29]
+var c int
+if c = b; a > b {
+    c = a
+}
+** Install Golang
+*** HALF Ubuntu install Go 1.6 by source code
+https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-14-04
+
+cd /tmp/
+curl -O https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz
+tar -xvf go1.6.linux-amd64.tar.gz
+mv go /usr/local
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
+
+go version
+*** install go
+sudo easy_install mercurial
+
+hg clone -u release https://go.googlecode.com/hg/ go
+
+cd go/src
+
+./all.bash
+**** DONE 安装the parser generator Bison: sudo apt-get install bison :noexport:
+ CLOSED: [2011-09-29 Thu 10:53]
+Bison is a general-purpose parser generator that converts an annotated context-free grammar into an LALR or GLR parser for that grammar. Once you are proficient with Bison, you can use it to develop a wide range of language parsers, from those used in simple desk calculators to complex programming languages.
+
+http://www.techsww.com/tutorials/operating_systems/linux/tools/installing_bison_gnu_parser_generator_ubuntu_linux.php\\
+::Techs Worldwide:: Installing Bison (GNU Parser Generator) on Ubuntu Linux
+***** ./all.bash Cannot find 'bison' on search path.
+denny@ubuntu:/tmp/google-go/go/src$ ./all.bash
+Cannot find 'bison' on search path.
+See http://golang.org/doc/install.html#ctools
+*** TODO Ubuntu 16.04 install google golang
+https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-16-04
+https://medium.com/@patdhlk/how-to-install-go-1-8-on-ubuntu-16-04-710967aa53c9
+** Golang regexp
+*** DONE [#B] regexp允许大小写
+  CLOSED: [2013-02-12 Tue 01:16]
+http://www.datamation.com/open-source/ubuntu-what-theyre-doing-right-and-wrong-1.html
+	title := regexp.MustCompile(`<title>([^<]*)</title>`).FindAllStringSubmatch(content, -1)
+
+<TITLE>Ubuntu: What They're Doing Right and Wrong - Datamation</title>
+
+/home/denny/go/src/pkg/regexp/exec_test.go
+#+begin_example
+			for _, c := range flag {
+				switch c {
+				case 'i':
+					syn |= syntax.FoldCase
+				}
+			}
+
+			re, err := compile(pattern, syn, true)
+			if err != nil {
+
+#+end_example
+*** DONE Regex to match any character including new lines ?(m)
+  CLOSED: [2013-02-12 Tue 01:17]
+http://stackoverflow.com/questions/8303488/regex-to-match-any-character-including-new-lines
 ** basic use
 #+BEGIN_EXAMPLE
 Go is an expressive, concurrent, garbage-collected programming language.
@@ -108,8 +198,362 @@ export GOROOT=$HOME/go
 export GOARCH=386
 export GOOS=linux
 #+end_example
-** [#A] 概念                                                      :IMPORTANT:
-*** [#A] Goroutine是轻量级的并行程序执行路径,与线程,coroutine或者进程类似 :Important:
+** useful link
+ http://www.oschina.net/question/12_7902\\
+ 编程语言 Google Go 的初级读本 - 讨论区 - 开源中国社区
+ http://golang.org/#package%20main%0A%0Aimport%20%22fmt%22%0A%0Afunc%20main%28%29%20{%0A%09fmt.Println%28%22Hello%2C%20%E4%B8%96%E7%95%8C%22%29%0A}%0A\\
+ The Go Programming Language
+** TODO [#A] Channel提供一个FIFO通信队列
+channel的阻塞行为并非永远是最佳的。该语言提供了两种对其进行定制的方式：
+
+ 1. 程序员可以指定缓冲大小——想缓冲的channel发送消息不会阻塞,除非缓冲已满,同样从缓冲的channel读取也不会阻塞,除非缓 冲是空的。
+ 2. 该语言同时还提供了不会被阻塞的发送和接收的能力,而操作成功是仍然要报告。
+*** 通过两个channel实现, fabonaci计算                               :Sample:
+#+begin_src go
+// Copyright 2009 The Go Authors. All rights reserved.
+// Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
+
+// Compute Fibonacci numbers with two goroutines
+// that pass integers back and forth. No actual
+// concurrency, just threads and synchronization
+// and foreign code on multiple pthreads.
+
+package main
+
+import (
+	big "gmp"
+	"runtime"
+)
+
+func fibber(c chan *big.Int, out chan string, n int64) {
+	// Keep the fibbers in dedicated operating system
+	// threads, so that this program tests coordination
+	// between pthreads and not just goroutines.
+	runtime.LockOSThread()
+
+	i := big.NewInt(n)
+	if n == 0 {
+		c <- i
+	}
+	for {
+		j := <-c
+		out <- j.String()
+		i.Add(i, j)
+		c <- i
+	}
+}
+
+func main() {
+	c := make(chan *big.Int)
+	out := make(chan string)
+	go fibber(c, out, 0)
+	go fibber(c, out, 1)
+	for i := 0; i < 200; i++ {
+		println(<-out)
+	}
+}
+#+end_src
+** TODO 没有shell的交互式运行
+** TODO =与:=的区别是什么
+** DONE golang write file: ioutil.WriteFile("out.html", []byte(content_str), 0644)
+   CLOSED: [2013-02-06 Wed 18:12]
+** concat two arrays or slices
+https://groups.google.com/forum/?fromgroups=#!topic/golang-nuts/mRUD0KffSG4
+#+begin_example
+Assuming slices of ints, you can do (not really tested):
+
+func concat(old1, old2 []int) []int {
+   newslice := make([]int, len(old1) + len(old2))
+   copy(newslice, old1)
+   copy(newslice[len(old1):], old2)
+   return newslice
+}
+
+A fun little exercise might be to write
+
+func concat(slices ...[]int) []int
+
+That is, a function to concatenate efficiently an arbitrary number of slices, as opposed to just two.
+#+end_example
+** 注意if...else...缩进
+#+begin_src go
+		if object == "content" {
+			content = action(content, from_str, end_str)
+		} else {
+			title = action(title, from_str, end_str)
+		}
+#+end_src
+** DONE golang中anonymous function避免了不少超短函数的问题
+  CLOSED: [2013-02-08 Fri 10:47]
+#+begin_src go
+var generator = map[string] Stringy {
+	"http://haowenz.com/a/bl/": Generator_haowenzcom_1,
+
+	// RSS feed
+	"http://www.36kr.com/feed": func(url string) []Task { return generator_rss(url,
+			"<link>(http://www.36kr.com/p/[0-9]*.html)</link>") },
+}
+
+#+end_src
+** DONE golang与C/C++不同， package不同文件定义的include没有先后顺序的依赖问题
+   CLOSED: [2013-02-08 Fri 10:48]
+** DONE [#B] 使用golang后，深刻怀念erlang的lists:sort, lists:map之类的功能
+  CLOSED: [2013-02-08 Fri 10:48]
+#+begin_src go
+func Generator_haowenzcom_1(url string) []Task {
+	tasks := make([]Task, 0)
+        _, content := webcrawler.Webcrawler(url)
+        content = webcrawler.Filter_content(content,"当前位置", "首页")
+        match_strings := regexp.MustCompile("#.*耽美微小说.*日期.*点击.*</span>").FindAllStringSubmatch(content, -1)
+        for i := range match_strings {
+		record_string := match_strings[i][0]
+		//fmt.Print(record_string)
+                url_match_record := regexp.MustCompile("# <a href=\"([^\"]*)\"").FindAllStringSubmatch(record_string, -1)
+		// fmt.Print("\nurl:"+url_match_record[0][1]+"\n")
+		tasks = append(tasks, Task{url_match_record[0][1]})
+
+                // date_match_record := regexp.MustCompile("日期：</small>([0-9-: ]*)").FindAllStringSubmatch(record_string, -1)
+		// fmt.Print("\ndate:"+date_match_record[0][1]+"\n")
+
+                // count_match_record := regexp.MustCompile("</small>([0-9]*) </span>").FindAllStringSubmatch(record_string, -1)
+		// fmt.Print("\ncount:"+count_match_record[0][1]+"\n")
+        }
+
+	//fmt.Print(tasks)
+
+        return tasks
+}
+#+end_src
+** DONE golang允许两个函数名相同，但大小写不一样的情况; 但不允许函数重载
+  CLOSED: [2013-02-09 Sat 10:25]
+#+begin_src go
+package main
+
+import (
+	"fmt"
+)
+func test1() string {
+	return "test1"
+}
+
+func Test1() string {
+	return "Test1"
+}
+func main() {
+	fmt.Printf(test1())
+	fmt.Printf("\n")
+	fmt.Printf(Test1())
+	fmt.Printf("\n")
+}
+#+end_src
+** # --8<-------------------------- separator ------------------------>8--
+** DONE getopt
+   CLOSED: [2013-02-12 Tue 13:30]
+http://stackoverflow.com/questions/1714236/getopt-like-behavior-in-go
+
+go run ./test.go -help -version --monkey business
+#+begin_src go
+package main
+import ("fmt"; "os")
+func main() {
+	i := 0
+	for _,arg := range os.Args {
+		if arg == "-help" {
+			fmt.Printf ("I need somebody\n")
+		} else if arg == "-version" {
+			fmt.Printf ("Version Zero\n")
+		} else {
+			fmt.Printf("arg %d: %s\n", i, os.Args[i])
+		}
+                i = i + 1
+	}
+}
+#+end_src
+
+#+begin_src go
+func parse_opt(args []string) bool {
+        // go run ./src/main.go --fetch_url "http://haowenz.com/a/bl/list_4_4.html" --shall_generator --dst_dir "webcrawler_raw_haowenz"
+        // go run ./src/main.go --fetch_url "http://haowenz.com/a/bl/2013/2608.html" --dst_dir "webcrawler_raw_haowenz"
+	count := len(args)
+	for i := 0; i<count; i++ {
+                switch args[i] {
+                case "--dst_dir":
+                        dst_dir = args[i+1]
+                        i = i + 1
+                case "--fetch_url":
+                        fetch_url = args[i+1]
+                        i = i + 1
+                case "--shall_generator":
+                        shall_generator = true
+                default:
+                        fmt.Printf("Error: Unknown option for " + args[i])
+                }
+	}
+        return true
+}
+#+end_src
+** DONE golang print current function and current line
+  CLOSED: [2013-02-12 Tue 14:32]
+  http://stackoverflow.com/questions/4947705/go-is-there-a-way-to-get-the-source-code-filename-and-line-number-in-go
+
+/home/denny/go/src/pkg/runtime/extern.go
+#+begin_src go
+package main
+import ("fmt"
+	"runtime"
+)
+func test() bool {
+	_, file, line, _ := runtime.Caller(3)
+	fmt.Print(file)
+	fmt.Print("\n")
+	fmt.Print(line)
+	fmt.Print("\n")
+
+	return true
+}
+
+func main() {
+	test()
+}
+#+end_src
+** DONE golang http get set header
+  CLOSED: [2013-02-13 Wed 17:17]
+http://stackoverflow.com/questions/12864302/how-to-set-headers-in-http-get-request
+#+begin_src go
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", url, nil)
+	req.Header.Set("Cookie", "q_c0=\"NDBiMDcyYzEyYTE0ZjA5N2U4NmE3NTRjNzNlN2FlYTh8aG45U1QwM0FBcldGYXNqNw==|1360513150|122c5023e9667a713c9d34f91b104309754323a0\"") // TODO
+	errorHandler(err)
+	resp, err := client.Do(req)
+#+end_src
+** DONE golang read file
+   CLOSED: [2013-02-17 Sun 00:03]
+http://stackoverflow.com/questions/5884154/golang-read-text-file-into-string-array-and-write
+#+begin_src go
+func test_url(url string) bool {
+	tmp_file := "/tmp/test"
+        bytes, err := ioutil.ReadFile(tmp_file)
+        if err == nil {
+		fmt.Print(string(bytes))
+		fmt.Print("\n")
+        }
+        return true
+}
+#+end_src
+** DONE [#A] [讨论] golang convert html entity to Unicode         :IMPORTANT:
+  CLOSED: [2013-02-17 Sun 17:42]
+#+begin_src go
+package main
+import ("fmt"
+	"html/template"
+	"strconv"
+)
+
+func main() {
+	fmt.Print("\ncontent:\n")
+	fmt.Print(template.HTMLEscapeString("\\u987e"))
+
+	fmt.Print("\ncontent:\n")
+	fmt.Print(template.HTMLEscapeString("\u987e"))
+	fmt.Print("\nend\n")
+
+        content := "\\u987e"
+	i, _ := strconv.ParseUint(content[2:], 16, 0)
+	fmt.Print(string(i))
+	fmt.Print("\n")
+
+	fmt.Print("\nend\n")
+}
+#+end_src
+** DONE 简化golang的for语句
+   CLOSED: [2013-02-23 Sat 17:18]
+#+begin_src go
+package main
+import ("fmt"
+)
+
+func test() {
+	entries := []string{"hello", "world"}
+	for i, entry:= range entries {
+		fmt.Print(i)
+		fmt.Print(" "+entry+"\n")
+	}
+
+}
+func main() {
+	test()
+}
+#+end_src
+** DONE [#B] golang defer可能会修改函数返回值
+  CLOSED: [2013-02-19 Tue 16:37]
+http://blog.golang.org/2010/08/defer-panic-and-recover.html#Blog1
+#+begin_src go
+package main
+import ("fmt"
+)
+
+func c() (i int) {
+    defer func() { i++ }()
+    return 1
+}
+
+func main() {
+	fmt.Println(c())
+}
+
+#+end_src
+** DONE golang为什么下面代码创建的acl是0775, 而不是0777: 因为父目录不是777, 可通过syscall的unmask来解决
+   CLOSED: [2013-07-25 Thu 22:09]
+*** test code
+#+begin_src go
+package main
+import ("fmt"
+	"os"
+)
+func write_data(fname_data string, data string) bool {
+	fmt.Printf("\n============ write file:" + fname_data+" ===============\n")
+	f_data, err := os.OpenFile(fname_data, os.O_WRONLY | os.O_CREATE | os.O_TRUNC, 0777)
+        if err != nil {
+                panic(err)
+        }
+	defer f_data.Close()
+
+	_, err = f_data.WriteString(data)
+	if err != nil {
+		panic(err)
+	}
+
+	return true
+}
+
+func main() {
+	write_data("/tmp/test", "afdafd")
+	fmt.Print("\nend\n")
+}
+#+end_src
+*** console shot
+#+begin_example
+denny@denny-Vostro-1014:~$  go run ./test.go
+
+============ write file:/tmp/test ===============
+
+end
+denny@denny-Vostro-1014:~$ ls -lt /tmp/test
+-rwxrwxr-x 1 denny denny 6 Feb 18 14:08 /tmp/test
+#+end_example
+** [#A] golang Defer: commonly used to simplify functions that perform various clean-up actions.
+** DONE go: undefined: sync.Pool: upgrade to go 1.3+
+   CLOSED: [2017-06-13 Tue 11:22]
+https://stackoverflow.com/questions/26236734/go-error-undefined-sync-pool-when-installing-go-mtpfs
+In order to use the go-fuse library you'll need to use a Go version of at least 1.3.
+** DONE package os/exec: unrecognized import path "os/exec" (import path does not begin with hostname)
+   CLOSED: [2017-06-13 Tue 11:29]
+https://groups.google.com/forum/#!topic/golang-nuts/ml3C0MuHNUI
+C:\go\bin is not a valid GOROOT. Don't set GOROOT and you should be fine.
+** TODO ubuntu upgrade google go
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** [#A] Goroutine是轻量级的并行程序执行路径,与线程,coroutine或者进程类似 :Important:
 http://www.oschina.net/question/12_7902\\
 
 #+begin_example
@@ -129,11 +573,7 @@ go func() {
 
 这些goroutine将会通过Go运行时而映射到适当的操作系统原语(比如,POSIX线程)。
 #+end_example
-*** 匿名函数
-*** Slice(切片)
-- slice表示一个数组内的连续分段: 通过切片来操纵数组的部分内容
-- 切片的长度可以更改,只要不超出切片的容量
-** 重要网页
+** 重要网页                                                        :noexport:
 *** [#A] web page: The Go Programming Language Specification
 #+BEGIN_EXAMPLE
 http://golang.org/doc/go_spec.html\\
@@ -3470,588 +3910,6 @@ func main() [] //ERROR - where curly braces are required, only those are allowed
 
 func main() { fmt.Println('hello world') } //ERROR - use double quotes for strings: func main() { fmt.Println("hello world") }
    #+end_example
-** useful link
- http://www.oschina.net/question/12_7902\\
- 编程语言 Google Go 的初级读本 - 讨论区 - 开源中国社区
- http://golang.org/#package%20main%0A%0Aimport%20%22fmt%22%0A%0Afunc%20main%28%29%20{%0A%09fmt.Println%28%22Hello%2C%20%E4%B8%96%E7%95%8C%22%29%0A}%0A\\
- The Go Programming Language
-** TODO [#A] Channel提供一个FIFO通信队列
-channel的阻塞行为并非永远是最佳的。该语言提供了两种对其进行定制的方式：
-
- 1. 程序员可以指定缓冲大小——想缓冲的channel发送消息不会阻塞,除非缓冲已满,同样从缓冲的channel读取也不会阻塞,除非缓 冲是空的。
- 2. 该语言同时还提供了不会被阻塞的发送和接收的能力,而操作成功是仍然要报告。
-*** 通过两个channel实现, fabonaci计算                               :Sample:
-#+begin_src go
-// Copyright 2009 The Go Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-
-// Compute Fibonacci numbers with two goroutines
-// that pass integers back and forth. No actual
-// concurrency, just threads and synchronization
-// and foreign code on multiple pthreads.
-
-package main
-
-import (
-	big "gmp"
-	"runtime"
-)
-
-func fibber(c chan *big.Int, out chan string, n int64) {
-	// Keep the fibbers in dedicated operating system
-	// threads, so that this program tests coordination
-	// between pthreads and not just goroutines.
-	runtime.LockOSThread()
-
-	i := big.NewInt(n)
-	if n == 0 {
-		c <- i
-	}
-	for {
-		j := <-c
-		out <- j.String()
-		i.Add(i, j)
-		c <- i
-	}
-}
-
-func main() {
-	c := make(chan *big.Int)
-	out := make(chan string)
-	go fibber(c, out, 0)
-	go fibber(c, out, 1)
-	for i := 0; i < 200; i++ {
-		println(<-out)
-	}
-}
-#+end_src
-** TODO 没有shell的交互式运行
-** TODO =与:=的区别是什么
-** DONE golang write file: ioutil.WriteFile("out.html", []byte(content_str), 0644)
-   CLOSED: [2013-02-06 Wed 18:12]
-** concat two arrays or slices
-https://groups.google.com/forum/?fromgroups=#!topic/golang-nuts/mRUD0KffSG4
-#+begin_example
-Assuming slices of ints, you can do (not really tested):
-
-func concat(old1, old2 []int) []int {
-   newslice := make([]int, len(old1) + len(old2))
-   copy(newslice, old1)
-   copy(newslice[len(old1):], old2)
-   return newslice
-}
-
-A fun little exercise might be to write
-
-func concat(slices ...[]int) []int
-
-That is, a function to concatenate efficiently an arbitrary number of slices, as opposed to just two.
-#+end_example
-** 注意if...else...缩进
-#+begin_src go
-		if object == "content" {
-			content = action(content, from_str, end_str)
-		} else {
-			title = action(title, from_str, end_str)
-		}
-#+end_src
-** DONE golang中anonymous function避免了不少超短函数的问题
-  CLOSED: [2013-02-08 Fri 10:47]
-#+begin_src go
-var generator = map[string] Stringy {
-	"http://haowenz.com/a/bl/": Generator_haowenzcom_1,
-
-	// RSS feed
-	"http://www.36kr.com/feed": func(url string) []Task { return generator_rss(url,
-			"<link>(http://www.36kr.com/p/[0-9]*.html)</link>") },
-}
-
-#+end_src
-** DONE golang与C/C++不同， package不同文件定义的include没有先后顺序的依赖问题
-   CLOSED: [2013-02-08 Fri 10:48]
-** DONE [#B] 使用golang后，深刻怀念erlang的lists:sort, lists:map之类的功能
-  CLOSED: [2013-02-08 Fri 10:48]
-#+begin_src go
-func Generator_haowenzcom_1(url string) []Task {
-	tasks := make([]Task, 0)
-        _, content := webcrawler.Webcrawler(url)
-        content = webcrawler.Filter_content(content,"当前位置", "首页")
-        match_strings := regexp.MustCompile("#.*耽美微小说.*日期.*点击.*</span>").FindAllStringSubmatch(content, -1)
-        for i := range match_strings {
-		record_string := match_strings[i][0]
-		//fmt.Print(record_string)
-                url_match_record := regexp.MustCompile("# <a href=\"([^\"]*)\"").FindAllStringSubmatch(record_string, -1)
-		// fmt.Print("\nurl:"+url_match_record[0][1]+"\n")
-		tasks = append(tasks, Task{url_match_record[0][1]})
-
-                // date_match_record := regexp.MustCompile("日期：</small>([0-9-: ]*)").FindAllStringSubmatch(record_string, -1)
-		// fmt.Print("\ndate:"+date_match_record[0][1]+"\n")
-
-                // count_match_record := regexp.MustCompile("</small>([0-9]*) </span>").FindAllStringSubmatch(record_string, -1)
-		// fmt.Print("\ncount:"+count_match_record[0][1]+"\n")
-        }
-
-	//fmt.Print(tasks)
-
-        return tasks
-}
-#+end_src
-** DONE golang允许两个函数名相同，但大小写不一样的情况; 但不允许函数重载
-  CLOSED: [2013-02-09 Sat 10:25]
-#+begin_src go
-package main
-
-import (
-	"fmt"
-)
-func test1() string {
-	return "test1"
-}
-
-func Test1() string {
-	return "Test1"
-}
-func main() {
-	fmt.Printf(test1())
-	fmt.Printf("\n")
-	fmt.Printf(Test1())
-	fmt.Printf("\n")
-}
-#+end_src
-** # --8<-------------------------- separator ------------------------>8--
-** DONE getopt
-   CLOSED: [2013-02-12 Tue 13:30]
-http://stackoverflow.com/questions/1714236/getopt-like-behavior-in-go
-
-go run ./test.go -help -version --monkey business
-#+begin_src go
-package main
-import ("fmt"; "os")
-func main() {
-	i := 0
-	for _,arg := range os.Args {
-		if arg == "-help" {
-			fmt.Printf ("I need somebody\n")
-		} else if arg == "-version" {
-			fmt.Printf ("Version Zero\n")
-		} else {
-			fmt.Printf("arg %d: %s\n", i, os.Args[i])
-		}
-                i = i + 1
-	}
-}
-#+end_src
-
-#+begin_src go
-func parse_opt(args []string) bool {
-        // go run ./src/main.go --fetch_url "http://haowenz.com/a/bl/list_4_4.html" --shall_generator --dst_dir "webcrawler_raw_haowenz"
-        // go run ./src/main.go --fetch_url "http://haowenz.com/a/bl/2013/2608.html" --dst_dir "webcrawler_raw_haowenz"
-	count := len(args)
-	for i := 0; i<count; i++ {
-                switch args[i] {
-                case "--dst_dir":
-                        dst_dir = args[i+1]
-                        i = i + 1
-                case "--fetch_url":
-                        fetch_url = args[i+1]
-                        i = i + 1
-                case "--shall_generator":
-                        shall_generator = true
-                default:
-                        fmt.Printf("Error: Unknown option for " + args[i])
-                }
-	}
-        return true
-}
-#+end_src
-** DONE golang print current function and current line
-  CLOSED: [2013-02-12 Tue 14:32]
-  http://stackoverflow.com/questions/4947705/go-is-there-a-way-to-get-the-source-code-filename-and-line-number-in-go
-
-/home/denny/go/src/pkg/runtime/extern.go
-#+begin_src go
-package main
-import ("fmt"
-	"runtime"
-)
-func test() bool {
-	_, file, line, _ := runtime.Caller(3)
-	fmt.Print(file)
-	fmt.Print("\n")
-	fmt.Print(line)
-	fmt.Print("\n")
-
-	return true
-}
-
-func main() {
-	test()
-}
-#+end_src
-** DONE golang http get set header
-  CLOSED: [2013-02-13 Wed 17:17]
-http://stackoverflow.com/questions/12864302/how-to-set-headers-in-http-get-request
-#+begin_src go
-	client := &http.Client{}
-	req, err := http.NewRequest("GET", url, nil)
-	req.Header.Set("Cookie", "q_c0=\"NDBiMDcyYzEyYTE0ZjA5N2U4NmE3NTRjNzNlN2FlYTh8aG45U1QwM0FBcldGYXNqNw==|1360513150|122c5023e9667a713c9d34f91b104309754323a0\"") // TODO
-	errorHandler(err)
-	resp, err := client.Do(req)
-#+end_src
-** DONE golang read file
-   CLOSED: [2013-02-17 Sun 00:03]
-http://stackoverflow.com/questions/5884154/golang-read-text-file-into-string-array-and-write
-#+begin_src go
-func test_url(url string) bool {
-	tmp_file := "/tmp/test"
-        bytes, err := ioutil.ReadFile(tmp_file)
-        if err == nil {
-		fmt.Print(string(bytes))
-		fmt.Print("\n")
-        }
-        return true
-}
-#+end_src
-** DONE [#A] [讨论] golang convert html entity to Unicode         :IMPORTANT:
-  CLOSED: [2013-02-17 Sun 17:42]
-#+begin_src go
-package main
-import ("fmt"
-	"html/template"
-	"strconv"
-)
-
-func main() {
-	fmt.Print("\ncontent:\n")
-	fmt.Print(template.HTMLEscapeString("\\u987e"))
-
-	fmt.Print("\ncontent:\n")
-	fmt.Print(template.HTMLEscapeString("\u987e"))
-	fmt.Print("\nend\n")
-
-        content := "\\u987e"
-	i, _ := strconv.ParseUint(content[2:], 16, 0)
-	fmt.Print(string(i))
-	fmt.Print("\n")
-
-	fmt.Print("\nend\n")
-}
-#+end_src
-** DONE 简化golang的for语句
-   CLOSED: [2013-02-23 Sat 17:18]
-#+begin_src go
-package main
-import ("fmt"
-)
-
-func test() {
-	entries := []string{"hello", "world"}
-	for i, entry:= range entries {
-		fmt.Print(i)
-		fmt.Print(" "+entry+"\n")
-	}
-
-}
-func main() {
-	test()
-}
-#+end_src
-** DONE [#B] golang defer可能会修改函数返回值
-  CLOSED: [2013-02-19 Tue 16:37]
-http://blog.golang.org/2010/08/defer-panic-and-recover.html#Blog1
-#+begin_src go
-package main
-import ("fmt"
-)
-
-func c() (i int) {
-    defer func() { i++ }()
-    return 1
-}
-
-func main() {
-	fmt.Println(c())
-}
-
-#+end_src
-** DONE golang为什么下面代码创建的acl是0775, 而不是0777: 因为父目录不是777, 可通过syscall的unmask来解决
-   CLOSED: [2013-07-25 Thu 22:09]
-*** test code
-#+begin_src go
-package main
-import ("fmt"
-	"os"
-)
-func write_data(fname_data string, data string) bool {
-	fmt.Printf("\n============ write file:" + fname_data+" ===============\n")
-	f_data, err := os.OpenFile(fname_data, os.O_WRONLY | os.O_CREATE | os.O_TRUNC, 0777)
-        if err != nil {
-                panic(err)
-        }
-	defer f_data.Close()
-
-	_, err = f_data.WriteString(data)
-	if err != nil {
-		panic(err)
-	}
-
-	return true
-}
-
-func main() {
-	write_data("/tmp/test", "afdafd")
-	fmt.Print("\nend\n")
-}
-#+end_src
-*** console shot
-#+begin_example
-denny@denny-Vostro-1014:~$  go run ./test.go
-
-============ write file:/tmp/test ===============
-
-end
-denny@denny-Vostro-1014:~$ ls -lt /tmp/test
--rwxrwxr-x 1 denny denny 6 Feb 18 14:08 /tmp/test
-#+end_example
-** [#A] golang Defer: commonly used to simplify functions that perform various clean-up actions.
-** DONE go: undefined: sync.Pool: upgrade to go 1.3+
-   CLOSED: [2017-06-13 Tue 11:22]
-https://stackoverflow.com/questions/26236734/go-error-undefined-sync-pool-when-installing-go-mtpfs
-In order to use the go-fuse library you'll need to use a Go version of at least 1.3.
-** DONE package os/exec: unrecognized import path "os/exec" (import path does not begin with hostname)
-   CLOSED: [2017-06-13 Tue 11:29]
-https://groups.google.com/forum/#!topic/golang-nuts/ml3C0MuHNUI
-C:\go\bin is not a valid GOROOT. Don't set GOROOT and you should be fine.
-** TODO ubuntu upgrade google go
-** Install Golang
-*** HALF Ubuntu install Go 1.6 by source code
-https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-14-04
-
-cd /tmp/
-curl -O https://storage.googleapis.com/golang/go1.6.linux-amd64.tar.gz
-tar -xvf go1.6.linux-amd64.tar.gz
-mv go /usr/local
-
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-
-go version
-
-*** install go
-sudo easy_install mercurial
-
-hg clone -u release https://go.googlecode.com/hg/ go
-
-cd go/src
-
-./all.bash
-**** DONE 安装the parser generator Bison: sudo apt-get install bison :noexport:
- CLOSED: [2011-09-29 Thu 10:53]
-Bison is a general-purpose parser generator that converts an annotated context-free grammar into an LALR or GLR parser for that grammar. Once you are proficient with Bison, you can use it to develop a wide range of language parsers, from those used in simple desk calculators to complex programming languages.
-
-http://www.techsww.com/tutorials/operating_systems/linux/tools/installing_bison_gnu_parser_generator_ubuntu_linux.php\\
-::Techs Worldwide:: Installing Bison (GNU Parser Generator) on Ubuntu Linux
-***** ./all.bash Cannot find 'bison' on search path.
-denny@ubuntu:/tmp/google-go/go/src$ ./all.bash
-Cannot find 'bison' on search path.
-See http://golang.org/doc/install.html#ctools
-*** TODO Ubuntu 16.04 install google golang
-https://www.digitalocean.com/community/tutorials/how-to-install-go-1-6-on-ubuntu-16-04
-https://medium.com/@patdhlk/how-to-install-go-1-8-on-ubuntu-16-04-710967aa53c9
-** Golang regexp
-*** DONE [#B] regexp允许大小写
-  CLOSED: [2013-02-12 Tue 01:16]
-http://www.datamation.com/open-source/ubuntu-what-theyre-doing-right-and-wrong-1.html
-	title := regexp.MustCompile(`<title>([^<]*)</title>`).FindAllStringSubmatch(content, -1)
-
-<TITLE>Ubuntu: What They're Doing Right and Wrong - Datamation</title>
-
-/home/denny/go/src/pkg/regexp/exec_test.go
-#+begin_example
-			for _, c := range flag {
-				switch c {
-				case 'i':
-					syn |= syntax.FoldCase
-				}
-			}
-
-			re, err := compile(pattern, syn, true)
-			if err != nil {
-
-#+end_example
-*** DONE Regex to match any character including new lines ?(m)
-  CLOSED: [2013-02-12 Tue 01:17]
-http://stackoverflow.com/questions/8303488/regex-to-match-any-character-including-new-lines
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** DONE golang json
-  CLOSED: [2018-04-07 Sat 19:10]
-Marshalling to JSON
-import "encoding/json"
-data := []int{1,2,3,4,5}
-json.Marshal(data)
-Marshalling structs
-type Object struct {
-    ExportedField string `json:"exported_field"`
-}
-json.Marshal(&Object{
-    ExportedField: "some info",
-})
-// {"exported_field":"some info"}
-** DONE go install package: go get github.com/op/go-logging
-  CLOSED: [2018-04-07 Sat 19:11]
-https://github.com/op/go-logging
-** DONE go logging
-  CLOSED: [2018-04-07 Sat 19:12]
-https://github.com/davidsiefert/golang-cheatsheet#logging
-# go get github.com/op/go-logging
-
-package main
-
-import (
-	"github.com/op/go-logging"
-)
-
-func main() {
-	log := logging.MustGetLogger("some-name")
-	log.Info("Informational...")
-	log.Warning("Warning...")
-	log.Error("Error!")
-	log.Critical("Oh no!")
-}
-** DONE nil detection in Go: if config == nil
-  CLOSED: [2018-04-08 Sun 12:26]
-https://stackoverflow.com/questions/20240179/nil-detection-in-go
-** DONE golang one line if
-  CLOSED: [2018-04-08 Sun 12:29]
-var c int
-if c = b; a > b {
-    c = a
-}
-
-* [#A] golang BDD test: ginkgo gomega                        :IMPORTANT:
-| Name                        | Summary                                                    |
-|-----------------------------+------------------------------------------------------------|
-| ginkgo                      | BDD Testing Framework for Go http://onsi.github.io/ginkgo/ |
-|-----------------------------+------------------------------------------------------------|
-| gomega                      | Ginkgo's Preferred Matcher Library                         |
-| gomega validation functions | https://godoc.org/github.com/onsi/gomega                   |
-|                             | http://onsi.github.io/gomega/ https://github.com/onsi      |
-
-Check
-| Name             | Summary |
-|------------------+---------|
-| ContainSubstring |         |
-| HavePrefix       |         |
-|------------------+---------|
-| Equal            |         |
-| BeTrue           |         |
-| BeNil            |         |
-** TODO Making Assertions in Helper Functions
-http://onsi.github.io/gomega/#making-assertions-in-helper-functions
-
-#+BEGIN_SRC go
-var _ = Describe("Turbo-encabulator", func() {
-    ...
-    func assertTurboEncabulatorContains(components ...string) {
-        teComponents, err := turboEncabulator.GetComponents()
-        Expect(err).NotTo(HaveOccurred())
-
-        Expect(teComponents).To(HaveLen(components))
-        for _, component := range components {
-            Expect(teComponents).To(ContainElement(component))
-        }
-    }
-
-    It("should have components", func() {
-        assertTurboEncabulatorContains("semi-boloid slots", "grammeters")
-    })
-})
-#+END_SRC
-** TODO NotTo vs ToNot
-http://onsi.github.io/gomega/
-#+BEGIN_EXAMPLE
-  Expect(ACTUAL).To(Equal(EXPECTED))
-  Expect(ACTUAL).NotTo(Equal(EXPECTED))
-  Expect(ACTUAL).ToNot(Equal(EXPECTED))
-#+END_EXAMPLE
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** DONE GomegaAssertion interface: Should, ShouldNot, To, ToNot, NotTo
-   CLOSED: [2018-07-04 Wed 21:52]
-http://onsi.github.io/gomega/
-#+BEGIN_EXAMPLE
-  Expect(ACTUAL).To(Equal(EXPECTED))
-  Expect(ACTUAL).NotTo(Equal(EXPECTED))
-  Expect(ACTUAL).ToNot(Equal(EXPECTED))
-#+END_EXAMPLE
-
-http://onsi.github.io/gomega/
-
-https://godoc.org/github.com/onsi/gomega
-
-Expect(err).To(HaveOccurred())
-Expect("foo").To(Equal("foo"))
-** DONE example: gexec-example
-   CLOSED: [2018-07-04 Wed 21:52]
-https://github.com/Amit-PivotalLabs/gexec-example
-** DONE Add msg to assertions: Ω(SprocketsAreLeaky()).Should(BeFalse(), "Sprockets shouldn't leak")
-   CLOSED: [2018-07-04 Wed 21:52]
-** DONE [#A] Asynchronous Assertions: Eventually, Consistently
-   CLOSED: [2018-07-04 Wed 22:37]
-http://onsi.github.io/gomega/#making-asynchronous-assertions
-
-- Eventually will poll the passed in function (which must have zero-arguments and at least one return value) repeatedly and check the return value against the GomegaMatcher
-  Eventually then blocks until the match succeeds or until a timeout interval has elapsed.
-
-- Consistently checks that an assertion passes for a period of time. It does this by polling its argument repeatedly during the period. It fails if the matcher ever fails during that period.
-
-#+BEGIN_EXAMPLE
-Eventually(func() []int {
-    return thing.SliceImMonitoring
-}).Should(HaveLen(2))
-
-Eventually(func() string {
-    return thing.Status
-}).ShouldNot(Equal("Stuck Waiting"))
-#+END_EXAMPLE
-
-#+BEGIN_EXAMPLE
-Consistently(func() []int {
-    return thing.MemoryUsage()
-}).Should(BeNumerically("<", 10))
-#+END_EXAMPLE
-#+BEGIN_SRC go
-	Context("when exitCode flag is passed explicitly", func() {
-		BeforeEach(func() {
-			command = exec.Command(pathToExecutable, "-exitCode=33")
-		})
-
-		It("exits with the passed in value", func() {
-			session, err := gexec.Start(command, GinkgoWriter, GinkgoWriter)
-			Ω(err).ShouldNot(HaveOccurred())
-
-			Eventually(session).Should(gexec.Exit(33))
-		})
-	})
-#+END_SRC
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** ginkgo structure
-https://github.com/onsi/ginkgo
-
-Structure your BDD-style tests expressively:
-
-Nestable Describe, Context and When container blocks
-BeforeEach and AfterEach blocks for setup and teardown
-It and Specify blocks that hold your assertions
-JustBeforeEach blocks that separate creation from configuration (also known as the subject action pattern).
-BeforeSuite and AfterSuite blocks to prep for and cleanup after a suite.
-** Concept: defer
-** Concept: context
-** #  --8<-------------------------- separator ------------------------>8-- :noexport:
-** TODO DescribeTable
-** TODO gexec.Build("github.com/amitkgupta/gexec-example"): https://github.com/Amit-PivotalLabs/gexec-example/blob/master/gexec_example_test.go#L17
-How I distribute my test code
-
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE Go by Example: Sorting by Functions
   CLOSED: [2018-04-17 Tue 11:06]
@@ -4061,10 +3919,6 @@ https://gobyexample.com/sorting-by-functions
 sort.Slice(planets, func(i, j int) bool {
   return planets[i].Axis < planets[j].Axis
 })
-* DONE golang maximum int: math.MaxInt32
-  CLOSED: [2018-04-17 Tue 10:02]
-https://stackoverflow.com/questions/6878590/the-maximum-value-for-an-int-type-in-go
-
 * DONE golang struct
   CLOSED: [2018-04-16 Mon 23:10]
 https://tour.golang.org/moretypes/2
@@ -4080,7 +3934,6 @@ type Vertex struct {
 func main() {
 	fmt.Println(Vertex{1, 2})
 }
-
 * DONE golang switch
   CLOSED: [2018-04-16 Mon 23:03]
 
@@ -4118,10 +3971,8 @@ https://gobyexample.com/switch
         fmt.Println("It's after noon")
     }
 #+END_SRC
-
 * DONE golang log package
   CLOSED: [2018-07-03 Tue 11:23]
-
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE go get -t to retrieve the packages referenced in your code
   CLOSED: [2018-07-04 Wed 10:02]
