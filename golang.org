@@ -3929,6 +3929,130 @@ if c = b; a > b {
     c = a
 }
 
+* [#A] golang BDD test: ginkgo gomega                        :IMPORTANT:
+| Name                        | Summary                                                    |
+|-----------------------------+------------------------------------------------------------|
+| ginkgo                      | BDD Testing Framework for Go http://onsi.github.io/ginkgo/ |
+|-----------------------------+------------------------------------------------------------|
+| gomega                      | Ginkgo's Preferred Matcher Library                         |
+| gomega validation functions | https://godoc.org/github.com/onsi/gomega                   |
+|                             | http://onsi.github.io/gomega/ https://github.com/onsi      |
+
+Check
+| Name             | Summary |
+|------------------+---------|
+| ContainSubstring |         |
+| HavePrefix       |         |
+|------------------+---------|
+| Equal            |         |
+| BeTrue           |         |
+| BeNil            |         |
+** TODO Making Assertions in Helper Functions
+http://onsi.github.io/gomega/#making-assertions-in-helper-functions
+
+#+BEGIN_SRC go
+var _ = Describe("Turbo-encabulator", func() {
+    ...
+    func assertTurboEncabulatorContains(components ...string) {
+        teComponents, err := turboEncabulator.GetComponents()
+        Expect(err).NotTo(HaveOccurred())
+
+        Expect(teComponents).To(HaveLen(components))
+        for _, component := range components {
+            Expect(teComponents).To(ContainElement(component))
+        }
+    }
+
+    It("should have components", func() {
+        assertTurboEncabulatorContains("semi-boloid slots", "grammeters")
+    })
+})
+#+END_SRC
+** TODO NotTo vs ToNot
+http://onsi.github.io/gomega/
+#+BEGIN_EXAMPLE
+  Expect(ACTUAL).To(Equal(EXPECTED))
+  Expect(ACTUAL).NotTo(Equal(EXPECTED))
+  Expect(ACTUAL).ToNot(Equal(EXPECTED))
+#+END_EXAMPLE
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** DONE GomegaAssertion interface: Should, ShouldNot, To, ToNot, NotTo
+   CLOSED: [2018-07-04 Wed 21:52]
+http://onsi.github.io/gomega/
+#+BEGIN_EXAMPLE
+  Expect(ACTUAL).To(Equal(EXPECTED))
+  Expect(ACTUAL).NotTo(Equal(EXPECTED))
+  Expect(ACTUAL).ToNot(Equal(EXPECTED))
+#+END_EXAMPLE
+
+http://onsi.github.io/gomega/
+
+https://godoc.org/github.com/onsi/gomega
+
+Expect(err).To(HaveOccurred())
+Expect("foo").To(Equal("foo"))
+** DONE example: gexec-example
+   CLOSED: [2018-07-04 Wed 21:52]
+https://github.com/Amit-PivotalLabs/gexec-example
+** DONE Add msg to assertions: Ω(SprocketsAreLeaky()).Should(BeFalse(), "Sprockets shouldn't leak")
+   CLOSED: [2018-07-04 Wed 21:52]
+** DONE [#A] Asynchronous Assertions: Eventually, Consistently
+   CLOSED: [2018-07-04 Wed 22:37]
+http://onsi.github.io/gomega/#making-asynchronous-assertions
+
+- Eventually will poll the passed in function (which must have zero-arguments and at least one return value) repeatedly and check the return value against the GomegaMatcher
+  Eventually then blocks until the match succeeds or until a timeout interval has elapsed.
+
+- Consistently checks that an assertion passes for a period of time. It does this by polling its argument repeatedly during the period. It fails if the matcher ever fails during that period.
+
+#+BEGIN_EXAMPLE
+Eventually(func() []int {
+    return thing.SliceImMonitoring
+}).Should(HaveLen(2))
+
+Eventually(func() string {
+    return thing.Status
+}).ShouldNot(Equal("Stuck Waiting"))
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+Consistently(func() []int {
+    return thing.MemoryUsage()
+}).Should(BeNumerically("<", 10))
+#+END_EXAMPLE
+#+BEGIN_SRC go
+	Context("when exitCode flag is passed explicitly", func() {
+		BeforeEach(func() {
+			command = exec.Command(pathToExecutable, "-exitCode=33")
+		})
+
+		It("exits with the passed in value", func() {
+			session, err := gexec.Start(command, GinkgoWriter, GinkgoWriter)
+			Ω(err).ShouldNot(HaveOccurred())
+
+			Eventually(session).Should(gexec.Exit(33))
+		})
+	})
+#+END_SRC
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** ginkgo structure
+https://github.com/onsi/ginkgo
+
+Structure your BDD-style tests expressively:
+
+Nestable Describe, Context and When container blocks
+BeforeEach and AfterEach blocks for setup and teardown
+It and Specify blocks that hold your assertions
+JustBeforeEach blocks that separate creation from configuration (also known as the subject action pattern).
+BeforeSuite and AfterSuite blocks to prep for and cleanup after a suite.
+** Concept: defer
+** Concept: context
+** #  --8<-------------------------- separator ------------------------>8-- :noexport:
+** TODO DescribeTable
+** TODO gexec.Build("github.com/amitkgupta/gexec-example"): https://github.com/Amit-PivotalLabs/gexec-example/blob/master/gexec_example_test.go#L17
+How I distribute my test code
+
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE Go by Example: Sorting by Functions
   CLOSED: [2018-04-17 Tue 11:06]
 https://stackoverflow.com/questions/28999735/what-is-the-shortest-way-to-simply-sort-an-array-of-structs-by-arbitrary-field
@@ -3999,3 +4123,10 @@ https://gobyexample.com/switch
   CLOSED: [2018-07-03 Tue 11:23]
 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE go get -t to retrieve the packages referenced in your code
+  CLOSED: [2018-07-04 Wed 10:02]
+http://onsi.github.io/gomega/
+#+BEGIN_EXAMPLE
+$ cd /path/to/my/app
+$ go get -t ./...
+#+END_EXAMPLE
