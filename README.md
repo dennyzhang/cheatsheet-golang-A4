@@ -104,6 +104,7 @@ Table of Contents
 | Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)`   |
 | Convert string to int     | `i, err := strconv.Atoi("-42")`               |
 | Convert string to list    | `L := strings.Split("hi,golang", "")`         |
+| Convert string to []byte  | `[]byte("abc日")`                             |
 | Convert string to float32 | `f, _ := strconv.ParseFloat("3.1415", 32)`    |
 | Convert int to float32    | `0.5*float32(age)+7>= float32(age2)`          |
 | Convert int to string     | `s := strconv.Itoa(-42)`                      |

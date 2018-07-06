@@ -3981,3 +3981,23 @@ http://onsi.github.io/gomega/
 $ cd /path/to/my/app
 $ go get -t ./...
 #+END_EXAMPLE
+* DONE [#A] golang workspace                                      :IMPORTANT:
+  CLOSED: [2018-07-05 Thu 14:40]
+https://golang.org/doc/code.html#Workspaces
+#+BEGIN_EXAMPLE
+mkdir -p   /Users/zdenny/Dropbox/gocode
+cd  /Users/zdenny/Dropbox/gocode
+
+cd $GOPATH
+
+mkdir -p src/github.com/pivotal-cf
+cd src/github.com/pivotal-cf
+git clone git@github.com:pivotal-cf/fluent-bit-out-syslog.git
+
+cd fluent-bit-out-syslog/cmd
+go get -d -t ./ ...
+
+# run test
+go test -v
+#+END_EXAMPLE
+
