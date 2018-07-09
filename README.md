@@ -124,12 +124,12 @@ Table of Contents
 ## Goroutines
 | Name                   | Comment                                      |
 | :--------------------- | -------------------------------------------- |
-| Basic goroutine        | [example_goroutine.go](example_goroutine.go) |
+| Basic goroutine        | [code/example_goroutine.go](code/example_goroutine.go) |
 
 ## Files & Folders
 | Name                   | Comment                            |
 | :--------------------- | ---------------------------------- |
-| Read/Write files       | [example_file.go](example_file.go) |
+| Read/Write files       | [code/example_file.go](code/example_file.go) |
 
 ## Bit Operator
 
@@ -191,6 +191,21 @@ var (
 
 func main() {
   fmt.Println(p, v1, v2, v3)
+}
+```
+
+- Print map
+
+```
+import "encoding/json"
+
+b, err := json.MarshalIndent(x, "", "  ")
+fmt.Println(string(b))
+```
+
+```
+for key := range record {
+   fmt.Println("key: %s, value: %s", key, record[key]
 }
 ```
 
