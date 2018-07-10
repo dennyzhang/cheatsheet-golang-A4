@@ -127,9 +127,10 @@ Table of Contents
 | Basic goroutine        | [code/example_goroutine.go](code/example_goroutine.go) |
 
 ## Files & Folders
-| Name                   | Comment                            |
-| :--------------------- | ---------------------------------- |
-| Read/Write files       | [code/example_file.go](code/example_file.go) |
+| Name                   | Comment                                                  |
+| :--------------------- | ----------------------------------                       |
+| Read files             | [code/example_read_file.go](code/example_read_file.go)   |
+| Write files            | [code/example_write_file.go](code/example_write_file.go) |
 
 ## Bit Operator
 
@@ -205,7 +206,7 @@ fmt.Println(string(b))
 
 ```
 for key := range record {
-   fmt.Println("key: %s, value: %s", key, record[key]
+   fmt.Printf("key: %s, value: %s\n", key, record[key])
 }
 ```
 
