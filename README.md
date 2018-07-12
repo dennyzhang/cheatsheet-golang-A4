@@ -19,6 +19,7 @@ Table of Contents
       * [Conversion](#conversion)
       * [Dict/Hashmap/Map](#dicthashmapmap)
       * [Goroutines](#goroutines)
+      * [Inteface](#inteface)
       * [Files &amp; Folders](#files--folders)
       * [Bit Operator](#bit-operator)
       * [Math](#math)
@@ -126,6 +127,12 @@ Table of Contents
 | :--------------------- | -------------------------------------------- |
 | Basic goroutine        | [code/example_goroutine.go](code/example_goroutine.go) |
 
+## Inteface
+
+| Name                                                       | Comment                                                      |
+| :--------------------------------------------------------- | -------------------------------------------                  |
+| Convert map[interface {}]interface {} to map[string]string | [code/interface_conversion.go](code/interface_conversion.go)  |
+
 ## Files & Folders
 | Name                   | Comment                                                  |
 | :--------------------- | ----------------------------------                       |
@@ -144,7 +151,7 @@ Table of Contents
 | Name          | Comment                                     |
 | :------------ | ------------------------------------------- |
 | pow(2, 3)     | `int(math.Pow(2, 3))` // Default is float64 |
-  
+
 ## queue/heapq
 
 | Name            | Comment                |

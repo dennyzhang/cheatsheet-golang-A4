@@ -4001,3 +4001,16 @@ go get -d -t ./ ...
 go test -v
 #+END_EXAMPLE
 
+* DONE go get github package with specific version: go dep
+  CLOSED: [2018-07-11 Wed 09:25]
+https://gist.github.com/subfuzion/12342599e26f5094e4e2d08e9d4ad50d
+
+dep init
+dep ensure
+dep ensure --add github.com/gorilla/websocket@1.2.0
+
+https://stackoverflow.com/questions/24855081/how-do-i-import-a-specific-version-of-a-package-using-go-get
+https://github.com/golang/go/issues/21933
+https://github.com/golang/dep
+https://github.com/golang/go/wiki/PackagePublishing
+
