@@ -129,8 +129,9 @@ Table of Contents
 
 ## Inteface
 
-| Name                                                       | Comment                                                      |
-| :--------------------------------------------------------- | -------------------------------------------                  |
+| Name                                                       | Comment                                                       |
+| :--------------------------------------------------------- | ------------------------------------------------------------- |
+| Hash map with both key and value dynamic                   | `map[interface{}]interface{}`                                 |
 | Convert map[interface {}]interface {} to map[string]string | [code/interface_conversion.go](code/interface_conversion.go)  |
 
 ## Files & Folders
