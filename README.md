@@ -3,6 +3,8 @@
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com) [![LinkedIn](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/linkedin_icon.png)](https://www.linkedin.com/in/dennyzhang001) <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a> [![Github](https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/github.png)](https://github.com/DennyZhang)
 
+[![Build Status](https://travis-ci.org/dennyzhang/challenges-golang-a4.svg?branch=master)](https://travis-ci.org/dennyzhang/challenges-golang-a4) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 File me [tickets](https://github.com/DennyZhang/cheatsheet-golang-a4/issues) or star [the repo](https://github.com/DennyZhang/cheatsheet-golang-a4).
 
 See more CheatSheets from Denny: [#denny-cheatsheets](https://github.com/topics/denny-cheatsheets)
