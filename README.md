@@ -17,6 +17,7 @@ Table of Contents
       * [String](#string)
       * [Integer/Float](#integerfloat)
       * [Conversion](#conversion)
+      * [Ascii](#ascii)
       * [Dict/Hashmap/Map](#dicthashmapmap)
       * [Goroutines](#goroutines)
       * [Inteface](#inteface)
@@ -63,14 +64,15 @@ Table of Contents
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
 | Sort string array               | `sort.Strings(T); fmt.Print(T)`               |
-| Sort int array                  | `sort.Ints(l)` //in-place change           |
+| Sort int array                  | `sort.Ints(l)` //in-place change              |
 | Append item                     | `T = append(T, "e")`                          |
 | Append items                    | `T = append(T, "e", "b", "c")`                |
 | Append item to head/prepend     | `T = append([]string{"a"}, T...)`             |
 | Remove last item                | `T = T[:len(T)-1]`                            |
 | Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
 | Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          |
-  
+| Join two lists                  | `l1 = append(l1, l2...)`                      |
+
 ## String
 
 [Package strings](https://golang.org/pkg/strings/)
@@ -90,7 +92,6 @@ Table of Contents
 | Tolower                      | `strings.ToLower("TEST")`                                       |
 | Trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
 | Trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
-| get character ascii          | `byte('0')`                                                     |
 
 ## Integer/Float
 
@@ -111,6 +112,12 @@ Table of Contents
 | Convert int to string     | `s := strconv.Itoa(-42)`                      |
 | Convert list to string    | `strings.Join(list, ", ")`                    |
 | Convert rune to string    | `s := strconv.Itoa(-42)`                      |
+
+## Ascii
+| Name                 | Comment                                          |
+| :------------------- | --------------------------------                 |
+| get character ascii  | `byte('0')`                                      |
+| ascii offset         | `fmt.Println(string('B' + byte('a')-byte('A')))` |
 
 ## Dict/Hashmap/Map
 
