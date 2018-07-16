@@ -9,7 +9,6 @@ language: go
 # with them.
 go:
   - 1.9.x
-  - 1.x
 
 # Only clone the most recent commit.
 git:
