@@ -15,15 +15,14 @@ Table of Contents
       * [Golang Compact Coding](#golang-compact-coding)
       * [Array/List/Slice](#arraylistslice)
       * [String](#string)
-      * [Integer/Float](#integerfloat)
       * [Conversion](#conversion)
+      * [Integer/Float](#integerfloat)
       * [Ascii](#ascii)
       * [Dict/Hashmap/Map](#dicthashmapmap)
       * [Goroutines](#goroutines)
       * [Inteface](#inteface)
       * [Files &amp; Folders](#files--folders)
-      * [Bit Operator](#bit-operator)
-      * [Math](#math)
+      * [Bit Operator &amp; Math](#bit-operator--math)
       * [queue/heapq](#queueheapq)
    * [Code snippets](#code-snippets)
    * [More links](#more-links)
@@ -42,10 +41,10 @@ Table of Contents
 | Loop string    | `for ch in str:`                         | `for _, ch := range str { fmt.Print(ch) }`         |
 | Iterator       | `for num in nums:`                       | `for _, num := range nums {fmt.Print(num)}`        |
 | While          | `while isOK:`                            | `for isOK`                                         |
-| Reverse list   | `nums[::-1]`                             | Need to create your own function. Weird!           |
-| Check ch range | `ord(ch) in range(ord('a'), ord('z')+1)` | ch >='a' && ch <='z'                               |
+| Check ch range | `ord(ch) in range(ord('a'), ord('z')+1)` | `ch >='a' && ch <='z'`                             |
 | Get min        | `min(2, 6, 5)`                           |                                                    |
 | Check is nil   | `root is None`                           | `root == nil`                                      |
+| Reverse list   | `nums[::-1]`                             | Need to create your own function. Weird!           |
 
 ## Golang Compact Coding
 
@@ -69,7 +68,7 @@ Table of Contents
 | Append items                    | `l = append(l, "e", "b", "c")`                |
 | Append item to head/prepend     | `l = append([]string{"a"}, l...)`             |
 | Remove last item                | `l = l[:len(l)-1]`                            |
-| Remove item by index            | `l = append(l[0:1], l[2:]...)`                                            |
+| Remove item by index            | `l = append(l[0:1], l[2:]...)`                |
 | Slices of a array               | `var l2 = l[1:3]` // Notice: it's a reference |
 | Copy a list                     | `b := make([]l, len(a)); copy(b, a)`          |
 | Join two lists                  | `l1 = append(l1, l2...)`                      |
@@ -94,13 +93,6 @@ Table of Contents
 | Trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
 | Trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
 
-## Integer/Float
-
-| Name                | Comment                                                             |
-| :------------------ | ------------------------------------------------------------------- |
-| Int max             | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
-| Int min             | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
-
 ## Conversion
 | Name                      | Comment                                       |
 | :----------------------   | --------------------------------------------- |
@@ -113,6 +105,13 @@ Table of Contents
 | Convert int to string     | `s := strconv.Itoa(-42)`                      |
 | Convert list to string    | `strings.Join(list, ", ")`                    |
 | Convert rune to string    | `s := strconv.Itoa(-42)`                      |
+
+## Integer/Float
+
+| Name                | Comment                                                             |
+| :------------------ | ------------------------------------------------------------------- |
+| Int max             | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
+| Int min             | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
 
 ## Ascii
 | Name                 | Comment                                          |
@@ -148,18 +147,13 @@ Table of Contents
 | Read files             | [code/example_read_file.go](code/example_read_file.go)   |
 | Write files            | [code/example_write_file.go](code/example_write_file.go) |
 
-## Bit Operator
+## Bit Operator & Math
 
-| Name           | Comment                       |
-| :------------- | ----------------------------- |
-| Shift left     | `fmt.Print(1 << 10)` // 1024  |
-| Shift right    | `fmt.Print(1024 >> 3)` // 128 |
-  
-## Math
-
-| Name          | Comment                                     |
-| :------------ | ------------------------------------------- |
-| pow(2, 3)     | `int(math.Pow(2, 3))` // Default is float64 |
+| Name           | Comment                                     |
+| :------------- | ------------------------------------------  |
+| Shift left     | `fmt.Print(1 << 10)` // 1024                |
+| Shift right    | `fmt.Print(1024 >> 3)` // 128               |
+| pow(2, 3)      | `int(math.Pow(2, 3))` // Default is float64 |
 
 ## queue/heapq
 
