@@ -59,18 +59,19 @@ Table of Contents
 | Name                            | Comment                                       |
 | :-----------------------------  | --------------------------------------------  |
 | Make a array                    | `var a [2]string; a[0]="hello"; a[1]="world"` |
-| Create array with given values  | `T := [6]int{2, 3, 7, 5, 11, 13}`             |
-| Create array with given values  | `T := []string{"a", "c", "b", "d"}`           |
+| Create array with given values  | `l := [6]int{2, 3, 7, 5, 11, 13}`             |
+| Create array with given values  | `l := []string{"a", "c", "b", "d"}`           |
 | Create dynamically-sized arrays | `a := make([]int, 5)`                         |
 | Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
-| Sort string array               | `sort.Strings(T); fmt.Print(T)`               |
+| Sort string array               | `sort.Strings(l); fmt.Print(l)`               |
 | Sort int array                  | `sort.Ints(l)` //in-place change              |
-| Append item                     | `T = append(T, "e")`                          |
-| Append items                    | `T = append(T, "e", "b", "c")`                |
-| Append item to head/prepend     | `T = append([]string{"a"}, T...)`             |
-| Remove last item                | `T = T[:len(T)-1]`                            |
-| Slices of a array               | `var T2 = T[1:3]` // Notice: it's a reference |
-| Copy a list                     | `b := make([]T, len(a)); copy(b, a)`          |
+| Append item                     | `l = append(l, "e")`                          |
+| Append items                    | `l = append(l, "e", "b", "c")`                |
+| Append item to head/prepend     | `l = append([]string{"a"}, l...)`             |
+| Remove last item                | `l = l[:len(l)-1]`                            |
+| Remove item by index            | `l = append(l[0:1], l[2:]...)`                                            |
+| Slices of a array               | `var l2 = l[1:3]` // Notice: it's a reference |
+| Copy a list                     | `b := make([]l, len(a)); copy(b, a)`          |
 | Join two lists                  | `l1 = append(l1, l2...)`                      |
 
 ## String
@@ -89,7 +90,7 @@ Table of Contents
 | Substring                    | `strings.Index("test", "e")`                                    |
 | Join string                  | `strings.Join([]string{"a","b"}, "-")`                          |
 | Repeat string                | `strings.Repeat("a", 2)` // aa                                  |
-| Tolower                      | `strings.ToLower("TEST")`                                       |
+| lolower                      | `strings.ToLower("TEST")`                                       |
 | Trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
 | Trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
 
