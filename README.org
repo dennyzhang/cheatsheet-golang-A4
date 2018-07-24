@@ -3984,23 +3984,6 @@ $ go get -t ./...
 * DONE [#A] golang workspace                                      :IMPORTANT:
   CLOSED: [2018-07-05 Thu 14:40]
 https://golang.org/doc/code.html#Workspaces
-#+BEGIN_EXAMPLE
-mkdir -p   /Users/zdenny/Dropbox/gocode
-cd  /Users/zdenny/Dropbox/gocode
-
-cd $GOPATH
-
-mkdir -p src/github.com/pivotal-cf
-cd src/github.com/pivotal-cf
-git clone git@github.com:pivotal-cf/fluent-bit-out-syslog.git
-
-cd fluent-bit-out-syslog/cmd
-go get -d -t ./ ...
-
-# run test
-go test -v
-#+END_EXAMPLE
-
 * DONE go get github package with specific version: go dep
   CLOSED: [2018-07-11 Wed 09:25]
 https://gist.github.com/subfuzion/12342599e26f5094e4e2d08e9d4ad50d
