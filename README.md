@@ -110,10 +110,11 @@ Table of Contents
 
 ## Integer/Float
 
-| Name                | Comment                                                             |
-| :------------------ | ------------------------------------------------------------------- |
-| Int max             | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/) |
-| Int min             | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/) |
+| Name                  | Comment                                                                             |
+| :------------------   | -------------------------------------------------------------------                 |
+| Int max               | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/)                 |
+| Int min               | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/)                 |
+| Pass int as reference | [sample code](https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence) |
 
 ## Ascii
 | Name                 | Comment                                          |
