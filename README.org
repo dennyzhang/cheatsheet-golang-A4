@@ -235,7 +235,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
-
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * Golang                                                    :noexport:Coding:
 :PROPERTIES:
 :type:   Language
@@ -4138,7 +4138,6 @@ func main() [] //ERROR - where curly braces are required, only those are allowed
 
 func main() { fmt.Println('hello world') } //ERROR - use double quotes for strings: func main() { fmt.Println("hello world") }
    #+end_example
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * DONE Go by Example: Sorting by Functions
   CLOSED: [2018-04-17 Tue 11:06]
 https://stackoverflow.com/questions/28999735/what-is-the-shortest-way-to-simply-sort-an-array-of-structs-by-arbitrary-field
@@ -4209,7 +4208,7 @@ http://onsi.github.io/gomega/
 $ cd /path/to/my/app
 $ go get -t ./...
 #+END_EXAMPLE
-* DONE [#A] golang workspace                                      :IMPORTANT:
+* DONE [#A] golang workspace                             :IMPORTANT:noexport:
   CLOSED: [2018-07-05 Thu 14:40]
 https://golang.org/doc/code.html#Workspaces
 * DONE go get github package with specific version: go dep         :noexport:
