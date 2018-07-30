@@ -236,7 +236,7 @@ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_lice
 <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 #+END_HTML
 
-* Golang                                                             :Coding:
+* Golang                                                    :noexport:Coding:
 :PROPERTIES:
 :type:   Language
 :END:
