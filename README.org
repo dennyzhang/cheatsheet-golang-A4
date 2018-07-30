@@ -140,9 +140,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 |-------------+----------------------------|
 | Read files  | [[code/example_read_file.go][code/example_read_file.go]]  |
 | Write files | [[code/example_write_file.go][code/example_write_file.go]] |
-
 ** Bit Operator & Math
-
 | Name        | Comment                                     |
 |-------------+---------------------------------------------|
 | Shift left  | =fmt.Print(1 << 10)= // 1024                |
@@ -4149,7 +4147,7 @@ https://gobyexample.com/sorting-by-functions
 sort.Slice(planets, func(i, j int) bool {
   return planets[i].Axis < planets[j].Axis
 })
-* DONE golang struct
+* DONE golang struct                                               :noexport:
   CLOSED: [2018-04-16 Mon 23:10]
 https://tour.golang.org/moretypes/2
 package main
@@ -4164,7 +4162,7 @@ type Vertex struct {
 func main() {
 	fmt.Println(Vertex{1, 2})
 }
-* DONE golang switch
+* DONE golang switch                                               :noexport:
   CLOSED: [2018-04-16 Mon 23:03]
 
 https://tour.golang.org/flowcontrol/9
@@ -4201,10 +4199,10 @@ https://gobyexample.com/switch
         fmt.Println("It's after noon")
     }
 #+END_SRC
-* DONE golang log package
+* DONE golang log package                                          :noexport:
   CLOSED: [2018-07-03 Tue 11:23]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE go get -t to retrieve the packages referenced in your code
+* DONE go get -t to retrieve the packages referenced in your code  :noexport:
   CLOSED: [2018-07-04 Wed 10:02]
 http://onsi.github.io/gomega/
 #+BEGIN_EXAMPLE
@@ -4214,7 +4212,7 @@ $ go get -t ./...
 * DONE [#A] golang workspace                                      :IMPORTANT:
   CLOSED: [2018-07-05 Thu 14:40]
 https://golang.org/doc/code.html#Workspaces
-* DONE go get github package with specific version: go dep
+* DONE go get github package with specific version: go dep         :noexport:
   CLOSED: [2018-07-11 Wed 09:25]
 https://gist.github.com/subfuzion/12342599e26f5094e4e2d08e9d4ad50d
 
