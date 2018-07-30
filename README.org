@@ -4138,7 +4138,7 @@ func main() [] //ERROR - where curly braces are required, only those are allowed
 
 func main() { fmt.Println('hello world') } //ERROR - use double quotes for strings: func main() { fmt.Println("hello world") }
    #+end_example
-* DONE Go by Example: Sorting by Functions
+* DONE Go by Example: Sorting by Functions                         :noexport:
   CLOSED: [2018-04-17 Tue 11:06]
 https://stackoverflow.com/questions/28999735/what-is-the-shortest-way-to-simply-sort-an-array-of-structs-by-arbitrary-field
 https://gobyexample.com/sorting-by-functions
