@@ -1,13 +1,244 @@
--*- mode:org; fill-column:70; coding:utf-8; -*-
-* org-mode configuration
+* org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone hidestars
-#+TAGS: ARCHIVE(a) WORK(w) LIFE(l) EMACS(e) IMPORTANT(i) Difficult(d) Communication(c) RECOMMENDATE(r) Tool(t) Habit(h) noexport(n) Share (s) BLOG(b)
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+DRAWERS: HIDDEN CODE CONF EMAIL WEBPAGE SNIP
+#+TITLE:  Golang CheatSheet
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
 #+PRIORITIES: A D C
-#+ARCHIVE: %s_done::** Finished Tasks
-#+AUTHOR: dennyzhang.com (denny@dennyzhang.com)
-#+OPTIONS: toc:2 \n:t ^:nil creator:nil d:nil
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
+* CheatSheet
+#+BEGIN_HTML
+<a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+<a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="http://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+<a href="https://github.com/DennyZhang"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+
+<br/><br/>
+
+<a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
+#+END_HTML
+
+File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
+** Syntax Sugar: From Python To Golang
+| Name           | Python                                   | Golang                                             |
+|----------------+------------------------------------------+----------------------------------------------------|
+| sum slice      | `sum([1, 2, 3])`                         | `sum := 0; for i := range nums { sum += nums[i] }` |
+| Get last item  | `nums[-1]`                               | `nums[len(nums)-1]`                                |
+| For            | `for i in range(10):`                    | `for i := 0; i < 10; i++`                          |
+| Loop list      | `for num in [1, 2]`                      | `for num := range[]int{1, 2} { fmt.Print(num) }`   |
+| Loop string    | `for ch in str:`                         | `for _, ch := range str { fmt.Print(ch) }`         |
+| Iterator       | `for num in nums:`                       | `for _, num := range nums {fmt.Print(num)}`        |
+| While          | `while isOK:`                            | `for isOK`                                         |
+| Check ch range | `ord(ch) in range(ord('a'), ord('z')+1)` | `ch >='a' && ch <='z'`                             |
+| Get min        | `min(2, 6, 5)`                           |                                                    |
+| Check is nil   | `root is None`                           | `root == nil`                                      |
+| Reverse list   | `nums[::-1]`                             | Need to create your own function. Weird!           |
+
+** Golang Compact Coding
+| Name                                | Comment                                     |
+|-------------------------------------+---------------------------------------------|
+| Declare variables with initializers | `var ischecked, v, str  = false, 2, "yes!"` |
+| One line if statement               | `if a >= 1 { fmt.Print("yes") }`            |
+
+** Array/List/Slice
+
+| Name                            | Comment                                       |
+|---------------------------------+-----------------------------------------------|
+| Make a array                    | `var a [2]string; a[0]="hello"; a[1]="world"` |
+| Create array with given values  | `l := [6]int{2, 3, 7, 5, 11, 13}`             |
+| Create array with given values  | `l := []string{"a", "c", "b", "d"}`           |
+| Create dynamically-sized arrays | `a := make([]int, 5)`                         |
+| Create dynamically-sized arrays | `a := make([]int, 1, 5)` // 5 is capacity     |
+| Sort string array               | `sort.Strings(l); fmt.Print(l)`               |
+| Sort int array                  | `sort.Ints(l)` //in-place change              |
+| Append item                     | `l = append(l, "e")`                          |
+| Append items                    | `l = append(l, "e", "b", "c")`                |
+| Append item to head/prepend     | `l = append([]string{"a"}, l...)`             |
+| Remove last item                | `l = l[:len(l)-1]`                            |
+| Remove item by index            | `l = append(l[0:1], l[2:]...)`                |
+| Slices of a array               | `var l2 = l[1:3]` // Notice: it's a reference |
+| Copy a list                     | `b := make([]l, len(a)); copy(b, a)`          |
+| Join two lists                  | `l1 = append(l1, l2...)`                      |
+
+** String
+
+[[https://golang.org/pkg/strings/][Package strings]]
+
+| Name                         | Comment                                                         |
+|------------------------------+-----------------------------------------------------------------|
+| Format string                | `fmt.Sprintf("At %v, %s", e.When, e.What)`                      |
+| Format string                | `fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)` |
+| Split string                 | `var L = strings.Split("hi,golang", ",")`                       |
+| Replace string               | `var str2 = strings.Replace("hi,all", ",", ";", -1)`            |
+| Replace string               | `strings.Replace("aaaa", "a", "b", 2)` //bbaa                   |
+| Split string by separator    | `strings.Split(path, " ")`                                      |
+| Count characters             | `strings.Count("test", "t")`                                    |
+| Substring                    | `strings.Index("test", "e")`                                    |
+| Join string                  | `strings.Join([]string{"a","b"}, "-")`                          |
+| Repeat string                | `strings.Repeat("a", 2)` // aa                                  |
+| lolower                      | `strings.ToLower("TEST")`                                       |
+| Trim whitespace in two sides | `strings.TrimSpace("\t Hello world!\n ")`                       |
+| Trim trailing whitespace     | `strings.TrimRight("\t Hello world!\n ", "\n ")`                |
+
+** Conversion
+| Name                      | Comment                                     |
+|---------------------------+---------------------------------------------|
+| Convert string to int     | `i, _ := strconv.ParseInt("12345", 10, 64)` |
+| Convert string to int     | `i, err := strconv.Atoi("-42")`             |
+| Convert string to list    | `L := strings.Split("hi,golang", "")`       |
+| Convert string to []byte  | `[]byte("abc日")`                           |
+| Convert string to float32 | `f, _ := strconv.ParseFloat("3.1415", 32)`  |
+| Convert int to float32    | `0.5*float32(age)+7>= float32(age2)`        |
+| Convert int to string     | `s := strconv.Itoa(-42)`                    |
+| Convert list to string    | `strings.Join(list, ", ")`                  |
+| Convert rune to string    | `s := strconv.Itoa(-42)`                    |
+
+** Integer/Float
+
+| Name                  | Comment                                                                             |
+|-----------------------+-------------------------------------------------------------------------------------|
+| Int max               | `MaxInt32  = 1<<31 - 1` [golang math](https://golang.org/pkg/math/)                 |
+| Int min               | `MinInt32 = -1 << 31`   [golang math](https://golang.org/pkg/math/)                 |
+| Pass int as reference | [sample code](https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence) |
+
+** Ascii
+| Name                | Comment                                          |
+|---------------------+--------------------------------------------------|
+| get character ascii | `byte('0')`                                      |
+| ascii offset        | `fmt.Println(string('B' + byte('a')-byte('A')))` |
+
+** Dict/Hashmap/Map
+
+| Name                  | Comment                          |
+|-----------------------+----------------------------------|
+| Create dict           | `map[string]int{"a": 1, "b": 2}` |
+| Create dict           | `make(map[string]int)`           |
+| Check existence       | `_, ok := m[k]`                  |
+| Delete key            | `delete(m, "k1")`                |
+| Create a map of lists | `m := make(map[string][]string)` |
+  
+** Goroutines
+| Name            | Comment                                                |
+|-----------------+--------------------------------------------------------|
+| Basic goroutine | [code/example_goroutine.go](code/example_goroutine.go) |
+
+** Inteface
+
+| Name                                                       | Comment                                                      |
+|------------------------------------------------------------+--------------------------------------------------------------|
+| Hash map with both key and value dynamic                   | `map[interface{}]interface{}`                                |
+| Convert map[interface {}]interface {} to map[string]string | [code/interface_conversion.go](code/interface_conversion.go) |
+
+** Files & Folders
+| Name        | Comment                                                  |
+|-------------+----------------------------------------------------------|
+| Read files  | [code/example_read_file.go](code/example_read_file.go)   |
+| Write files | [code/example_write_file.go](code/example_write_file.go) |
+
+** Bit Operator & Math
+
+| Name        | Comment                                     |
+|-------------+---------------------------------------------|
+| Shift left  | `fmt.Print(1 << 10)` // 1024                |
+| Shift right | `fmt.Print(1024 >> 3)` // 128               |
+| pow(2, 3)   | `int(math.Pow(2, 3))` // Default is float64 |
+
+# Code snippets
+- Create 2D arrays
+#+BEGIN_SRC go
+// static
+board := [][]string{
+         []string{"_", "_", "_"},
+         []string{"_", "_", "_"},
+         []string{"_", "_", "_"},
+}
+
+// dynamic
+a := make([][]uint8, dy)
+for i := range a {
+    a[i] = make([]uint8, dx)
+}
+#+END_SRC
+
+- Logging
+#+BEGIN_SRC go
+import "github.com/op/go-logging"
+log := logging.MustGetLogger("my-app")
+log.Info("Some info...")
+log.Warning("Some warning...")
+log.Error("Some error!")
+log.Critical("Some critical!")
+#+END_SRC
+
+- struct
+#+BEGIN_SRC go
+type Point struct {
+  X, Y int
+}
+
+var (
+  v1 = Point{10, 8}
+  v2 = Point{X: 1}  // Y would be 0
+  v3 = Point{}      // Both X and Y is 0
+  p  = &Point{10, 8} // reference: type *Point
+)
+
+func main() {
+  fmt.Println(p, v1, v2, v3)
+}
+#+END_SRC
+
+- Print map
+
+#+BEGIN_SRC go
+import "encoding/json"
+
+b, err := json.MarshalIndent(x, "", "  ")
+fmt.Println(string(b))
+#+END_SRC
+
+#+BEGIN_SRC go
+for key := range record {
+   fmt.Printf("key: %s, value: %s\n", key, record[key])
+}
+#+END_SRC
+
+- Goroutines & Channels
+#+BEGIN_SRC go
+// Goroutines
+go func() {
+  // do something
+}
+#+END_SRC
+
+#+BEGIN_SRC go
+// Channels
+c := make(chan T [, capacity ])
+c <- t // blocks on unbuffered channels until another routine receives the value
+
+d := <-c // blocks on unbuffered channels until another routine sends the value
+
+close(c)
+#+END_SRC
+* More Resources
+- https://tour.golang.org/list
+- https://golang.org/doc/
+- https://github.com/a8m/go-lang-cheat-sheet
+
+License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+
+<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+
 * Golang                                                             :Coding:
 :PROPERTIES:
 :type:   Language
