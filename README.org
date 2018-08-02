@@ -1,5 +1,5 @@
 * org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone hidestars
+#+STARTUP: overview customtime noalign logdone showall
 #+TITLE:  Golang CheatSheet
 #+DESCRIPTION: 
 #+KEYWORDS: 
@@ -4223,4 +4223,17 @@ https://stackoverflow.com/questions/24855081/how-do-i-import-a-specific-version-
 https://github.com/golang/go/issues/21933
 https://github.com/golang/dep
 https://github.com/golang/go/wiki/PackagePublishing
+* TODO golang lint                                                 :noexport:
+https://github.com/securego/gosec
+https://github.com/golangci/golangci-lint
+* DONE golang invalid character '\n' in string literal             :noexport:
+  CLOSED: [2018-08-01 Wed 17:26]
+https://stackoverflow.com/questions/38977555/error-embedding-n-into-a-string-literal
+#+BEGIN_SRC go
+separator := `\n    `
+#+END_SRC
 
+or
+#+BEGIN_SRC go
+separator := "\\n    "
+#+END_SRC
