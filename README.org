@@ -13,7 +13,7 @@
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+LINK_UP:   
 #+LINK_HOME: 
-* CheatSheet
+* Golang CheatSheet
 #+BEGIN_HTML
 <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
 <a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
@@ -51,10 +51,10 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Name                            | Comment                                       |
 |---------------------------------+-----------------------------------------------|
 | Make a array                    | var a [2]string; a[0]="hello"; a[1]="world"   |
-| Create array with given values  | =l := [6]int{2, 3, 7, 5, 11, 13}=             |
+| Create array with given values  | l := [6]int{2, 3, 7, 5, 11, 13}               |
 | Create array with given values  | l := []string{"a", "c", "b", "d"}             |
-| Create dynamically-sized arrays | =a := make([]int, 5)=                         |
-| Create dynamically-sized arrays | =a := make([]int, 1, 5)= // 5 is capacity     |
+| Create dynamically-sized arrays | a := make([]int, 5)                           |
+| Create dynamically-sized arrays | a := make([]int, 1, 5) // 5 is capacity       |
 | Sort string array               | =sort.Strings(l); fmt.Print(l)=               |
 | Sort int array                  | =sort.Ints(l)= //in-place change              |
 | Append item                     | l = append(l, "e")                            |
@@ -63,8 +63,9 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Remove last item                | =l = l[:len(l)-1]=                            |
 | Remove item by index            | =l = append(l[0:1], l[2:]...)=                |
 | Slices of a array               | =var l2 = l[1:3]= // Notice: it's a reference |
-| Copy a list                     | =b := make([]l, len(a)); copy(b, a)=          |
+| Copy a list                     | b := make([]l, len(a)); copy(b, a)            |
 | Join two lists                  | =l1 = append(l1, l2...)=                      |
+| Use pointer of array list       | [[file:code/pointer_array.go][code/pointer_array.go]]                    |
 
 ** String
 
@@ -92,11 +93,12 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert string to int     | i, _ := strconv.ParseInt("12345", 10, 64) |
 | Convert string to int     | i, err := strconv.Atoi("-42")             |
 | Convert string to list    | L := strings.Split("hi,golang", "")       |
-| Convert string to []byte  | []byte("abc日")                           |
+| Convert string to []byte  | []byte("abcXX")                          |
 | Convert string to float32 | f, _ := strconv.ParseFloat("3.1415", 32)  |
-| Convert int to float32    | =0.5*float32(age)+7>= float32(age2)=      |
+| Convert int to float32    | 0.5*float32(age)+7>= float32(age2)        |
 | Convert int to string     | =s := strconv.Itoa(-42)=                  |
 | Convert list to string    | strings.Join(list, ", ")                  |
+| Convert byte to int       | =int(byte('a'))=                          |
 
 ** Integer/Float
 
@@ -120,25 +122,26 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Create dict           | =make(map[string]int)=           |
 | Check existence       | _, ok := m[k]                    |
 | Delete key            | =delete(m, "k1")=                |
-| Create a map of lists | =m := make(map[string][]string)= |
+| Create a map of lists | m := make(map[string][]string)   |
   
 ** Goroutines
 | Name            | Comment                   |
 |-----------------+---------------------------|
-| Basic goroutine | [[code/example_goroutine.go][code/example_goroutine.go]] |
+| Basic goroutine | [[file:code/example_goroutine.go][code/example_goroutine.go]] |
 
 ** Inteface
 
-| Name                                                       | Comment                                                      |
-|------------------------------------------------------------+--------------------------------------------------------------|
-| Hash map with both key and value dynamic                   | =map[interface{}]interface{}=                                |
-| Convert map[interface {}]interface {} to map[string]string | [code/interface_conversion.go](code/interface_conversion.go) |
+| Name                                                       | Comment                       |
+|------------------------------------------------------------+-------------------------------|
+| Hash map with both key and value dynamic                   | =map[interface{}]interface{}= |
+| Convert map[interface {}]interface {} to map[string]string | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/interface_conversion.go][code/interface_conversion.go]]  |
 
 ** Files & Folders
 | Name        | Comment                    |
 |-------------+----------------------------|
-| Read files  | [[code/example_read_file.go][code/example_read_file.go]]  |
-| Write files | [[code/example_write_file.go][code/example_write_file.go]] |
+| Read files  | [[file:code/example_read_file.go][code/example_read_file.go]] |
+| Write files | [[file:code/example_write_file.go][code/example_write_file.go]] |
+
 ** Bit Operator & Math
 | Name        | Comment                                     |
 |-------------+---------------------------------------------|

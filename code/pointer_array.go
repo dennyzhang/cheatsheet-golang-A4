@@ -8,7 +8,7 @@
 // Description :
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-08-10 23:10:06>
+// Updated: Time-stamp: <2018-08-10 23:10:02>
 //-------------------------------------------------------------------
 package main
 
@@ -17,8 +17,8 @@ import (
 )
 
 func main() {
-	msg := "hello world\n";
-	// print sample message
-	fmt.Print(msg)
+	A := []int{1, 2, 3}
+	B := &A
+	fmt.Println((*B)[2])
+	fmt.Println(B)
 }
-// File: helloworld.go ends
