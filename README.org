@@ -1,24 +1,12 @@
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+TITLE:  Golang CheatSheet
-#+DESCRIPTION: 
-#+KEYWORDS: 
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
-* Golang CheatSheet
+* Golang CheatSheet                                                     :Languages:
+:PROPERTIES:
+:type:     golang
+:END:
 #+BEGIN_HTML
 <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
 <a href="https://github.com/DennyZhang"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
 <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-<a href="https://github.com/DennyZhang"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/cheatsheet-golang-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <br/><br/>
 
@@ -35,8 +23,8 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Loop list      | =for num in [1, 2]=                      | for num := range[]int{1, 2} { fmt.Print(num) }   |
 | Loop string    | =for ch in str:=                         | for _, ch := range str { fmt.Print(ch) }         |
 | Iterator       | =for num in nums:=                       | for _, num := range nums {fmt.Print(num)}        |
-| While          | =while isOK:=                            | for isOK=                                        |
-| Check ch range | =ord(ch) in range(ord('a'), ord('z')+1)= | ch >='a' && ch <='z'                             |
+| While          | =while isOK:=                            | =for isOK=                                       |
+| Check ch range | =ord(ch) in range(ord('a'), ord('z')+1)= | =ch >='a' && ch <='z'=                           |
 | Get min        | =min(2, 6, 5)=                           |                                                  |
 | Check is nil   | =root is None=                           | root == nil                                      |
 | Reverse list   | =nums[::-1]=                             | Need to create your own function. Weird!         |
@@ -65,7 +53,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Slices of a array               | =var l2 = l[1:3]= // Notice: it's a reference |
 | Copy a list                     | b := make([]l, len(a)); copy(b, a)            |
 | Join two lists                  | =l1 = append(l1, l2...)=                      |
-| Use pointer of array list       | [[file:code/pointer_array.go][code/pointer_array.go]]                    |
+| Use pointer of array list       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/pointer_array.go][code/pointer_array.go]]                         |
 
 ** String
 
@@ -127,7 +115,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 ** Goroutines
 | Name            | Comment                   |
 |-----------------+---------------------------|
-| Basic goroutine | [[file:code/example_goroutine.go][code/example_goroutine.go]] |
+| Basic goroutine | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example_goroutine.go][code/example_goroutine.go]] |
 
 ** Inteface
 
@@ -139,8 +127,8 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 ** Files & Folders
 | Name        | Comment                    |
 |-------------+----------------------------|
-| Read files  | [[file:code/example_read_file.go][code/example_read_file.go]] |
-| Write files | [[file:code/example_write_file.go][code/example_write_file.go]] |
+| Read files  | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example_read_file.go][code/example_read_file.go]] |
+| Write files | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example_write_file.go][code/example_write_file.go]] |
 
 ** Bit Operator & Math
 | Name        | Comment                                     |
@@ -226,20 +214,35 @@ d := <-c // blocks on unbuffered channels until another routine sends the value
 
 close(c)
 #+END_SRC
-* More Resources
-- https://tour.golang.org/list
-- https://golang.org/doc/
-- https://github.com/a8m/go-lang-cheat-sheet
+** More Resources
+ - https://tour.golang.org/list
+ - https://golang.org/doc/
+ - https://github.com/a8m/go-lang-cheat-sheet
 
-License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_HTML
-<a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
-<a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+ #+BEGIN_HTML
+ <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+ <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
-<a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
-<a href="https://github.com/DennyZhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
-<a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-#+END_HTML
+ <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+ <a href="https://github.com/DennyZhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+ <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+ #+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+TITLE:  Golang CheatSheet
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:   
+#+LINK_HOME: 
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * Golang                                                    :noexport:Coding:
 :PROPERTIES:

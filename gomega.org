@@ -1,13 +1,3 @@
--*- mode:org; fill-column:70; coding:utf-8; -*-
-* org-mode configuration
-#+STARTUP: overview customtime noalign logdone hidestars
-#+TAGS: ARCHIVE(a) WORK(w) LIFE(l) EMACS(e) IMPORTANT(i) Difficult(d) Communication(c) RECOMMENDATE(r) Tool(t) Habit(h) noexport(n) Share (s) BLOG(b)
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+DRAWERS: HIDDEN CODE CONF EMAIL WEBPAGE SNIP
-#+PRIORITIES: A D C
-#+ARCHIVE: %s_done::** Finished Tasks
-#+AUTHOR: dennyzhang.com (denny@dennyzhang.com)
-#+OPTIONS: toc:2 \n:t ^:nil creator:nil d:nil
 * [#A] golang BDD test: ginkgo gomega                        :IMPORTANT:
 | Name                        | Summary                                                    |
 |-----------------------------+------------------------------------------------------------|
@@ -134,3 +124,12 @@ BeforeSuite and AfterSuite blocks to prep for and cleanup after a suite.
 ** TODO DescribeTable
 ** TODO gexec.Build("github.com/amitkgupta/gexec-example"): https://github.com/Amit-PivotalLabs/gexec-example/blob/master/gexec_example_test.go#L17
 How I distribute my test code
+* org-mode configuration
+#+STARTUP: overview customtime noalign logdone hidestars
+#+TAGS: ARCHIVE(a) WORK(w) LIFE(l) EMACS(e) IMPORTANT(i) Difficult(d) Communication(c) RECOMMENDATE(r) Tool(t) Habit(h) noexport(n) Share (s) BLOG(b)
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+DRAWERS: HIDDEN CODE CONF EMAIL WEBPAGE SNIP
+#+PRIORITIES: A D C
+#+ARCHIVE: %s_done::** Finished Tasks
+#+AUTHOR: dennyzhang.com (denny@dennyzhang.com)
+#+OPTIONS: toc:2 \n:t ^:nil creator:nil d:nil
