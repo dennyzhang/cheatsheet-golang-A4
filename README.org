@@ -189,7 +189,7 @@ func main() {
 }
 #+END_SRC
 
-- Print map
+- Print Map
 
 #+BEGIN_SRC go
 import "encoding/json"
@@ -221,6 +221,7 @@ d := <-c // blocks on unbuffered channels until another routine sends the value
 
 close(c)
 #+END_SRC
+
 ** More Resources
  - https://tour.golang.org/list
  - https://golang.org/doc/
