@@ -202,6 +202,15 @@ for key := range record {
 }
 #+END_SRC
 
+- Print TreeNode
+#+BEGIN_SRC go
+func printTreeNodePreOrder(root *TreeNode) {
+    if root != nil { fmt.Println(root.Val) }
+    if root.Left != nil { printTreeNodePreOrder(root.Left) }
+    if root.Right != nil { printTreeNodePreOrder(root.Right) }
+}
+#+END_SRC
+
 - Goroutines & Channels
 #+BEGIN_SRC go
 // Goroutines
