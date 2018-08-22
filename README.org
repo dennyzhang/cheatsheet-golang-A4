@@ -79,6 +79,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Lower string                 | =strings.ToLower("TEST")=                                       |
 | Trim whitespace in two sides | =strings.TrimSpace("\t Hello world!\n ")=                       |
 | Trim trailing whitespace     | =strings.TrimRight("\t Hello world!\n ", "\n ")=                |
+| Concact string               | =fmt.Sprintf("%s%s", str1, str2)=                               |
 
 ** Conversion
 | Name                      | Comment                                   |
@@ -386,11 +387,11 @@ http://stackoverflow.com/questions/8303488/regex-to-match-any-character-includin
 Go is an expressive, concurrent, garbage-collected programming language.
 
 Go所需的内存和执行占用空间要比C和C++高得多
-在Go中可以实现原始且直接控制内存访问。
+在Go中可以实现原始且直接控制内存访问.
 
-Go语言最初定位于网络服务器、存储系统和数据库的程序设计,同时在语言中包含并发构造体,以方便的帮助开发者创建并行任务。
+Go语言最初定位于网络服务器`存储系统和数据库的程序设计,同时在语言中包含并发构造体,以方便的帮助开发者创建并行任务.
 
-现有的语言都没有针对多核心处理器进行优化,为了解决此类编程问题,Google工程师们开发了Go语言。
+现有的语言都没有针对多核心处理器进行优化,为了解决此类编程问题,Google工程师们开发了Go语言.
 #+END_EXAMPLE
 *** [#A] go的个人感悟                                              :noexport:
 - 数组的切片功能
@@ -455,10 +456,10 @@ export GOOS=linux
  http://golang.org/#package%20main%0A%0Aimport%20%22fmt%22%0A%0Afunc%20main%28%29%20{%0A%09fmt.Println%28%22Hello%2C%20%E4%B8%96%E7%95%8C%22%29%0A}%0A\\
  The Go Programming Language
 ** TODO [#A] Channel提供一个FIFO通信队列
-channel的阻塞行为并非永远是最佳的。该语言提供了两种对其进行定制的方式：
+channel的阻塞行为并非永远是最佳的.该语言提供了两种对其进行定制的方式:
 
- 1. 程序员可以指定缓冲大小——想缓冲的channel发送消息不会阻塞,除非缓冲已满,同样从缓冲的channel读取也不会阻塞,除非缓 冲是空的。
- 2. 该语言同时还提供了不会被阻塞的发送和接收的能力,而操作成功是仍然要报告。
+ 1. 程序员可以指定缓冲大小--想缓冲的channel发送消息不会阻塞,除非缓冲已满,同样从缓冲的channel读取也不会阻塞,除非缓 冲是空的.
+ 2. 该语言同时还提供了不会被阻塞的发送和接收的能力,而操作成功是仍然要报告.
 *** 通过两个channel实现, fabonaci计算                               :Sample:
 #+begin_src go
 // Copyright 2009 The Go Authors. All rights reserved.
@@ -547,9 +548,9 @@ var generator = map[string] Stringy {
 }
 
 #+end_src
-** DONE golang与C/C++不同， package不同文件定义的include没有先后顺序的依赖问题
+** DONE golang与C/C++不同, package不同文件定义的include没有先后顺序的依赖问题
    CLOSED: [2013-02-08 Fri 10:48]
-** DONE [#B] 使用golang后，深刻怀念erlang的lists:sort, lists:map之类的功能
+** DONE [#B] 使用golang后,深刻怀念erlang的lists:sort, lists:map之类的功能
   CLOSED: [2013-02-08 Fri 10:48]
 #+begin_src go
 func Generator_haowenzcom_1(url string) []Task {
@@ -564,7 +565,7 @@ func Generator_haowenzcom_1(url string) []Task {
 		// fmt.Print("\nurl:"+url_match_record[0][1]+"\n")
 		tasks = append(tasks, Task{url_match_record[0][1]})
 
-                // date_match_record := regexp.MustCompile("日期：</small>([0-9-: ]*)").FindAllStringSubmatch(record_string, -1)
+                // date_match_record := regexp.MustCompile("日期:</small>([0-9-: ]*)").FindAllStringSubmatch(record_string, -1)
 		// fmt.Print("\ndate:"+date_match_record[0][1]+"\n")
 
                 // count_match_record := regexp.MustCompile("</small>([0-9]*) </span>").FindAllStringSubmatch(record_string, -1)
@@ -576,7 +577,7 @@ func Generator_haowenzcom_1(url string) []Task {
         return tasks
 }
 #+end_src
-** DONE golang允许两个函数名相同，但大小写不一样的情况; 但不允许函数重载
+** DONE golang允许两个函数名相同,但大小写不一样的情况; 但不允许函数重载
   CLOSED: [2013-02-09 Sat 10:25]
 #+begin_src go
 package main
@@ -810,19 +811,19 @@ http://www.oschina.net/question/12_7902\\
 #+begin_example
 
 
-Goroutine是轻量级的并行程序执行路径,与线程,coroutine或者进程类似。然而,它们彼此相当不同,因此Go作者决定给它一个新的 名字并 放弃其它术语可能隐含的意义。
+Goroutine是轻量级的并行程序执行路径,与线程,coroutine或者进程类似.然而,它们彼此相当不同,因此Go作者决定给它一个新的 名字并 放弃其它术语可能隐含的意义.
 
-创建一个goroutine来运行名为DoThis的函数十分简单：
+创建一个goroutine来运行名为DoThis的函数十分简单:
 
 go DoThis() // but do not wait for it to complete
 
-匿名的函数可以这样使用：
+匿名的函数可以这样使用:
 
 go func() {
  for { /* do something forever */ }
 }() // Note that the function must be invoked
 
-这些goroutine将会通过Go运行时而映射到适当的操作系统原语(比如,POSIX线程)。
+这些goroutine将会通过Go运行时而映射到适当的操作系统原语(比如,POSIX线程).
 #+end_example
 ** 重要网页                                                        :noexport:
 *** [#A] web page: The Go Programming Language Specification
@@ -866,7 +867,7 @@ The syntax is specified using Extended Backus-Naur Form (EBNF):
 Production  = production_name "=" [ Expression ] "." .
 Expression  = Alternative { "|" Alternative } .
 Alternative = Term { Term } .
-Term        = production_name | token [ "…" token ] | Group | Option | Repetition .
+Term        = production_name | token [ "..." token ] | Group | Option | Repetition .
 Group       = "(" Expression ")" .
 Option      = "[" Expression "]" .
 Repetition  = "{" Expression "}" .
@@ -882,9 +883,9 @@ precedence:
 Lower-case production names are used to identify lexical tokens. Non-terminals are in CamelCase.
 Lexical symbols are enclosed in double quotes "" or back quotes ``.
 
-The form a … b represents the set of characters from a through b as alternatives. The horizontal
-ellipis … is also used elsewhere in the spec to informally denote various enumerations or code
-snippets that are not further specified. The character … (as opposed to the three characters ...)
+The form a ... b represents the set of characters from a through b as alternatives. The horizontal
+ellipis ... is also used elsewhere in the spec to informally denote various enumerations or code
+snippets that are not further specified. The character ... (as opposed to the three characters ...)
 is not a token of the Go language.
 
 Source code representation
@@ -917,9 +918,9 @@ Letters and digits
 The underscore character _ (U+005F) is considered a letter.
 
 letter        = unicode_letter | "_" .
-decimal_digit = "0" … "9" .
-octal_digit   = "0" … "7" .
-hex_digit     = "0" … "9" | "A" … "F" | "a" … "f" .
+decimal_digit = "0" ... "9" .
+octal_digit   = "0" ... "7" .
+hex_digit     = "0" ... "9" | "A" ... "F" | "a" ... "f" .
 
 Lexical elements
 
@@ -1003,7 +1004,7 @@ sets a non-decimal base: 0 for octal, 0x or 0X for hexadecimal. In hexadecimal l
 a-f and A-F represent values 10 through 15.
 
 int_lit     = decimal_lit | octal_lit | hex_lit .
-decimal_lit = ( "1" … "9" ) { decimal_digit } .
+decimal_lit = ( "1" ... "9" ) { decimal_digit } .
 octal_lit   = "0" { octal_digit } .
 hex_lit     = "0" ( "x" | "X" ) hex_digit { hex_digit } .
 
@@ -1203,8 +1204,8 @@ TypeName  = QualifiedIdent .
 TypeLit   = ArrayType | StructType | PointerType | FunctionType | InterfaceType |
         SliceType | MapType | ChannelType .
 
-Named instances of the boolean, numeric, and string types are predeclared. Composite types—array,
-struct, pointer, function, interface, slice, map, and channel types—may be constructed using type
+Named instances of the boolean, numeric, and string types are predeclared. Composite types-array,
+struct, pointer, function, interface, slice, map, and channel types-may be constructed using type
 literals.
 
 The static type (or just type) of a variable is the type defined by its declaration. Variables of
@@ -1479,9 +1480,9 @@ interface {
 More than one type may implement an interface. For instance, if two types S1 and S2 have the method
 set
 
-func (p T) Read(b Buffer) bool { return … }
-func (p T) Write(b Buffer) bool { return … }
-func (p T) Close() { … }
+func (p T) Read(b Buffer) bool { return ... }
+func (p T) Write(b Buffer) bool { return ... }
+func (p T) Close() { ... }
 
 (where T stands for either S1 or S2) then the File interface is implemented by both S1 and S2,
 regardless of what other methods S1 and S2 may have or share.
@@ -1501,8 +1502,8 @@ type Lock interface {
 
 If S1 and S2 also implement
 
-func (p T) Lock() { … }
-func (p T) Unlock() { … }
+func (p T) Lock() { ... }
+func (p T) Unlock() { ... }
 
 they implement the Lock interface as well as the File interface.
 
@@ -2116,11 +2117,11 @@ days := [...]string{"Sat", "Sun"}    // len(days) == 2
 A slice literal describes the entire underlying array literal. Thus, the length and capacity of a
 slice literal are the maximum element index plus one. A slice literal has the form
 
-[]T{x1, x2, … xn}
+[]T{x1, x2, ... xn}
 
 and is a shortcut for a slice operation applied to an array literal:
 
-[n]T{x1, x2, … xn}[0 : n]
+[n]T{x1, x2, ... xn}[0 : n]
 
 Within a composite literal of array, slice, or map type T, elements that are themselves composite
 literals may elide the respective literal type if it is identical to the element type of T.
@@ -2134,8 +2135,8 @@ statement, because the braces surrounding the expressions in the literal are con
 introducing the block of statements. To resolve the ambiguity in this rare case, the composite
 literal must appear within parentheses.
 
-if x == (T{a,b,c}[i]) { … }
-if (x == T{a,b,c}[i]) { … }
+if x == (T{a,b,c}[i]) { ... }
+if (x == T{a,b,c}[i]) { ... }
 
 Examples of valid array, slice, and map literals:
 
@@ -2386,9 +2387,9 @@ Calls
 
 Given an expression f of function type F,
 
-f(a1, a2, … an)
+f(a1, a2, ... an)
 
-calls f with arguments a1, a2, … an. Except for one special case, arguments must be single-valued
+calls f with arguments a1, a2, ... an. Except for one special case, arguments must be single-valued
 expressions assignable to the parameter types of F and are evaluated before the function is called.
 The type of the expression is the result type of F. A method invocation is similar but the method
 itself is specified as a selector upon a value of the receiver type for the method.
@@ -3804,7 +3805,7 @@ package main
 
 import "fmt"
 
-// Send the sequence 2, 3, 4, … to channel 'ch'.
+// Send the sequence 2, 3, 4, ... to channel 'ch'.
 func generate(ch chan<- int) {
     for i := 2; ; i++ {
         ch <- i  // Send 'i' to channel 'ch'.
@@ -3905,7 +3906,7 @@ A complete program is created by linking a single, unimported package called the
 all the packages it imports, transitively. The main package must have package name main and declare
 a function main that takes no arguments and returns no value.
 
-func main() { … }
+func main() { ... }
 
 Program execution begins by initializing the main package and then invoking the function main.
 
@@ -4008,7 +4009,7 @@ License.
     http://golangtutorials.blogspot.com/2011/05/early-syntax-errors-and-other-minor.html
 **** webcontent                                                    :noexport:
    #+begin_example
-Sometimes we know what works right, but we don’t know what works wrong. Let me make a list of a few errors that one could encounter so that you don’t waste much time figuring it out.
+Sometimes we know what works right, but we don't know what works wrong. Let me make a list of a few errors that one could encounter so that you don't waste much time figuring it out.
 
 Unncessary Imports
 Copy the code below into a file and execute it.
@@ -4028,7 +4029,7 @@ func main() {
 Output:
 prog.go:4: imported and not used: os
 
-Go is particularly parsimonious when it comes to code - if you are not going to use something, don’t ask for it. Here, you have indicated that you want to import the os package but you haven’t used it anywhere. That’s not allowed. If you are not using it, remove it. If you remove the import os at line 4, this program will work.
+Go is particularly parsimonious when it comes to code - if you are not going to use something, don't ask for it. Here, you have indicated that you want to import the os package but you haven't used it anywhere. That's not allowed. If you are not using it, remove it. If you remove the import os at line 4, this program will work.
 
 Exact Names - case dependent
 
@@ -4047,7 +4048,7 @@ Output:
 prog.go:6: cannot refer to unexported name fmt.println
 prog.go:6: undefined: fmt.println
 
-Notice how we have written fmt.println and not fmt.Println. Go is case dependent, which means to say that when you use another’s name, use it exactly as it is defined. If the name is John, then only John works - not john, not joHn, and no other combination. So, in this case some of the others that are not allowed:
+Notice how we have written fmt.println and not fmt.Println. Go is case dependent, which means to say that when you use another's name, use it exactly as it is defined. If the name is John, then only John works - not john, not joHn, and no other combination. So, in this case some of the others that are not allowed:
 
 Invalid code
 
@@ -4060,7 +4061,7 @@ fmt.println
 
 
 Separating lines with semicolons
-If you are coming from a background in languages like C, C++, Java, Perl, etc. you will notice that Go (at least so far) has not required you to put semi colons at the end of the line. In Go, the new line character automatically indicates the end of the line. However, if you happen to put two statements in the same line, then you need to have a semicolon separating them. Let’s take a look at an example.
+If you are coming from a background in languages like C, C++, Java, Perl, etc. you will notice that Go (at least so far) has not required you to put semi colons at the end of the line. In Go, the new line character automatically indicates the end of the line. However, if you happen to put two statements in the same line, then you need to have a semicolon separating them. Let's take a look at an example.
 
 Full file: ErrProg3.go
 
@@ -4125,7 +4126,7 @@ But watch out where you go with all those free semicolons.
 
 Unnecessary semicolons
 
-Let’s simplify that program, but go overboard with our semicolons. Try out this code now.
+Let's simplify that program, but go overboard with our semicolons. Try out this code now.
 
 Full file
 
@@ -4144,7 +4145,7 @@ prog.go:3: empty top-level declaration
 Again, Go is strictly frugal with its code. Here, alongside the import statement, there are two semicolons. Now the first one is acceptable - not necessary here, but acceptable. But two! Nope, that is where Go draws the line. The semicolon indicates the end of a statement, but there is no valid statement prior to the second semicolon. So remove the extra semicolon and all should be fine again.
 
 Syntax and other things
-The compiler demands that you follow proper syntax. There are a large possibility of syntax errors and it wouldn’t be a good idea to list them all. But I shall list a few. If you know these ones, most of the rest are just similar.
+The compiler demands that you follow proper syntax. There are a large possibility of syntax errors and it wouldn't be a good idea to list them all. But I shall list a few. If you know these ones, most of the rest are just similar.
 
 package 'main' //ERROR - no quotes for the package name: package main
 package "main" //ERROR - no quotes for the package: package main
