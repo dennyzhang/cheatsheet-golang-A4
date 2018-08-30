@@ -92,6 +92,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert list to string         | strings.Join(list, ", ")                      |
 | Convert byte to int            | =int(byte('a'))=                              |
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }= |
+| Convert string[] to string     | strings.Join([]string{"a", "b"}, ",")         |
 
 ** Integer/Float
 
