@@ -1,2 +1,2 @@
-*_flymake
-test.go
+*.tex
+README.pdf
