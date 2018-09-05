@@ -125,11 +125,23 @@ BeforeSuite and AfterSuite blocks to prep for and cleanup after a suite.
 ** TODO gexec.Build("github.com/amitkgupta/gexec-example"): https://github.com/Amit-PivotalLabs/gexec-example/blob/master/gexec_example_test.go#L17
 How I distribute my test code
 * org-mode configuration
-#+STARTUP: overview customtime noalign logdone hidestars
+#+STARTUP: overview customtime noalign logdone showall
 #+TAGS: ARCHIVE(a) WORK(w) LIFE(l) EMACS(e) IMPORTANT(i) Difficult(d) Communication(c) RECOMMENDATE(r) Tool(t) Habit(h) noexport(n) Share (s) BLOG(b)
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
 #+DRAWERS: HIDDEN CODE CONF EMAIL WEBPAGE SNIP
 #+PRIORITIES: A D C
 #+ARCHIVE: %s_done::** Finished Tasks
-#+AUTHOR: dennyzhang.com (denny@dennyzhang.com)
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-kubernetes-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-kubernetes-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-kubernetes-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
 #+OPTIONS: toc:2 \n:t ^:nil creator:nil d:nil
