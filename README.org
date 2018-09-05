@@ -249,7 +249,6 @@ close(c)
  #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+TITLE:  Golang CheatSheet
 #+DESCRIPTION: 
 #+KEYWORDS: 
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
