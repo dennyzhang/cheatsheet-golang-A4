@@ -22,6 +22,13 @@
 - Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
 
 File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
+
+** Golang Handy Commands
+| Name                                | Comment                                   |
+|-------------------------------------+-------------------------------------------|
+| Online Go Playgroud                 | https://play.golang.org/                  |
+| Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!" |
+| One line if statement               | if a >= 1 { fmt.Print("yes") }            |
 ** Syntax Sugar: From Python To Golang
 | Name           | Python                                   | Golang                                           |
 |----------------+------------------------------------------+--------------------------------------------------|
@@ -36,12 +43,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Get min        | =min(2, 6, 5)=                           |                                                  |
 | Check is nil   | =root is None=                           | root == nil                                      |
 | Reverse list   | =nums[::-1]=                             | Need to create your own function. Weird!         |
-
-** Golang Compact Coding
-| Name                                | Comment                                     |
-|-------------------------------------+---------------------------------------------|
-| Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!"   |
-| One line if statement               | if a >= 1 { fmt.Print("yes") }              |
 ** Array/List/Slice
 | Name                            | Comment                                       |
 |---------------------------------+-----------------------------------------------|
@@ -4278,3 +4279,4 @@ separator := "\\n    "
 https://github.com/a8m/go-lang-cheat-sheet
 
 https://github.com/a8m/go-lang-cheat-sheet/blob/master/golang_refcard.pdf
+* TODO consolidate and think beyond: https://github.com/a8m/go-lang-cheat-sheet :noexport:
