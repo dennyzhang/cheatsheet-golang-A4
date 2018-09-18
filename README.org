@@ -29,6 +29,8 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Online Go Playgroud                 | https://play.golang.org/                  |
 | Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!" |
 | One line if statement               | if a >= 1 { fmt.Print("yes") }            |
+| Golang switch                       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-switch.go][example-switch.go]]                         |
+
 ** Syntax Sugar: From Python To Golang
 | Name           | Python                                   | Golang                                           |
 |----------------+------------------------------------------+--------------------------------------------------|
@@ -381,18 +383,6 @@ http://www.datamation.com/open-source/ubuntu-what-theyre-doing-right-and-wrong-1
 <TITLE>Ubuntu: What They're Doing Right and Wrong - Datamation</title>
 
 /home/denny/go/src/pkg/regexp/exec_test.go
-#+begin_example
-			for _, c := range flag {
-				switch c {
-				case 'i':
-					syn |= syntax.FoldCase
-				}
-			}
-
-			re, err := compile(pattern, syn, true)
-			if err != nil {
-
-#+end_example
 *** DONE Regex to match any character including new lines ?(m)
   CLOSED: [2013-02-12 Tue 01:17]
 http://stackoverflow.com/questions/8303488/regex-to-match-any-character-including-new-lines
