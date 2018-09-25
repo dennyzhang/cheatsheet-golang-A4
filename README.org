@@ -17,9 +17,8 @@
 <a href="http://makeapullrequest.com" target="_blank" rel="nofollow"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs Welcome"/></a>
 #+END_HTML
 
-- PDF Link: [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/cheatsheet-golang-A4.pdf][cheatsheet-golang-A4.pdf]]
+- PDF Link: [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/cheatsheet-golang-A4.pdf][cheatsheet-golang-A4.pdf]], Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
-- Category: [[https://cheatsheet.dennyzhang.com/category/languages/][languages]]
 
 File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
 
@@ -242,14 +241,14 @@ close(c)
  - https://github.com/a8m/go-lang-cheat-sheet
 
  License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
- #+BEGIN_HTML
+#+BEGIN_HTML
  <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
  <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
 
  <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
  <a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
  <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
- #+END_HTML
+#+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
 #+DESCRIPTION: 
