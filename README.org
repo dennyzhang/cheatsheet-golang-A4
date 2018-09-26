@@ -5,7 +5,7 @@
 :END:
 
 #+BEGIN_HTML
-<a href="https://github.com/dennyzhang/cheatsheet-golang-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
+<a href="https://github.com/dennyzhang/.*cheatsheet-golang-A4"><img align="right" width="200" height="183" src="https://www.dennyzhang.com/wp-content/uploads/denny/watermark/github.png" /></a>
 
 <div id="the whole thing" style="overflow: hidden;">
 <div style="float: left; padding: 5px"> <a href="https://www.linkedin.com/in/dennyzhang001"><img src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a></div>
@@ -106,6 +106,12 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Int max               | =MaxInt32  = 1<<31 - 1= [[https://golang.org/pkg/math/][golang math]] |
 | Int min               | =MinInt32 = -1 << 31=   [[https://golang.org/pkg/math/][golang math]] |
 | Pass int as reference | [[https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence][sample code]]                         |
+
+** Package management
+| Name       | Comment                             |
+|------------+-------------------------------------|
+| go mod     | [[https://github.com/golang/go/wiki/Modules][link: go modules]]                    |
+| go get fix | =GO111MODULE=off go get -fix ./...= |
 
 ** Ascii
 | Name                | Comment                                          |
