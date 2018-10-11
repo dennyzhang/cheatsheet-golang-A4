@@ -6,9 +6,10 @@
 // File: helloworld.go
 // Author : Denny <https://www.dennyzhang.com/contact>
 // Description :
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-08-10 23:10:02>
+// Updated: Time-stamp: <2018-10-06 16:40:15>
 //-------------------------------------------------------------------
 package main
 

@@ -7,9 +7,10 @@
 // Author : Denny <https://www.dennyzhang.com/contact>
 // Description : go run interface_conversion.go
 // Link: https://www.golang-book.com/books/intro/13
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-07-11 22:33:09>
+// Updated: Time-stamp: <2018-10-06 16:40:25>
 //-------------------------------------------------------------------
 package main
 

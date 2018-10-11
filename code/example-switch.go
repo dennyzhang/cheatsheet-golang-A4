@@ -1,3 +1,5 @@
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
+
 	for _, c := range flag {
 		switch c {
 		case 'i':

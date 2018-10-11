@@ -7,9 +7,10 @@
 // Author : Denny <https://www.dennyzhang.com/contact>
 // Description : go run example_json.go
 // Link: https://www.chazzuka.com/2015/03/load-parse-json-file-golang/
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-08 13:02:18>
+// Updated: Time-stamp: <2018-10-06 16:40:26>
 //-------------------------------------------------------------------
 package main
 

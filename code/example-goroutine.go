@@ -6,9 +6,10 @@
 // File: example_goroutine.go
 // Author : Denny <https://www.dennyzhang.com/contact>
 // Description : go run example_goroutine.go
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 16:15:49>
+// Updated: Time-stamp: <2018-10-06 16:40:26>
 //-------------------------------------------------------------------
 package main
 

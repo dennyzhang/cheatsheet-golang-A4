@@ -3,9 +3,10 @@
 // Description :
 //    go run example_frontend.go
 //    curl http://localhost:8080/view/
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 16:58:58>
+// Updated: Time-stamp: <2018-10-06 16:39:56>
 //-------------------------------------------------------------------
 // link: https://golang.org/doc/articles/wiki/part2.go
 // Copyright 2010 The Go Authors. All rights reserved.

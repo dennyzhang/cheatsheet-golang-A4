@@ -5,9 +5,10 @@
 // Description : go run example_procedue_pig.go
 // https://golang.org/doc/codewalk/functions/
 //
+// https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 // --
 // Created : <2018-04-07>
-// Updated: Time-stamp: <2018-04-07 15:09:34>
+// Updated: Time-stamp: <2018-10-06 16:40:26>
 //-------------------------------------------------------------------
 package main
 
