@@ -21,7 +21,6 @@
 - Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4
 
 File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
-
 ** Golang Handy Commands
 | Name                                | Comment                                   |
 |-------------------------------------+-------------------------------------------|
@@ -29,7 +28,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!" |
 | One line if statement               | if a >= 1 { fmt.Print("yes") }            |
 | Golang switch                       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-switch.go][example-switch.go]]                         |
-
 ** Syntax Sugar: From Python To Golang
 | Name           | Python                                   | Golang                                           |
 |----------------+------------------------------------------+--------------------------------------------------|
@@ -63,7 +61,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Copy a list                     | b := make([]l, len(a)); copy(b, a)            |
 | Join two lists                  | =l1 = append(l1, l2...)=                      |
 | Use pointer of array list       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/pointer-array.go][code/pointer-array.go]]                         |
-
 ** String
 [[https://golang.org/pkg/strings/][Package strings]]
 
@@ -83,7 +80,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Trim whitespace in two sides | =strings.TrimSpace("\t Hello world!\n ")=                       |
 | Trim trailing whitespace     | =strings.TrimRight("\t Hello world!\n ", "\n ")=                |
 | Concact string               | =fmt.Sprintf("%s%s", str1, str2)=                               |
-
 ** Conversion
 | Name                           | Comment                                       |
 |--------------------------------+-----------------------------------------------|
@@ -99,7 +95,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert bytes to string        | =string([]byte("abcXX"))=                     |
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }= |
 | Convert string[] to string     | strings.Join([]string{"a", "b"}, ",")         |
-
 ** Integer/Float
 
 | Name                  | Comment                             |
@@ -107,19 +102,16 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Int max               | =MaxInt32  = 1<<31 - 1= [[https://golang.org/pkg/math/][golang math]] |
 | Int min               | =MinInt32 = -1 << 31=   [[https://golang.org/pkg/math/][golang math]] |
 | Pass int as reference | [[https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence][sample code]]                         |
-
 ** Package management
 | Name       | Comment                             |
 |------------+-------------------------------------|
 | go mod     | [[https://github.com/golang/go/wiki/Modules][link: go modules]]                    |
 | go get fix | =GO111MODULE=off go get -fix ./...= |
-
 ** Ascii
 | Name                | Comment                                          |
 |---------------------+--------------------------------------------------|
 | get character ascii | =byte('0')=                                      |
 | ascii offset        | =fmt.Println(string('B' + byte('a')-byte('A')))= |
-
 ** Dict/Hashmap/Map
 
 | Name                  | Comment                          |
@@ -129,25 +121,22 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Check existence       | _, ok := m[k]                    |
 | Delete key            | =delete(m, "k1")=                |
 | Create a map of lists | m := make(map[string][]string)   |
-  
+
 ** Goroutines
 | Name            | Comment                   |
 |-----------------+---------------------------|
 | Basic goroutine | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-goroutine.go][code/example-goroutine.go]] |
-
 ** Inteface
 
 | Name                                                       | Comment                       |
 |------------------------------------------------------------+-------------------------------|
 | Hash map with both key and value dynamic                   | =map[interface{}]interface{}= |
 | Convert map[interface {}]interface {} to map[string]string | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/interface-conversion.go][code/interface-conversion.go]]  |
-
 ** Files & Folders
 | Name        | Comment                    |
 |-------------+----------------------------|
 | Read files  | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-read-file.go][code/example-read-file.go]] |
 | Write files | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-write-file.go][code/example-write-file.go]] |
-
 ** Bit Operator & Math
 | Name        | Comment                                     |
 |-------------+---------------------------------------------|
@@ -241,7 +230,6 @@ d := <-c // blocks on unbuffered channels until another routine sends the value
 
 close(c)
 #+END_SRC
-
 ** More Resources
  - https://tour.golang.org/list
  - https://golang.org/doc/
@@ -258,8 +246,8 @@ close(c)
 #+END_HTML
 * org-mode configuration                                           :noexport:
 #+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION: 
-#+KEYWORDS: 
+#+DESCRIPTION:
+#+KEYWORDS:
 #+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
 #+LaTeX_CLASS_OPTIONS: [8pt]
 #+LATEX_HEADER: \usepackage[english]{babel}
@@ -279,8 +267,8 @@ close(c)
 #+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+EXPORT_EXCLUDE_TAGS: exclude noexport
 #+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_UP:
+#+LINK_HOME:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * Golang                                                    :noexport:Coding:
 :PROPERTIES:
