@@ -62,10 +62,9 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Join two lists                  | =l1 = append(l1, l2...)=                      |
 | Use pointer of array list       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/pointer-array.go][code/pointer-array.go]]                         |
 ** String
-[[https://golang.org/pkg/strings/][Package strings]]
-
 | Name                         | Comment                                                         |
 |------------------------------+-----------------------------------------------------------------|
+| Reference                    | [[https://golang.org/pkg/strings/][link: package strings]]                                           |
 | Format string                | =fmt.Sprintf("At %v, %s", e.When, e.What)=                      |
 | Format string                | =fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)= |
 | Split string                 | =var L = strings.Split("hi,golang", ",")=                       |
@@ -96,7 +95,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }= |
 | Convert string[] to string     | strings.Join([]string{"a", "b"}, ",")         |
 ** Integer/Float
-
 | Name                  | Comment                             |
 |-----------------------+-------------------------------------|
 | Int max               | =MaxInt32  = 1<<31 - 1= [[https://golang.org/pkg/math/][golang math]] |
@@ -4264,3 +4262,4 @@ https://github.com/a8m/go-lang-cheat-sheet
 
 https://github.com/a8m/go-lang-cheat-sheet/blob/master/golang_refcard.pdf
 * TODO consolidate and think beyond: https://github.com/a8m/go-lang-cheat-sheet :noexport:
+* TODO golang heap                                                 :noexport:
