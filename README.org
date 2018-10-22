@@ -64,7 +64,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 ** String
 | Name                         | Comment                                                         |
 |------------------------------+-----------------------------------------------------------------|
-| Reference                    | [[https://golang.org/pkg/strings/][link: package strings]]                                           |
+| Reference                    | [[https://golang.org/pkg/strings/][Link: package strings]]                                           |
 | Format string                | =fmt.Sprintf("At %v, %s", e.When, e.What)=                      |
 | Format string                | =fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)= |
 | Split string                 | =var L = strings.Split("hi,golang", ",")=                       |
@@ -90,6 +90,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert int to float32         | 0.5*float32(age)+7>= float32(age2)            |
 | Convert int to string          | s := strconv.Itoa(-42)                        |
 | Convert list to string         | strings.Join(list, ", ")                      |
+| Convert list to byte           | byteI := byte(65)                             |
 | Convert byte to int            | =int(byte('a'))=                              |
 | Convert bytes to string        | =string([]byte("abcXX"))=                     |
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }= |
@@ -103,7 +104,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 ** Package management
 | Name       | Comment                             |
 |------------+-------------------------------------|
-| go mod     | [[https://github.com/golang/go/wiki/Modules][link: go modules]]                    |
+| go mod     | [[https://github.com/golang/go/wiki/Modules][Link: go modules]]                    |
 | go get fix | =GO111MODULE=off go get -fix ./...= |
 ** Ascii
 | Name                | Comment                                          |
@@ -142,7 +143,13 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Shift right | =fmt.Print(1024 >> 3)= // 128               |
 | pow(2, 3)   | =int(math.Pow(2, 3))= // Default is float64 |
 
-# Code snippets
+** Golang Missing Datastructure
+| Name      | Comment           |
+|-----------+-------------------|
+| bfs       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]  |
+| trie tree | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]] |
+
+** Code snippets
 - Create 2D arrays
 #+BEGIN_SRC go
 // static
@@ -4263,3 +4270,12 @@ https://github.com/a8m/go-lang-cheat-sheet
 https://github.com/a8m/go-lang-cheat-sheet/blob/master/golang_refcard.pdf
 * TODO consolidate and think beyond: https://github.com/a8m/go-lang-cheat-sheet :noexport:
 * TODO golang heap                                                 :noexport:
+* TODO golang rune, byte                                           :noexport:
+* HALF golang set: doesn't have                                    :noexport:
+https://github.com/deckarep/golang-set
+
+Coming from Python one of the things I miss is the superbly wonderful set collection.
+
+This is my attempt to mimic the primary features of the set from Python. You can of course argue that there is no need for a set in Go, otherwise the creators would have added one to the standard library. To those I say simply ignore this repository and carry-on and to the rest that find this useful please contribute in helping me make it better by
+* TODO golang byte, rune, string: https://leetcode.com/problems/shortest-distance-to-a-character/discuss/125941/Golang-BFS :noexport:
+* HALF doc: release ram usage earlier, thus we can lower the space complexity: https://leetcode.com/problems/number-of-boomerangs/description/ :noexport:
