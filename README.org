@@ -112,7 +112,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | get character ascii | =byte('0')=                                      |
 | ascii offset        | =fmt.Println(string('B' + byte('a')-byte('A')))= |
 ** Dict/Hashmap/Map
-
 | Name                  | Comment                          |
 |-----------------------+----------------------------------|
 | Create dict           | =map[string]int{"a": 1, "b": 2}= |
@@ -142,13 +141,11 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Shift left  | =fmt.Print(1 << 10)= // 1024                |
 | Shift right | =fmt.Print(1024 >> 3)= // 128               |
 | pow(2, 3)   | =int(math.Pow(2, 3))= // Default is float64 |
-
-** Golang Missing Datastructure
+** Golang Common Algorithms
 | Name      | Comment           |
 |-----------+-------------------|
 | bfs       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]  |
 | trie tree | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]] |
-
 ** Code snippets
 - Create 2D arrays
 #+BEGIN_SRC go
@@ -4279,3 +4276,17 @@ Coming from Python one of the things I miss is the superbly wonderful set collec
 This is my attempt to mimic the primary features of the set from Python. You can of course argue that there is no need for a set in Go, otherwise the creators would have added one to the standard library. To those I say simply ignore this repository and carry-on and to the rest that find this useful please contribute in helping me make it better by
 * TODO golang byte, rune, string: https://leetcode.com/problems/shortest-distance-to-a-character/discuss/125941/Golang-BFS :noexport:
 * HALF doc: release ram usage earlier, thus we can lower the space complexity: https://leetcode.com/problems/number-of-boomerangs/description/ :noexport:
+* TODO ginkgo unfocus; ginkgo -r; ginkgo -r -v                     :noexport:
+* TODO golang Focus, Pend                                          :noexport:
+* TODO golang timeout                                              :noexport:
+* TODO golang net.Listener accept timeout                          :noexport:
+https://stackoverflow.com/questions/37386303/setting-timeout-via-setdeadline-for-tcp-listener
+* TODO [#A] golang zero or more syntax                             :noexport:
+* TODO golang json add tags                                        :noexport:
+* TODO golang compare byte                                         :noexport:
+* TODO golang stack                                                :noexport:
+https://stackoverflow.com/questions/28541609/looking-for-reasonable-stack-implementation-in-golang
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* HALF golang check type of variable                               :noexport:
+* TODO golang loop character in string: string to a slice of unicode code: range []rune(input) :noexport:
+* HALF avoid global variable: https://code.dennyzhang.com/boundary-of-binary-tree :noexport:
