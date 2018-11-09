@@ -46,6 +46,12 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert bytes to string        | =string([]byte("abcXX"))=                     |
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }= |
 | Convert string[] to string     | strings.Join([]string{"a", "b"}, ",")         |
+** Golang Common Algorithms
+| Name      | Comment                          |
+|-----------+----------------------------------|
+| bfs       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]                 |
+| queue     | [[https://code.dennyzhang.com/number-of-recent-calls][Leetcode: Number of Recent Calls]] |
+| trie tree | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]]                |
 ** Syntax Sugar: From Python To Golang
 | Name           | Python                                   | Golang                                           |
 |----------------+------------------------------------------+--------------------------------------------------|
@@ -143,11 +149,6 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Shift left  | =fmt.Print(1 << 10)= // 1024                |
 | Shift right | =fmt.Print(1024 >> 3)= // 128               |
 | pow(2, 3)   | =int(math.Pow(2, 3))= // Default is float64 |
-** Golang Common Algorithms
-| Name      | Comment           |
-|-----------+-------------------|
-| bfs       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]  |
-| trie tree | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]] |
 ** Code snippets
 - Create 2D arrays
 #+BEGIN_SRC go
@@ -4293,3 +4294,5 @@ https://stackoverflow.com/questions/28541609/looking-for-reasonable-stack-implem
 * HALF golang check type of variable                               :noexport:
 * TODO golang loop character in string: string to a slice of unicode code: range []rune(input) :noexport:
 * HALF avoid global variable: https://code.dennyzhang.com/boundary-of-binary-tree :noexport:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO golang implement a queue
