@@ -22,14 +22,7 @@
 - Related posts: [[https://cheatsheet.dennyzhang.com/cheatsheet-ruby-A4][Ruby CheatSheet]], [[https://cheatsheet.dennyzhang.com/cheatsheet-python-A4][Python CheatSheet]], [[https://github.com/topics/denny-cheatsheets][#denny-cheatsheets]]
 
 File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]] or star [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4][this repo]].
-** Golang Handy Commands
-| Name                                | Comment                                   |
-|-------------------------------------+-------------------------------------------|
-| Online Go Playgroud                 | https://play.golang.org/                  |
-| Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!" |
-| One line if statement               | if a >= 1 { fmt.Print("yes") }            |
-| Golang switch                       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-switch.go][example-switch.go]]                         |
-** Conversion
+** Golang Conversion
 | Name                           | Comment                                       |
 |--------------------------------+-----------------------------------------------|
 | Convert string to int          | i, _ := strconv.ParseInt("12345", 10, 64)     |
@@ -46,12 +39,19 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Convert bytes to string        | =string([]byte("abcXX"))=                     |
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }= |
 | Convert string[] to string     | strings.Join([]string{"a", "b"}, ",")         |
-** Golang Common Algorithms
-| Name      | Comment                          |
-|-----------+----------------------------------|
-| bfs       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]                 |
-| queue     | [[https://code.dennyzhang.com/number-of-recent-calls][Leetcode: Number of Recent Calls]] |
-| trie tree | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]]                |
+** Golang Code Structure & Common Algorithms
+| Name                                | Comment                                   |
+|-------------------------------------+-------------------------------------------|
+| Online Go Playgroud                 | https://play.golang.org/                  |
+| One line if statement               | if a >= 1 { fmt.Print("yes") }            |
+| Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!" |
+| switch                              | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-switch.go][code/example-switch.go]]                    |
+| queue                               | [[https://code.dennyzhang.com/number-of-recent-calls][Leetcode: Number of Recent Calls]]          |
+| bfs                                 | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]                          |
+| trie tree                           | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]]                         |
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
 ** Syntax Sugar: From Python To Golang
 | Name           | Python                                   | Golang                                           |
 |----------------+------------------------------------------+--------------------------------------------------|
@@ -66,7 +66,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Get min        | =min(2, 6, 5)=                           |                                                  |
 | Check is nil   | =root is None=                           | root == nil                                      |
 | Reverse list   | =nums[::-1]=                             | Need to create your own function. Weird!         |
-** Array/List/Slice
+** Golang Array/List/Slice
 | Name                            | Comment                                       |
 |---------------------------------+-----------------------------------------------|
 | Make a array                    | var a [2]string; a[0]="hello"; a[1]="world"   |
@@ -85,7 +85,7 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Copy a list                     | b := make([]l, len(a)); copy(b, a)            |
 | Join two lists                  | =l1 = append(l1, l2...)=                      |
 | Use pointer of array list       | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/pointer-array.go][code/pointer-array.go]]                         |
-** String
+** Golang String
 | Name                         | Comment                                                         |
 |------------------------------+-----------------------------------------------------------------|
 | Reference                    | [[https://golang.org/pkg/strings/][Link: package strings]]                                           |
@@ -103,23 +103,23 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Trim whitespace in two sides | =strings.TrimSpace("\t Hello world!\n ")=                       |
 | Trim trailing whitespace     | =strings.TrimRight("\t Hello world!\n ", "\n ")=                |
 | Concact string               | =fmt.Sprintf("%s%s", str1, str2)=                               |
-** Integer/Float
+** Golang Integer/Float
 | Name                  | Comment                             |
 |-----------------------+-------------------------------------|
 | Int max               | =MaxInt32  = 1<<31 - 1= [[https://golang.org/pkg/math/][golang math]] |
 | Int min               | =MinInt32 = -1 << 31=   [[https://golang.org/pkg/math/][golang math]] |
 | Pass int as reference | [[https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence][sample code]]                         |
-** Package management
+** Golang Package management
 | Name       | Comment                             |
 |------------+-------------------------------------|
 | go mod     | [[https://github.com/golang/go/wiki/Modules][Link: go modules]]                    |
 | go get fix | =GO111MODULE=off go get -fix ./...= |
-** Ascii
+** Golang Ascii
 | Name                | Comment                                          |
 |---------------------+--------------------------------------------------|
 | get character ascii | =byte('0')=                                      |
 | ascii offset        | =fmt.Println(string('B' + byte('a')-byte('A')))= |
-** Dict/Hashmap/Map
+** Golang Dict/Hashmap/Map
 | Name                  | Comment                          |
 |-----------------------+----------------------------------|
 | Create dict           | =map[string]int{"a": 1, "b": 2}= |
@@ -128,28 +128,75 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Delete key            | =delete(m, "k1")=                |
 | Create a map of lists | m := make(map[string][]string)   |
 
-** Goroutines
+** Golang Goroutines
 | Name            | Comment                   |
 |-----------------+---------------------------|
 | Basic goroutine | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-goroutine.go][code/example-goroutine.go]] |
-** Inteface
-
+#+BEGIN_HTML
+<a href="https://www.dennyzhang.com"><img align="right" width="185" height="37" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+#+END_HTML
+** Golang Inteface
 | Name                                                       | Comment                       |
 |------------------------------------------------------------+-------------------------------|
 | Hash map with both key and value dynamic                   | =map[interface{}]interface{}= |
 | Convert map[interface {}]interface {} to map[string]string | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/interface-conversion.go][code/interface-conversion.go]]  |
-** Files & Folders
+** Golang Files & Folders
 | Name        | Comment                    |
 |-------------+----------------------------|
 | Read files  | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-read-file.go][code/example-read-file.go]] |
 | Write files | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-write-file.go][code/example-write-file.go]] |
-** Bit Operator & Math
+** Golang Bit Operator & Math
 | Name        | Comment                                     |
 |-------------+---------------------------------------------|
 | Shift left  | =fmt.Print(1 << 10)= // 1024                |
 | Shift right | =fmt.Print(1024 >> 3)= // 128               |
 | pow(2, 3)   | =int(math.Pow(2, 3))= // Default is float64 |
-** Code snippets
+** More Resources
+https://play.golang.org/
+
+https://tour.golang.org/list
+
+https://golang.org/doc/
+
+https://github.com/a8m/go-lang-cheat-sheet
+
+ License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
+#+BEGIN_HTML
+ <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
+ <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+
+ <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
+ <a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
+ <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
+#+END_HTML
+* org-mode configuration                                           :noexport:
+#+STARTUP: overview customtime noalign logdone showall
+#+DESCRIPTION:
+#+KEYWORDS:
+#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
+#+LaTeX_CLASS_OPTIONS: [8pt]
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{lastpage}
+#+LATEX_HEADER: \usepackage{fancyhdr}
+#+LATEX_HEADER: \pagestyle{fancy}
+#+LATEX_HEADER: \fancyhf{}
+#+LATEX_HEADER: \rhead{Updated: \today}
+#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
+#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-golang-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-golang-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4}}
+#+AUTHOR: Denny Zhang
+#+EMAIL:  denny@dennyzhang.com
+#+TAGS: noexport(n)
+#+PRIORITIES: A D C
+#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_EXCLUDE_TAGS: exclude noexport
+#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
+#+LINK_UP:
+#+LINK_HOME:
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* DONE Code snippets                                               :noexport:
+  CLOSED: [2018-11-17 Sat 12:12]
 - Create 2D arrays
 #+BEGIN_SRC go
 // static
@@ -236,46 +283,64 @@ d := <-c // blocks on unbuffered channels until another routine sends the value
 
 close(c)
 #+END_SRC
-** More Resources
- - https://tour.golang.org/list
- - https://golang.org/doc/
- - https://github.com/a8m/go-lang-cheat-sheet
+* DONE Go by Example: Sorting by Functions                         :noexport:
+  CLOSED: [2018-04-17 Tue 11:06]
+https://stackoverflow.com/questions/28999735/what-is-the-shortest-way-to-simply-sort-an-array-of-structs-by-arbitrary-field
+https://gobyexample.com/sorting-by-functions
 
- License: Code is licensed under [[https://www.dennyzhang.com/wp-content/mit_license.txt][MIT License]].
-#+BEGIN_HTML
- <a href="https://www.dennyzhang.com"><img align="right" width="201" height="268" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/denny_201706.png"></a>
- <a href="https://www.dennyzhang.com"><img align="right" src="https://raw.githubusercontent.com/USDevOps/mywechat-slack-group/master/images/dns_small.png"></a>
+sort.Slice(planets, func(i, j int) bool {
+  return planets[i].Axis < planets[j].Axis
+})
+* DONE golang struct                                               :noexport:
+  CLOSED: [2018-04-16 Mon 23:10]
+https://tour.golang.org/moretypes/2
+package main
 
- <a href="https://www.linkedin.com/in/dennyzhang001"><img align="bottom" src="https://www.dennyzhang.com/wp-content/uploads/sns/linkedin.png" alt="linkedin" /></a>
- <a href="https://github.com/dennyzhang"><img align="bottom"src="https://www.dennyzhang.com/wp-content/uploads/sns/github.png" alt="github" /></a>
- <a href="https://www.dennyzhang.com/slack" target="_blank" rel="nofollow"><img align="bottom" src="https://slack.dennyzhang.com/badge.svg" alt="slack"/></a>
-#+END_HTML
-* org-mode configuration                                           :noexport:
-#+STARTUP: overview customtime noalign logdone showall
-#+DESCRIPTION:
-#+KEYWORDS:
-#+LATEX_HEADER: \usepackage[margin=0.6in]{geometry}
-#+LaTeX_CLASS_OPTIONS: [8pt]
-#+LATEX_HEADER: \usepackage[english]{babel}
-#+LATEX_HEADER: \usepackage{lastpage}
-#+LATEX_HEADER: \usepackage{fancyhdr}
-#+LATEX_HEADER: \pagestyle{fancy}
-#+LATEX_HEADER: \fancyhf{}
-#+LATEX_HEADER: \rhead{Updated: \today}
-#+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
-#+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-golang-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-golang-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4}}
-#+AUTHOR: Denny Zhang
-#+EMAIL:  denny@dennyzhang.com
-#+TAGS: noexport(n)
-#+PRIORITIES: A D C
-#+OPTIONS:   H:3 num:t toc:nil \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
-#+EXPORT_EXCLUDE_TAGS: exclude noexport
-#+SEQ_TODO: TODO HALF ASSIGN | DONE BYPASS DELEGATE CANCELED DEFERRED
-#+LINK_UP:
-#+LINK_HOME:
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+import "fmt"
+
+type Vertex struct {
+	X int
+	Y int
+}
+
+func main() {
+	fmt.Println(Vertex{1, 2})
+}
+* DONE golang log package                                          :noexport:
+  CLOSED: [2018-07-03 Tue 11:23]
+* DONE go get -t to retrieve the packages referenced in your code  :noexport:
+  CLOSED: [2018-07-04 Wed 10:02]
+http://onsi.github.io/gomega/
+#+BEGIN_EXAMPLE
+$ cd /path/to/my/app
+$ go get -t ./...
+#+END_EXAMPLE
+* DONE [#A] golang workspace                             :IMPORTANT:noexport:
+  CLOSED: [2018-07-05 Thu 14:40]
+https://golang.org/doc/code.html#Workspaces
+* DONE go get github package with specific version: go dep         :noexport:
+  CLOSED: [2018-07-11 Wed 09:25]
+https://gist.github.com/subfuzion/12342599e26f5094e4e2d08e9d4ad50d
+
+dep init
+dep ensure
+dep ensure --add github.com/gorilla/websocket@1.2.0
+
+https://stackoverflow.com/questions/24855081/how-do-i-import-a-specific-version-of-a-package-using-go-get
+https://github.com/golang/go/issues/21933
+https://github.com/golang/dep
+https://github.com/golang/go/wiki/PackagePublishing
+* DONE golang invalid character '\n' in string literal             :noexport:
+  CLOSED: [2018-08-01 Wed 17:26]
+https://stackoverflow.com/questions/38977555/error-embedding-n-into-a-string-literal
+#+BEGIN_SRC go
+separator := `\n    `
+#+END_SRC
+
+or
+#+BEGIN_SRC go
+separator := "\\n    "
+#+END_SRC
 * Golang                                                    :noexport:Coding:
 :PROPERTIES:
 :type:   Language
@@ -4166,109 +4231,10 @@ func main() [] //ERROR - where curly braces are required, only those are allowed
 
 func main() { fmt.Println('hello world') } //ERROR - use double quotes for strings: func main() { fmt.Println("hello world") }
    #+end_example
-* DONE Go by Example: Sorting by Functions                         :noexport:
-  CLOSED: [2018-04-17 Tue 11:06]
-https://stackoverflow.com/questions/28999735/what-is-the-shortest-way-to-simply-sort-an-array-of-structs-by-arbitrary-field
-https://gobyexample.com/sorting-by-functions
-
-sort.Slice(planets, func(i, j int) bool {
-  return planets[i].Axis < planets[j].Axis
-})
-* DONE golang struct                                               :noexport:
-  CLOSED: [2018-04-16 Mon 23:10]
-https://tour.golang.org/moretypes/2
-package main
-
-import "fmt"
-
-type Vertex struct {
-	X int
-	Y int
-}
-
-func main() {
-	fmt.Println(Vertex{1, 2})
-}
-* DONE golang switch                                               :noexport:
-  CLOSED: [2018-04-16 Mon 23:03]
-
-https://tour.golang.org/flowcontrol/9
-#+BEGIN_SRC go
-package main
-
-import (
-	"fmt"
-	"runtime"
-)
-
-func main() {
-	fmt.Print("Go runs on ")
-	switch os := runtime.GOOS; os {
-	case "darwin":
-		fmt.Println("OS X.")
-	case "linux":
-		fmt.Println("Linux.")
-	default:
-		// freebsd, openbsd,
-		// plan9, windows...
-		fmt.Printf("%s.", os)
-	}
-}
-#+END_SRC
-
-https://gobyexample.com/switch
-#+BEGIN_SRC go
- t := time.Now()
-    switch {
-    case t.Hour() < 12:
-        fmt.Println("It's before noon")
-    default:
-        fmt.Println("It's after noon")
-    }
-#+END_SRC
-* DONE golang log package                                          :noexport:
-  CLOSED: [2018-07-03 Tue 11:23]
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* DONE go get -t to retrieve the packages referenced in your code  :noexport:
-  CLOSED: [2018-07-04 Wed 10:02]
-http://onsi.github.io/gomega/
-#+BEGIN_EXAMPLE
-$ cd /path/to/my/app
-$ go get -t ./...
-#+END_EXAMPLE
-* DONE [#A] golang workspace                             :IMPORTANT:noexport:
-  CLOSED: [2018-07-05 Thu 14:40]
-https://golang.org/doc/code.html#Workspaces
-* DONE go get github package with specific version: go dep         :noexport:
-  CLOSED: [2018-07-11 Wed 09:25]
-https://gist.github.com/subfuzion/12342599e26f5094e4e2d08e9d4ad50d
-
-dep init
-dep ensure
-dep ensure --add github.com/gorilla/websocket@1.2.0
-
-https://stackoverflow.com/questions/24855081/how-do-i-import-a-specific-version-of-a-package-using-go-get
-https://github.com/golang/go/issues/21933
-https://github.com/golang/dep
-https://github.com/golang/go/wiki/PackagePublishing
 * TODO golang lint                                                 :noexport:
 https://github.com/securego/gosec
 https://github.com/golangci/golangci-lint
-* DONE golang invalid character '\n' in string literal             :noexport:
-  CLOSED: [2018-08-01 Wed 17:26]
-https://stackoverflow.com/questions/38977555/error-embedding-n-into-a-string-literal
-#+BEGIN_SRC go
-separator := `\n    `
-#+END_SRC
-
-or
-#+BEGIN_SRC go
-separator := "\\n    "
-#+END_SRC
-* Sample links                                                     :noexport:
-https://github.com/a8m/go-lang-cheat-sheet
-
-https://github.com/a8m/go-lang-cheat-sheet/blob/master/golang_refcard.pdf
 * TODO consolidate and think beyond: https://github.com/a8m/go-lang-cheat-sheet :noexport:
 * TODO golang heap                                                 :noexport:
 * TODO golang rune, byte                                           :noexport:
@@ -4295,4 +4261,448 @@ https://stackoverflow.com/questions/28541609/looking-for-reasonable-stack-implem
 * TODO golang loop character in string: string to a slice of unicode code: range []rune(input) :noexport:
 * HALF avoid global variable: https://code.dennyzhang.com/boundary-of-binary-tree :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
-* TODO golang implement a queue
+* TODO golang implement a queue                                    :noexport:
+* HALF golang byte, rune, string                                   :noexport:
+#+BEGIN_SRC go
+// Blog link: https://brain.dennyzhang.com/roman-to-integer
+// Basic Ideas: Examine from left to right.
+//     If current is smaller than the next, substract. Otherwise, add
+//
+// Complexity: Time O(n), Space O(1)
+// Related reading: https://en.wikipedia.org/wiki/Roman_numerals#Roman_numeric_system
+func romanToInt(s string) int {
+    m := map[byte]int{'I': 1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+    res := 0
+    for i, _ := range s {
+        if i == len(s)-1 {
+            res += m[s[i]]
+        } else{
+            if m[s[i]] < m[s[i+1]] {
+                res -= m[s[i]]
+            } else {
+                res += m[s[i]]
+            }
+        }
+    }
+    return res
+}
+#+END_SRC
+
+* TODO golang bytes.buffer: https://code.dennyzhang.com/integer-to-roman :noexport:
+* TODO golang zip: https://golang.org/pkg/archive/zip/             :noexport:
+* TODO golang array with tuple                                     :noexport:
+https://stackoverflow.com/questions/13670818/pair-tuple-data-type-in-go
+
+type Pair struct {
+    a, b interface{}
+}
+
+* TODO golang concat two slices                                    :noexport:
+* TODO golang insert into slice by index                           :noexport:
+* TODO golang: string and type                                     :noexport:
+https://leetcode.com/contest/weekly-contest-82/problems/goat-latin/
+// Basic Ideas: Split string as a list first
+// Complexity: Time O(n), Space O(n)
+import "strings"
+func toGoatLatin(S string) string {
+    res := ""
+    for i, word := range strings.Split(S, " ") {
+        ch := strings.ToLower(string(word[0]))
+        item := ""
+        if strings.Index("aeiouAEIOU", ch) != -1 {
+            item = word+"ma"
+        } else {
+            item = word[1:]+word[0]+"ma"
+        }
+        item = item + strings.Repeat("a", i+1)
+        res += item + " "
+    }
+    return res[0:len(res)-1]
+}
+* TODO golang sort two array according to one                      :noexport:
+* TODO [#A] github: golang chanllenges                             :noexport:
+https://github.com/golang-collections/collections
+** implement trie in golang
+https://code.dennyzhang.com/short-encoding-of-words
+https://github.com/derekparker/trie/blob/master/trie.go
+** implement bfs in golang: make sure the time complexity is consistent?
+** manage your code as a package
+https://github.com/cespare/go-trie/blob/master/trie.go
+package trie
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO golang: sort one array by another array                     :noexport:
+* TODO local notes                                                 :noexport:
+** TODO golang initialize array with -1                             :noexport:
+    l := [26]int{}
+    for i, _ := range l{ l[i]=-1 }
+** TODO golang add assertion: https://godoc.org/github.com/stretchr/testify/assert :noexport:
+** HALF golang create a hashmap with value as hashmap               :noexport:
+** TODO golang check whether element exists in slices               :noexport:
+https://stackoverflow.com/questions/10485743/contains-method-for-a-slice
+** HALF golang create a set for (i, j)                              :noexport:
+** HALF golang hashmap can't use struct as key
+https://play.golang.org/p/FcY_0ckwOZ
+
+** TODO golang []rune to string
+** TODO golang abs
+https://github.com/golang/go/issues/15447
+func abs(v int) int {
+    if v<0 { return -v }
+    return v
+}
+
+** TODO golang string to array
+** TODO golang compare two float numbers
+** TODO golang fmt Sprintf float64
+** TODO golang add item to the head
+s = append([]int{0}, s...)
+** TODO golang initialize a list with a different default value
+    l := make([]int, len(nums))
+    for i:= 0; i<len(nums); i++ { l[i] = 1 }
+** TODO mac install golang
+https://golang.org/doc/install
+** TODO golang heap
+** TODO golang interface to struct
+** TODO golang testing
+import "testing"
+
+function TestSomething(t *testing.T) {
+   if true {
+      t.Error("test failure message")
+   }
+
+   if true {
+      t.Errorf("test %s message", "failure")
+   }
+}
+** TODO golang exec
+#+BEGIN_EXAMPLE
+Eventually(session).Should(gexec.Exit(0))
+//the wrapped command should exit with status 0, eventually
+
+Eventually(buffer).Should(Say("something matching this regexp"))
+Eventually(session.Out).Should(Say("Splines reticulated"))
+#+END_EXAMPLE
+** TODO golang namespace convention
+Use MixedCase
+Names in Go should use MixedCase.
+
+(Don't use names_with_underscores.)
+
+Acronyms should be all capitals, as in ServeHTTP and IDProcessor.
+** TODO git sub-module: /Users/zdenny/Dropbox/private_data/work/vmware/k8s-observability/code/github
+** TODO golang bufio
+** TODO golang import private repo
+** TODO go depths
+** TODO golang interface: spec := o.(*v1beta1.Drain).Spec
+** TODO golang no switch
+** TODO golang json marshal, json unmarshal
+** TODO emacs golang auto complete
+** TODO emacs golang go to the function definition
+** TODO golang import
+import (
+	"bufio"
+	"flag"
+	"fmt"
+	"os"
+	"path/filepath"
+
+	appsv1 "k8s.io/api/apps/v1"
+	apiv1 "k8s.io/api/core/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/util/homedir"
+	"k8s.io/client-go/util/retry"
+	// Uncomment the following line to load the gcp plugin (only required to authenticate against GKE clusters).
+	// _ "k8s.io/client-go/plugin/pkg/client/auth/gcp"
+)
+** TODO go run cmd/main.go --kubeconfig=$HOME/.kube/config
+** TODO golang logging with metrics
+** TODO golang vgo for task dependency
+** TODO golang os/exec
+** TODO golang github.com/onsi/gomega/gexec: gexec.CleanupBuildArtifacts()
+** TODO go get -t -d "github.com/onsi/gomega" ...  | go get -t -d "github.com/onsi/gomega"
+** TODO golang process issue: /Users/zdenny/Dropbox/private_data/work/vmware/denny_code/fluent-bit-out-syslog.problem
+#+BEGIN_EXAMPLE
+bash-3.2$ go test -v
+=== RUN   TestCmd
+Running Suite: Cmd Suite
+========================
+Random Seed: 1530651210
+Will run 3 of 3 specs
+
+absWd: /Users/zdenny/Dropbox/private_data/work/vmware/denny_code/fluent-bit-out-syslog/cmd  path: /usr/local/Cellar/go/packages  absPath: /usr/local/Cellar/go/packages
+/usr/local/bin//docker
+Failure [0.015 seconds]
+[BeforeSuite] BeforeSuite
+/Users/zdenny/Dropbox/private_data/work/vmware/denny_code/fluent-bit-out-syslog/cmd/cmd_suite_test.go:30
+
+  Expected error:
+      <*errors.errorString | 0xc42028a040>: {
+          s: "unable to find go path dir",
+      }
+      unable to find go path dir
+  not to have occurred
+
+  /Users/zdenny/Dropbox/private_data/work/vmware/denny_code/fluent-bit-out-syslog/cmd/cmd_suite_test.go:55
+------------------------------
+
+Ran 3 of 0 Specs in 0.015 seconds
+FAIL! -- 0 Passed | 3 Failed | 0 Pending | 0 Skipped
+--- FAIL: TestCmd (0.02s)
+FAIL
+exit status 1
+FAIL	_/Users/zdenny/Dropbox/private_data/work/vmware/denny_code/fluent-bit-out-syslog/cmd	0.067s
+bash-3.2$
+#+END_EXAMPLE
+
+#+BEGIN_EXAMPLE
+package main_test
+
+import (
+	"errors"
+	"io/ioutil"
+	"os"
+	"os/exec"
+	"path"
+	"path/filepath"
+	"strings"
+	"testing"
+	"time"
+	"fmt"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+	"github.com/onsi/gomega/gexec"
+)
+
+func TestCmd(t *testing.T) {
+	RegisterFailHandler(Fail)
+	RunSpecs(t, "Cmd Suite")
+}
+
+var (
+	pluginPath string
+	cleanup    = func() {}
+)
+
+var _ = BeforeSuite(func() {
+	detectDocker()
+	pluginPath, cleanup = buildPlugin()
+})
+
+var _ = AfterSuite(func() {
+	cleanup()
+})
+
+func detectDocker() {
+	cmd := exec.Command("which", "docker")
+	sess, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
+	Expect(err).ToNot(HaveOccurred())
+	sess.Wait()
+	if sess.ExitCode() != 0 {
+		Fail("docker is required to be installed and running on your machine" +
+			" in order to build the plugin and run it with fluent bit")
+	}
+}
+
+func buildPlugin() (string, func()) {
+	tmpPath, err := ioutil.TempDir("/tmp", "")
+	Expect(err).ToNot(HaveOccurred())
+
+	gopath, err := goPath()
+	Expect(err).ToNot(HaveOccurred())
+	cmd := exec.Command(
+		"docker",
+		"run",
+		"--volume", gopath+":/go",
+		"--volume", tmpPath+":/output",
+		"golang:latest",
+		"go",
+		"build",
+		"-buildmode", "c-shared",
+		"-o", "/output/out_syslog.so",
+		"github.com/oratos/out_syslog/cmd",
+	)
+	sess, err := gexec.Start(cmd, GinkgoWriter, GinkgoWriter)
+	Expect(err).ToNot(HaveOccurred())
+	sess.Wait(5 * time.Minute)
+
+	return path.Join(tmpPath, "out_syslog.so"), func() {
+		err := os.RemoveAll(tmpPath)
+		Expect(err).ToNot(HaveOccurred())
+	}
+}
+
+func goPath() (string, error) {
+	wd, err := os.Getwd()
+	if err != nil {
+		return "", err
+	}
+	absWd, err := filepath.Abs(wd)
+	if err != nil {
+		return "", err
+	}
+	for _, path := range strings.Split(os.Getenv("GOPATH"), ":") {
+		absPath, err := filepath.Abs(path)
+		fmt.Println("absWd:", absWd, " path:", path, " absPath:", absPath)
+		if err != nil {
+			continue
+		}
+		if strings.Contains(absWd, absPath) {
+			return absPath, nil
+		}
+	}
+	return "", errors.New("unable to find go path dir")
+}
+
+#+END_EXAMPLE
+
+** TODO golang use switch: https://code.dennyzhang.com/utf-8-validation
+** TODO golang use pointer as hashmap key
+** HALF golang get map keys
+https://stackoverflow.com/questions/41690156/how-to-get-the-keys-as-string-array-from-map-in-go-lang/41691320
+** TODO golang whether needs to delete pointer?
+https://leetcode.com/problems/design-linked-list/description/
+
+** TODO golang glog
+"github.com/golang/glog"
+
+** TODO [#A] https://golang.org/doc/code.html#Workspaces
+** TODO [#A] https://golang.org/doc/effective_go.html
+** TODO golang HTTP.GET()
+** TODO golang []unit8, []byte
+** TODO golang coverage: go tool cover
+go test -cover
+** HALF golang $GOROOT and $GOPATH
+https://astaxie.gitbooks.io/build-web-application-with-golang/en/01.2.html
+
+export GOROOT=/usr/local/Cellar/go/1.10.3/libexec
+export GOPATH=/usr/local/Cellar/go/packages
+
+#+BEGIN_EXAMPLE
+export GOPATH="/Users/***/work/go"
+export GO="/usr/local/Cellar/go/1.8.3"
+export GOROOT=$GO/libexec
+export PATH=$GO/bin:$GOPATH/bin:$PATH
+#+END_EXAMPLE
+
+** TODO golang rune vs byte
+** TODO golang check whether item in a int slice
+** TODO golang: https://github.com/SimonWaldherr/golang-examples
+** TODO golang: https://github.com/golang/example
+** TODO emacs golang: https://johnsogg.github.io/emacs-golang
+http://tleyden.github.io/blog/2014/05/22/configure-emacs-as-a-go-editor-from-scratch/
+
+** HALF golang copy a map: you need to copy them by yourself
+package main
+
+import (
+"fmt"
+)
+func main() {
+    map1 := map[string]int{
+        "x":1,
+        "y":2,
+    }
+    map2 := map[string]int{}
+
+    /* Copy Content from Map1 to Map2*/
+    for index,element := range map1{
+         map2[index] = element
+    }
+
+    for index,element := range map2{
+        fmt.Println(index,"=>",element)
+    }
+}
+http://www.golangprograms.com/how-to-copy-a-map-to-another.html
+
+https://stackoverflow.com/questions/23057785/how-to-copy-a-map
+** TODO golang struct: by pointer or by reference
+** TODO golang import and golang import .
+#+BEGIN_EXAMPLE
+import (
+	"testing"
+
+	. "github.com/onsi/ginkgo"
+	. "github.com/onsi/gomega"
+)
+#+END_EXAMPLE
+
+** TODO [#A] emacs setup for golang
+https://godoc.org/golang.org/x/tools/cmd/goimports
+godoc.org
+Command goimports
+Command goimports updates your Go import lines, adding missing ones and removing unreferenced ones.
+This tool is a superset of gofmt that also fixes import statements.
+
+** TODO golang strings.EqualFold
+https://github.com/pivotal-cf/fluent-bit-out-syslog/pull/11/files
+** HALF golang add assertion
+** HALF golang create tmp folders/files
+#+BEGIN_SRC go
+
++func openWriteFile() (*os.File, func()) {
++	tmpDir, err := ioutil.TempDir("/tmp", "")
++	Expect(err).ToNot(HaveOccurred())
++
++	f, err := ioutil.TempFile(tmpDir, "")
++	Expect(err).ToNot(HaveOccurred())
++
++	return f, func() {
++		err := os.RemoveAll(tmpDir)
++		Expect(err).ToNot(HaveOccurred())
++	}
++}
+#+END_SRC
+
+** TODO effective go: https://golang.org/doc/effective_go.html
+https://talks.golang.org/2010/ExpressivenessOfGo-2010.pdf
+** TODO golang workspace: https://golang.org/doc/code.html#Workspaces
+** TODO why golang name it slice, instead of list or array?
+** TODO understand golang interfaces
+Interfaces are one of most important building blocks of golang. Also, its usage make golang as language very simpler to use. for example, you can look into “io” package.
+http://kunalkushwaha.github.io/2015/09/11/understanding-golang-interfaces/
+
+** TODO emacs flymake for golang: when we save file, run code static check
+** TODO golang ...
+	ts.start(handlerOptions...)
+	return ts
+}
+
+func (t *tcpServer) start(handlerOptions ...HandlerOptions) {
+	log.Printf("Starting syslog server on: %s", t.syslogAddr)
+	var err error
+** TODO go mod
+** TODO go test --gingo -v
+** HALF types.go
+** TODO go bin
+bin.go
+
+MustAsset
+doc.go
+
+go generate
+** TODO operator: go code generator
+** TODO go path issue
+ out.go    10   2 error           cannot find package "code.cloudfoundry.org/rfc5424" in any of:
+ 	/usr/local/Cellar/go/1.10.3/libexec/src/code.cloudfoundry.org/rfc5424 (from $GOROOT)
+ 	/Users/zdenny/go/src/code.cloudfoundry.org/rfc5424 (from $GOPATH) (go-build)
+** TODO go test -race: https://github.com/pivotal-cf/oratos-ci/commit/7d47cc4820e9dce8ba7ba55c5a888cd6f7f5ab92
+go test $(eval "$PKGS_HOOK") -race
+** TODO go test $(go list ./... | grep -v vendor) -race
+** TODO go spew
+** TODO go module
+cd cmd
+
+go build
+
+~/go/pkg/mod
+** TODO go test ./... -race
+** TODO Go Buildpack
+** TODO go get, go mod
+https://github.com/golang/go/wiki/Modules
+** TODO go over the nsx-t process manually: https://www.youtube.com/watch?v=B7XOoOCiM00&list=PL7bmigfV0EqQzsvOcT8KYfulg-lpNsooC&index=2
+** TODO go swagger
