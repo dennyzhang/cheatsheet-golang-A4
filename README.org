@@ -4259,6 +4259,7 @@ https://stackoverflow.com/questions/28541609/looking-for-reasonable-stack-implem
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * HALF golang check type of variable                               :noexport:
 * TODO golang loop character in string: string to a slice of unicode code: range []rune(input) :noexport:
+* TODO consolidate: https://jimmysong.io/cheatsheets/go            :noexport:
 * HALF avoid global variable: https://code.dennyzhang.com/boundary-of-binary-tree :noexport:
 * #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO golang implement a queue                                    :noexport:
