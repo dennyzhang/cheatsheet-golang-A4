@@ -104,11 +104,11 @@ File me [[https://dockerhub.com/DennyZhang/cheatsheet-docker-A4/issues][Issues]]
 | Trim trailing whitespace     | =strings.TrimRight("\t Hello world!\n ", "\n ")=                |
 | Concact string               | =fmt.Sprintf("%s%s", str1, str2)=                               |
 ** Golang Integer/Float
-| Name                  | Comment                             |
-|-----------------------+-------------------------------------|
-| Int max               | =MaxInt32  = 1<<31 - 1= [[https://golang.org/pkg/math/][golang math]] |
-| Int min               | =MinInt32 = -1 << 31=   [[https://golang.org/pkg/math/][golang math]] |
-| Pass int as reference | [[https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence][sample code]]                         |
+| Name                  | Comment                          |
+|-----------------------+----------------------------------|
+| Int max               | MaxInt32 = 1<<31 - 1 [[https://golang.org/pkg/math/][golang math]] |
+| Int min               | MinInt32 = -1 << 31 [[https://golang.org/pkg/math/][golang math]]  |
+| Pass int as reference | [[https://code.dennyzhang.com/binary-tree-longest-consecutive-sequence][sample code]]                      |
 ** Golang Package management
 | Name       | Comment                             |
 |------------+-------------------------------------|
@@ -4664,7 +4664,7 @@ https://talks.golang.org/2010/ExpressivenessOfGo-2010.pdf
 ** TODO golang workspace: https://golang.org/doc/code.html#Workspaces
 ** TODO why golang name it slice, instead of list or array?
 ** TODO understand golang interfaces
-Interfaces are one of most important building blocks of golang. Also, its usage make golang as language very simpler to use. for example, you can look into “io” package.
+Interfaces are one of most important building blocks of golang. Also, its usage make golang as language very simpler to use. for example, you can look into "io" package.
 http://kunalkushwaha.github.io/2015/09/11/understanding-golang-interfaces/
 
 ** TODO emacs flymake for golang: when we save file, run code static check
@@ -4707,3 +4707,6 @@ go build
 https://github.com/golang/go/wiki/Modules
 ** TODO go over the nsx-t process manually: https://www.youtube.com/watch?v=B7XOoOCiM00&list=PL7bmigfV0EqQzsvOcT8KYfulg-lpNsooC&index=2
 ** TODO go swagger
+* TODO [#A] Ginkgo choose test scenario conditionally: env_type    :noexport:
+https://www.agiratech.com/golang-testing-using-ginkgo/
+* TODO ginkgo BeforeEach check context name                        :noexport:
