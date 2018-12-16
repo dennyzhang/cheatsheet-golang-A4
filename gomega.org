@@ -2,6 +2,7 @@
 | Name                        | Summary                                                    |
 |-----------------------------+------------------------------------------------------------|
 | ginkgo                      | BDD Testing Framework for Go http://onsi.github.io/ginkgo/ |
+| [[https://www.howtoinstall.co/en/ubuntu/xenial/golang-ginkgo-dev][Ubuntu install ginkgo]]       | =apt-get install golang-ginkgo-dev=                        |
 |-----------------------------+------------------------------------------------------------|
 | gomega                      | Ginkgo's Preferred Matcher Library                         |
 | gomega validation functions | https://godoc.org/github.com/onsi/gomega                   |
