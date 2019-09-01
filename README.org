@@ -29,11 +29,13 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Convert string to int          | i, err := strconv.Atoi("-42")                                   |
 | Convert string to list         | L := strings.Split("hi,golang", "")                             |
 | Convert string to []byte       | =[]byte("abcXX")=                                               |
+| Convert string to byte         | =byte(str1[])=                                                  |
 | Convert string to float32      | f, _ := strconv.ParseFloat("3.1415", 32)                        |
 | Convert int to float32         | 0.5*float32(age)+7>= float32(age2)                              |
-| Convert int to string          | s := strconv.Itoa(-42)                                          |
+| Convert int to string          | s := strconv.Itoa(-42). Notice: not =string(-42)                |
 | Convert rune to string         | =string(rune1)=                                                 |
-| Convert list to string         | =strings.Join(list, ", ")=                                      |
+| Convert string list to string  | =strings.Join(list, ", ")=                                      |
+| Convert int list to string     | =fmt.Sprintf("%s", l)=                                          |
 | Convert list to byte           | byteI := byte(65)                                               |
 | Convert byte to int            | =int(byte('a'))=                                                |
 | Convert byte to string         | =string(byte('a'))=                                             |
@@ -165,10 +167,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | =go env=  | Show a full list of environment variables                     |
 | Reference | [[https://www.programming-books.io/essential/go/gopath-goroot-gobin-d6da4b8481f94757bae43be1fdfa9e73][Link: GOPATH, GOROOT, GOBIN]]                                   |
 ** Golang Package management
-| Name       | Comment                                                       |
-|------------+---------------------------------------------------------------|
-| go mod     | [[https://github.com/golang/go/wiki/Modules][Link: go modules]]                                              |
-| go get fix | =GO111MODULE=off go get -fix ./...=                           |
+| Name               | Comment                             |
+|--------------------+-------------------------------------|
+| go mod             | [[https://github.com/golang/go/wiki/Modules][Link: go modules]]                    |
+| go get fix         | =GO111MODULE=off go get -fix ./...= |
+| go mod replace url | go mod edit -replace...             |
 ** Golang Ascii
 | Name                | Comment                                          |
 |---------------------+--------------------------------------------------|
@@ -217,10 +220,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | [[http://onsi.github.io/gomega][gomega]]                | Ginkgo's Preferred Matcher Library                                        |
 | Add tags to tests     | =// +build availability=, =go test -v --tags=availability ./test/e2e/...= |
 ** Golang Misc
-| Name           | Comment                                       |
-|----------------+-----------------------------------------------|
-| [[https://gobyexample.com/timeouts][Golang sleep]]   | =time.Sleep(4* time.Second)=                  |
-| Golang logging | =import "log"=, =log.Print=, =log.Fatal(err)= |
+| Name                       | Comment                                       |
+|----------------------------+-----------------------------------------------|
+| [[https://gobyexample.com/timeouts][Golang sleep]]               | =time.Sleep(4* time.Second)=                  |
+| Golang logging             | =import "log"=, =log.Print=, =log.Fatal(err)= |
+| [[https://stackoverflow.com/questions/25927660/how-to-get-the-current-function-name][Golang print function name]] | =runtime.Callers=                             |
 ** More Resources
 https://play.golang.org/
 
@@ -4918,4 +4922,3 @@ BeforeSuite and AfterSuite blocks to prep for and cleanup after a suite.
 ** TODO DescribeTable
 ** TODO gexec.Build("github.com/amitkgupta/gexec-example"): https://github.com/Amit-PivotalLabs/gexec-example/blob/master/gexec_example_test.go#L17
 How I distribute my test code
-
