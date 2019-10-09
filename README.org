@@ -32,7 +32,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Convert string to byte         | =byte(str1[])=                                                  |
 | Convert string to float32      | f, _ := strconv.ParseFloat("3.1415", 32)                        |
 | Convert int to float32         | 0.5*float32(age)+7>= float32(age2)                              |
-| Convert int to string          | s := strconv.Itoa(-42). Notice: not =string(-42)                |
+| Convert int to string          | s := strconv.Itoa(-42). Notice: not =string(-42)=               |
 | Convert rune to string         | =string(rune1)=                                                 |
 | Convert string list to string  | =strings.Join(list, ", ")=                                      |
 | Convert int list to string     | =fmt.Sprintf("%s", l)=                                          |
@@ -69,6 +69,17 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | make vendored copy of dependencies         | =go mod vendor=                                                                  |
 | add missing and remove unused modules      | =go mod tidy=                                                                    |
 | Reference                                  | [[https://blog.golang.org/using-go-modules][Link: Using Go Modules]]                                                           |
+
+** Deep Dive Into Golang
+- Go's original target was networked system infrastructure, what we now call cloud software
+| Name                                              | Comment                                                                                        |
+|---------------------------------------------------+------------------------------------------------------------------------------------------------|
+| Garbage Colection                                 |                                                                                                |
+| Golang goroutine                                  |                                                                                                |
+| Golang return a tuple                             | =func dfs(root *TreeNode, max *float64) (sum int, cnt int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]] |
+| Use strings.Builder, instead of string            | [[https://code.dennyzhang.com/unique-email-addresses][Leetcode: Unique Email Addresses]]                                                               |
+| Variable Conversion                               | =float64(x_int/y_int)= != =float64(x_int)/float64(y_int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]]   |
+| For a list of objects, pass by value or reference | =f(l []*TreeNode)= vs =f(l *[]*TreeNode)=, [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][Leetcode: Lowest Common Ancestor of a Binary Tree]]   |
 
 ** Golang Errors
 | Name                          | Comment                            |
@@ -178,14 +189,15 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | get character ascii | =byte('0')=                                      |
 | ascii offset        | =fmt.Println(string('B' + byte('a')-byte('A')))= |
 ** Golang Dict/Hashmap/Map
-| Name                  | Comment                                          |
-|-----------------------+--------------------------------------------------|
-| Create dict           | =map[string]int{"a": 1, "b": 2}=                 |
-| Create dict           | =make(map[string]int)=                           |
-| Check existence       | _, ok := m[k]                                    |
-| Delete key            | =delete(m, "k1")=                                |
-| Create a map of lists | m := make(map[string][]string)                   |
-| Get keys of a map     | Loop the dictionary and append the key to a list |
+| Name                      | Comment                                                  |
+|---------------------------+----------------------------------------------------------|
+| Create dict               | =map[string]int{"a": 1, "b": 2}=                         |
+| Create dict               | =make(map[string]int)=                                   |
+| Check existence           | _, ok := m[k]                                            |
+| Delete key                | =delete(m, "k1")=                                        |
+| Create a map of lists     | m := make(map[string][]string)                           |
+| Get keys of a map         | Loop the dictionary and append the key to a list         |
+| Use (x, y) as hashmap key | m[[2]int{2, 2}] = true, [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-hashmap-arraykey.go][code/example-hashmap-arraykey.go]] |
 
 ** Golang Goroutines
 | Name            | Comment                   |
@@ -205,13 +217,17 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 |-------------+----------------------------|
 | Read files  | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-read-file.go][code/example-read-file.go]] |
 | Write files | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-write-file.go][code/example-write-file.go]] |
+** Golang Math
+| Name      | Comment                                     |
+|-----------+---------------------------------------------|
+| pow(2, 3) | =int(math.Pow(2, 3))= // Default is float64 |
+| sqrt      | =math.Sqrt(100)=                            |
+| [[https://gobyexample.com/random-numbers][Get rand]]  | =rand.Intn(100)=, =rand.Float64()=          |
 ** Golang Bit Operator & Math
 | Name        | Comment                                     |
 |-------------+---------------------------------------------|
 | Shift left  | =fmt.Print(1 << 10)= // 1024                |
 | Shift right | =fmt.Print(1024 >> 3)= // 128               |
-| pow(2, 3)   | =int(math.Pow(2, 3))= // Default is float64 |
-| sqrt        | =math.Sqrt(100)=                            |
 ** Golang BBD Testing
 | Name                  | Summary                                                                   |
 |-----------------------+---------------------------------------------------------------------------|
@@ -223,7 +239,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Name                       | Comment                                       |
 |----------------------------+-----------------------------------------------|
 | [[https://gobyexample.com/timeouts][Golang sleep]]               | =time.Sleep(4* time.Second)=                  |
-| Golang logging             | =import "log"=, =log.Print=, =log.Fatal(err)= |
+| [[https://golang.org/pkg/log/][Golang logging]]             | =import "log"=, =log.Print=, =log.Fatal(err)= |
 | [[https://stackoverflow.com/questions/25927660/how-to-get-the-current-function-name][Golang print function name]] | =runtime.Callers=                             |
 ** More Resources
 https://play.golang.org/
@@ -4408,7 +4424,6 @@ package trie
     l := [26]int{}
     for i, _ := range l{ l[i]=-1 }
 ** TODO golang add assertion: https://godoc.org/github.com/stretchr/testify/assert :noexport:
-** HALF golang create a hashmap with value as hashmap               :noexport:
 ** TODO golang check whether element exists in slices               :noexport:
 https://stackoverflow.com/questions/10485743/contains-method-for-a-slice
 ** HALF golang create a set for (i, j)                              :noexport:
@@ -4795,7 +4810,6 @@ https://github.com/golang/dep
 
  curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
  apt-get install -y go-dep
-* #  --8<-------------------------- separator ------------------------>8-- :noexport:
 * TODO golang rune vs byte                                         :noexport:
 * TODO golang heap                                                 :noexport:
 https://golang.org/pkg/container/heap/#example__priorityQueue
@@ -4922,3 +4936,12 @@ BeforeSuite and AfterSuite blocks to prep for and cleanup after a suite.
 ** TODO DescribeTable
 ** TODO gexec.Build("github.com/amitkgupta/gexec-example"): https://github.com/Amit-PivotalLabs/gexec-example/blob/master/gexec_example_test.go#L17
 How I distribute my test code
+* golang questions                                                 :noexport:
+** TODO golang hashmap: map[[4]int] vs map[[]int]
+** TODO golang garbage collection
+** TODO go get -u k8s.io/client-go/..., vs  go get -u k8s.io/client-go vs go get -d -v k8s.io/client-go
+https://github.com/ponzu-cms/ponzu/issues/204
+* TODO golang hashmap use struct as key                            :noexport:
+Need to be hashable
+* #  --8<-------------------------- separator ------------------------>8-- :noexport:
+* TODO Q: Is golang runtime like JVM?                              :noexport:
