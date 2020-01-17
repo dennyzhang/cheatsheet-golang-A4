@@ -30,6 +30,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Convert string to list         | L := strings.Split("hi,golang", "")                             |
 | Convert string to []byte       | =[]byte("abcXX")=                                               |
 | Convert string to byte         | =byte(str1[])=                                                  |
+| Convert byte to string         | =string(byte('a'))==                                            |
 | Convert string to float32      | f, _ := strconv.ParseFloat("3.1415", 32)                        |
 | Convert int to float32         | 0.5*float32(age)+7>= float32(age2)                              |
 | Convert int to string          | s := strconv.Itoa(-42). Notice: not =string(-42)=               |
@@ -42,8 +43,26 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Convert bytes to string        | =string([]byte("abcXX"))=                                       |
 | Convert int32 to int32 Pointer | =func int32Ptr(i int32) *int32 { return &i }=                   |
 | Convert string[] to string     | =strings.Join([]string{"a", "b"}, ",")=                         |
+| Format string                  | =fmt.Sprintf("%.3f", float64(v)/1000)=                          |
 | Format string                  | =fmt.Sprintf("At %v, %s", e.When, e.What)=                      |
 | Format string                  | =fmt.Printf("int: %d, float: %f, bool: %t\n", 123, 78.9, true)= |
+
+** Deep Dive Into Golang
+- Go's original target was networked system infrastructure, what we now call cloud software
+| Name                                              | Comment                                                                                        |
+|---------------------------------------------------+------------------------------------------------------------------------------------------------|
+| Golang goroutine                                  |                                                                                                |
+| [[https://medium.com/a-journey-with-go/go-how-does-defer-statement-work-1a9492689b6e][How Golang implement =defer=]]                      | Execute a piece of code before a function returns with FILO mechanism                          |
+| How Golang implement timer                        |                                                                                                |
+| Golang for vs loop                                |                                                                                                |
+| Garbage Colection                                 |                                                                                                |
+| Golang CSP vs Erlang Actor Model                  | Each actor model, which actor has its own queue                                                |
+|---------------------------------------------------+------------------------------------------------------------------------------------------------|
+| How Golang channel feature is implement?          | [[https://www.youtube.com/watch?v=KBZlN0izeiY][YouTube: GopherCon 2017: Understanding Channels]], [[https://draveness.me/golang/docs/part3-runtime/ch06-concurrency/golang-channel/][Link: Golang Channel]]                          |
+| Golang return a tuple                             | =func dfs(root *TreeNode, max *float64) (sum int, cnt int)=, [[https://code.dennyzhang.com/maximum-average-subtree][LeetCode: Maximum Average Subtree]] |
+| Use strings.Builder, instead of string            | [[https://code.dennyzhang.com/unique-email-addresses][LeetCode: Unique Email Addresses]]                                                               |
+| Variable Conversion                               | =float64(x_int/y_int)= != =float64(x_int)/float64(y_int)=, [[https://code.dennyzhang.com/maximum-average-subtree][LeetCode: Maximum Average Subtree]]   |
+| For a list of objects, pass by value or reference | =f(l []*TreeNode)= vs =f(l *[]*TreeNode)=, [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][LeetCode: Lowest Common Ancestor of a Binary Tree]]   |
 ** Golang Quality Improvement Tools
 | Name              | Comment                                                                      |
 |-------------------+------------------------------------------------------------------------------|
@@ -64,22 +83,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | [[https://github.com/golang/dep/tree/master/cmd/dep][dep]]                                        | Go deps, now recommend =go modules=                                              |
 | [[https://golang.github.io/dep/docs/installation.html][Install go dep]]                             | =go get -u github.com/golang/dep/cmd/dep=                                        |
 | Go modules                                 | export GO111MODULE=on, =go mod download=                                         |
-| initialize new module in current directory | =go mod init XXX=                                                                |
-| download modules to local cache            | =go mod download=                                                                |
-| make vendored copy of dependencies         | =go mod vendor=                                                                  |
-| add missing and remove unused modules      | =go mod tidy=                                                                    |
+| Initialize new module in current directory | =go mod init XXX=                                                                |
+| Download modules to local cache            | =go mod download=                                                                |
+| Add missing and remove unused modules      | =go mod tidy=                                                                    |
+| Make vendored copy of dependencies         | =go mod vendor=                                                                  |
 | Reference                                  | [[https://blog.golang.org/using-go-modules][Link: Using Go Modules]]                                                           |
-
-** Deep Dive Into Golang
-- Go's original target was networked system infrastructure, what we now call cloud software
-| Name                                              | Comment                                                                                        |
-|---------------------------------------------------+------------------------------------------------------------------------------------------------|
-| Garbage Colection                                 |                                                                                                |
-| Golang goroutine                                  |                                                                                                |
-| Golang return a tuple                             | =func dfs(root *TreeNode, max *float64) (sum int, cnt int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]] |
-| Use strings.Builder, instead of string            | [[https://code.dennyzhang.com/unique-email-addresses][Leetcode: Unique Email Addresses]]                                                               |
-| Variable Conversion                               | =float64(x_int/y_int)= != =float64(x_int)/float64(y_int)=, [[https://code.dennyzhang.com/maximum-average-subtree][Leetcode: Maximum Average Subtree]]   |
-| For a list of objects, pass by value or reference | =f(l []*TreeNode)= vs =f(l *[]*TreeNode)=, [[https://code.dennyzhang.com/lowest-common-ancestor-of-a-binary-tree][Leetcode: Lowest Common Ancestor of a Binary Tree]]   |
 
 ** Golang Errors
 | Name                          | Comment                            |
@@ -100,7 +108,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Declare variables with initializers | var ischecked, v, str  = false, 2, "yes!"        |
 | goroutine                           | Define functions to run as distince subprocesses |
 | switch                              | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-switch.go][code/example-switch.go]]                           |
-| queue                               | [[https://code.dennyzhang.com/number-of-recent-calls][Leetcode: Number of Recent Calls]]                 |
+| queue                               | [[https://code.dennyzhang.com/number-of-recent-calls][LeetCode: Number of Recent Calls]]                 |
 | bfs                                 | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-bfs.go][code/tree-bfs.go]]                                 |
 | trie tree                           | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/tree-trie.go][code/tree-trie.go]]                                |
 #+BEGIN_HTML
@@ -134,7 +142,7 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Create dynamically-sized arrays        | a := make([]int, 1, 5) // 5 is capacity        |
 | Sort string array                      | =sort.Strings(l); fmt.Print(l)=                |
 | Sort int array                         | =sort.Ints(l)= //in-place change               |
-| Golang sort one array by another array | [[https://code.dennyzhang.com/largest-values-from-labels][Leetcode: Largest Values From Labels]]           |
+| Golang sort one array by another array | [[https://code.dennyzhang.com/largest-values-from-labels][LeetCode: Largest Values From Labels]]           |
 | [[https://stackoverflow.com/questions/37695209/golang-sort-slice-ascending-or-descending/40932847][Sort in descending order]]               | =sort.Sort(sort.Reverse(sort.IntSlice(keys)))= |
 | Append item                            | l = append(l, "e")                             |
 | Append items                           | l = append(l, "e", "b", "c")                   |
@@ -199,6 +207,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | Get keys of a map         | Loop the dictionary and append the key to a list         |
 | Use (x, y) as hashmap key | m[[2]int{2, 2}] = true, [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-hashmap-arraykey.go][code/example-hashmap-arraykey.go]] |
 
+** Golang Networking
+| Name        | Comment              |
+|-------------+----------------------|
+| golang http | [[https://github.com/dennyzhang/cheatsheet-golang-A4/blob/master/code/example-http.go][code/example-http.go]] |
+
 ** Golang Goroutines
 | Name            | Comment                   |
 |-----------------+---------------------------|
@@ -236,11 +249,11 @@ File me [[https://github.com/dennyzhang/cheatsheet-golang-A4/issues][Issues]] or
 | [[http://onsi.github.io/gomega][gomega]]                | Ginkgo's Preferred Matcher Library                                        |
 | Add tags to tests     | =// +build availability=, =go test -v --tags=availability ./test/e2e/...= |
 ** Golang Misc
-| Name                       | Comment                                       |
-|----------------------------+-----------------------------------------------|
-| [[https://gobyexample.com/timeouts][Golang sleep]]               | =time.Sleep(4* time.Second)=                  |
-| [[https://golang.org/pkg/log/][Golang logging]]             | =import "log"=, =log.Print=, =log.Fatal(err)= |
-| [[https://stackoverflow.com/questions/25927660/how-to-get-the-current-function-name][Golang print function name]] | =runtime.Callers=                             |
+| Name                       | Comment                                                   |
+|----------------------------+-----------------------------------------------------------|
+| [[https://gobyexample.com/timeouts][Golang sleep]]               | =time.Sleep(4* time.Second)=                              |
+| [[https://golang.org/pkg/log/][Golang logging]]             | =import "log"=, =log.Info=, =log.Print=, =log.Error(err)= |
+| [[https://stackoverflow.com/questions/25927660/how-to-get-the-current-function-name][Golang print function name]] | =runtime.Callers=                                         |
 ** More Resources
 https://play.golang.org/
 
@@ -273,7 +286,7 @@ https://github.com/a8m/go-lang-cheat-sheet
 #+LATEX_HEADER: \rhead{Updated: \today}
 #+LATEX_HEADER: \rfoot{\thepage\ of \pageref{LastPage}}
 #+LATEX_HEADER: \lfoot{\href{https://github.com/dennyzhang/cheatsheet-golang-A4}{GitHub: https://github.com/dennyzhang/cheatsheet-golang-A4}}
-#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-slack-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4}}
+#+LATEX_HEADER: \lhead{\href{https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4}{Blog URL: https://cheatsheet.dennyzhang.com/cheatsheet-golang-A4}}
 #+AUTHOR: Denny Zhang
 #+EMAIL:  denny@dennyzhang.com
 #+TAGS: noexport(n)
@@ -468,27 +481,6 @@ json.Marshal(&Object{
 })
 // {"exported_field":"some info"}
 #+END_SRC
-** DONE go install package: go get github.com/op/go-logging
-  CLOSED: [2018-04-07 Sat 19:11]
-https://github.com/op/go-logging
-** DONE go logging
-  CLOSED: [2018-04-07 Sat 19:12]
-https://github.com/davidsiefert/golang-cheatsheet#logging
-# go get github.com/op/go-logging
-
-package main
-
-import (
-	"github.com/op/go-logging"
-)
-
-func main() {
-	log := logging.MustGetLogger("some-name")
-	log.Info("Informational...")
-	log.Warning("Warning...")
-	log.Error("Error!")
-	log.Critical("Oh no!")
-}
 ** DONE golang one line if
   CLOSED: [2018-04-08 Sun 12:29]
 var c int
@@ -4440,7 +4432,6 @@ func abs(v int) int {
 
 ** TODO golang string to array
 ** TODO golang compare two float numbers
-** TODO golang fmt Sprintf float64
 ** TODO golang add item to the head
 s = append([]int{0}, s...)
 ** TODO golang initialize a list with a different default value
